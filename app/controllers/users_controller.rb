@@ -13,4 +13,15 @@ class UsersController < ApplicationController
       render :login_form    
     end  
   end
+
+  def log_out
+    session.clear
+    redirect_to root_path
+  end
+
+  def new;end
+
+  def show
+
+  end
 end
