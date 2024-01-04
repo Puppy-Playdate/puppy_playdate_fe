@@ -37,7 +37,7 @@ All tests should be passing.
 ## Contributors
 
 * Tommy Takahashi 
-    * [LinkedIn:] 
+    * [LinkedIn:](https://www.linkedin.com/in/tommy-takahashi/)
     * [Github:](https://github.com/ttakahashi1591)
 
 * Miranda Delaney 
@@ -45,15 +45,15 @@ All tests should be passing.
     * [Github:](https://github.com/delaneymiranda1)
 
 * Eric Belongea 
-    * [LinkedIn:]
+    * [LinkedIn:](https://www.linkedin.com/in/eric-belongea/)
     * [Github:](https://github.com/EricBelongea)
 
-* Blake S
-    * [LinkedIn:] 
+* Blake Sergesketter
+    * [LinkedIn:](https://www.linkedin.com/in/b-sergesketter/)
     * [Github:](https://github.com/bserge13)
 
 * Justin Lee
-    * [LinkedIn:] 
+    * [LinkedIn:](https://www.linkedin.com/in/justin-lee-438035294/)
     * [Github:](https://github.com/JustinSteel)
 
 
