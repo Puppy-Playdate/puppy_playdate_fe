@@ -12,15 +12,15 @@ These instructions will give you a copy of the project up and running on your lo
 
 ## Install Intructions
 
-In terminal(bash or zsh):
-```git clone git@github.com:Puppy-Playdate/puppy_playdate_fe.git```
-```git clone git@github.com:Puppy-Playdate/puppy_playdate_be.git```
-```cd puppy_playdate_be```
-Open up a second terminal:
-```cd puppy_playdate_fe```
-In both terminals:
-```bundle install```
-```rails s```
+In terminal(bash or zsh):  
+```git clone git@github.com:Puppy-Playdate/puppy_playdate_fe.git```  
+```git clone git@github.com:Puppy-Playdate/puppy_playdate_be.git```  
+```cd puppy_playdate_be```  
+Open up a second terminal:  
+```cd puppy_playdate_fe```  
+In both terminals:  
+```bundle install```  
+```rails s```  
 
 * The backend runs on 'http://localhost:3000/'
 * The frontend runs on 'http://localhost:5000/'
@@ -30,7 +30,7 @@ In both terminals:
 
 ## Running the tests
 
-```bundle exec rspec```
+```bundle exec rspec```  
 All tests should be passing.
 
 
