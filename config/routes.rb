@@ -8,12 +8,13 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root 'welcome#index'
 
-  get '/users/:id', to: 'users#show'
-  
+  resources :users, only: [:show]
+
   get '/login', to: 'users#login_form'
   post '/login', to: 'users#login_user' 
   get "/log_out", to: "users#log_out"
 
   get '/register', to: 'users#new', as: :new_user
-  get '/socials', to: 'socials#index', as: :socials  
+  
+  resources :socials, only: [:index, :new]
 end
