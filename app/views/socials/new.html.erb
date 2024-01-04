@@ -6,7 +6,7 @@
       height="450"
       frameborder="0" style="border:0"
       referrerpolicy="no-referrer-when-downgrade"
-      src="https://www.google.com/maps/embed/v1/place?key=<%= ENV["GOOGLE_MAPS_API_KEY"] %>&q=<%= @trip.lat %>,<%= @trip.long %>&zoom=13&maptype=satellite"
+      src="https://www.google.com/maps/embed/v1/place?key=<%= Rails.application.credentials.google[:maps_api] %>&q=42.8330° N, 108.7307° W&zoom=13&maptype=satellite"
       allowfullscreen>
   </iframe>
 </div>
