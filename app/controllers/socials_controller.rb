@@ -1,9 +1,5 @@
 class SocialsController < ApplicationController
-  def index
+  def index;end
 
-  end
-
-  def new
-    
-  end
+  def new;end
 end
