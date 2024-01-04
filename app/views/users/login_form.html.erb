@@ -1,0 +1,12 @@
+<%= form_with url: login_path, method: :post do |f| %>
+  <%= f.label :email, 'Email:' %>
+  <%= f.text_field :email %>
+
+  <%= f.label :password, 'Password:' %>
+  <%= f. text_field :password %>
+
+  <br><%= f.submit 'Login' %>
+<% end %>
+
+<br>
+<%= button_to "Login with Google"%>
