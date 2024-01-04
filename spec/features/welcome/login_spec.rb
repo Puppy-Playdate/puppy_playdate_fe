@@ -29,6 +29,7 @@ RSpec.describe 'User Login' do
     click_button('Login')
     expect(current_path).to eq(login_path)
     
+    expect(page).to have_field :full_name 
     expect(page).to have_field :email 
     expect(page).to have_field :password 
     expect(page).to have_button('Login')

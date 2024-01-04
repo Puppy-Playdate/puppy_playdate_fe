@@ -11,6 +11,6 @@ Rails.application.routes.draw do
   get '/login', to: 'users#login_form'
   post '/login', to: 'users#login_user' 
   
-  get '/register', to: 'users#new'
+  get '/register', to: 'users#new', as: :new_user
   get '/socials', to: 'socials#index', as: :socials  
 end
