@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Users Show' do 
   describe 'User Dashboard' do 
     before :each do 
-      visit '/users/1' 
+      visit user_path(1) 
     end
 
     it 'exists', :vcr do 

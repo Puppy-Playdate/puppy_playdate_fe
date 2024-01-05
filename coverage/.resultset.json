@@ -250,6 +250,56 @@
           null
         ]
       },
+      "/Users/blakesergesketter/m3/projects/puppy_playdate_fe/spec/features/users/show_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          6,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
       "/Users/blakesergesketter/m3/projects/puppy_playdate_fe/spec/features/welcome/login_spec.rb": {
         "lines": [
           1,
@@ -315,8 +365,7 @@
           null,
           null,
           1,
-          1,
-          null,
+          2,
           null,
           null
         ]
@@ -331,8 +380,8 @@
         "lines": [
           1,
           1,
-          7,
-          7,
+          8,
+          8,
           null,
           null
         ]
@@ -341,18 +390,18 @@
         "lines": [
           1,
           1,
-          7,
+          8,
           null,
           null,
           1,
-          7,
+          8,
           null,
           null,
           1,
           null,
           1,
-          7,
-          7,
+          8,
+          8,
           null,
           null
         ]
@@ -364,8 +413,8 @@
           null,
           null,
           1,
-          7,
-          7,
+          8,
+          8,
           null,
           null
         ]
@@ -378,6 +427,6 @@
         ]
       }
     },
-    "timestamp": 1704421765
+    "timestamp": 1704472863
   }
 }
