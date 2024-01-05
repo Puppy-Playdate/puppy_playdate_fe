@@ -223,10 +223,13 @@
           null,
           1,
           null,
+          null,
+          1,
+          1,
           1,
           1,
           null,
-          1,
+          null,
           1,
           null
         ]
@@ -237,10 +240,27 @@
           null
         ]
       },
-      "/Users/blakesergesketter/m3/projects/puppy_playdate_fe/app/controllers/welcome_controller.rb": {
+      "/Users/blakesergesketter/m3/projects/puppy_playdate_fe/app/controllers/users_controller.rb": {
         "lines": [
           1,
           1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          1,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
           null
         ]
       },
@@ -250,27 +270,37 @@
           null
         ]
       },
-      "/Users/blakesergesketter/m3/projects/puppy_playdate_fe/app/controllers/users_controller.rb": {
+      "/Users/blakesergesketter/m3/projects/puppy_playdate_fe/app/facades/user_facade.rb": {
         "lines": [
           1,
           1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/blakesergesketter/m3/projects/puppy_playdate_fe/app/services/user_service.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
           null,
           1,
-          0,
+          1,
           null,
-          0,
-          0,
-          0,
-          0,
           null,
-          0,
-          0,
+          1,
           null,
+          1,
+          1,
+          1,
           null,
           null
         ]
       }
     },
-    "timestamp": 1704334989
+    "timestamp": 1704416692
   }
 }

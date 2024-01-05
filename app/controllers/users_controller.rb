@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+  def show 
+    @user = UserFacade.get_by_id(params[:id])
+  end
+
   def login_form;end 
 
   def login_user
