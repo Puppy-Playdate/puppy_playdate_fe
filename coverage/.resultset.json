@@ -372,14 +372,22 @@
           null,
           1,
           1,
+          1,
           null,
+          1,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
           null,
           null,
           null,
           1,
           null,
-          null,
-          null,
+          1,
+          0,
           null,
           null
         ]
@@ -387,6 +395,11 @@
       "/Users/blakesergesketter/m3/projects/puppy_playdate_fe/app/controllers/application_controller.rb": {
         "lines": [
           1,
+          1,
+          null,
+          1,
+          0,
+          null,
           null
         ]
       },
@@ -394,9 +407,9 @@
         "lines": [
           1,
           1,
-          9,
-          9,
-          9,
+          10,
+          10,
+          10,
           null,
           null
         ]
@@ -405,18 +418,18 @@
         "lines": [
           1,
           1,
-          9,
+          10,
           null,
           null,
           1,
-          9,
+          10,
           null,
           null,
           1,
           null,
           1,
-          9,
-          9,
+          10,
+          10,
           null,
           null
         ]
@@ -428,8 +441,8 @@
           null,
           null,
           1,
-          9,
-          9,
+          10,
+          10,
           null,
           null
         ]
@@ -466,6 +479,6 @@
         ]
       }
     },
-    "timestamp": 1704491617
+    "timestamp": 1704496595
   }
 }
