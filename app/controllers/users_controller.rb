@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
   def login_user
     require 'pry'; binding.pry
+    # Not a real endpoint/ Facade yet
     user = UsersFacade.find_by_email(params[:email])
 
     if user.authenticate(params[:password])
