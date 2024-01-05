@@ -17,4 +17,9 @@ class UsersController < ApplicationController
       render :login_form    
     end  
   end
+
+  def edit
+    @user = UserFacade.get_by_id(params[:id])
+  end 
+
 end

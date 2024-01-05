@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   post '/login', to: 'users#login_user' 
   get '/register', to: 'users#new', as: :new_user
   get '/users/:id', to: 'users#show'
+  get '/users/:id/edit', to: 'users#edit', as: :edit
 
   # Socials 
   get '/socials', to: 'socials#index', as: :socials  

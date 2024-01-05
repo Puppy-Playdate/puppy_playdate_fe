@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2024-01-04T19:24:18-06:00">2024-01-04T19:24:18-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2024-01-04T20:05:50-06:00">2024-01-04T20:05:50-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -23,14 +23,14 @@
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
       <span class="green">
-  90.14%
+  90.67%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
-       <span class="red">
-         0.9
+       <span class="green">
+         1.13
        </span>
     </span> hits/line
     )
@@ -43,11 +43,11 @@
   </div>
 
   <div class="t-line-summary">
-    <b>71</b> relevant lines,
-    <span class="green"><b>64</b> lines covered</span> and
+    <b>75</b> relevant lines,
+    <span class="green"><b>68</b> lines covered</span> and
     <span class="red"><b>7</b> lines missed. </span>
     (<span class="green">
-  90.14%
+  90.67%
 </span>
 )
   </div>
@@ -83,12 +83,12 @@
         
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#8653add886da5780922cef6750bdd49410f02418" class="src_link" title="app/controllers/users_controller.rb">app/controllers/users_controller.rb</a></td>
-            <td class="red strong cell--number t-file__coverage">41.67 %</td>
-            <td class="cell--number">20</td>
-            <td class="cell--number">12</td>
-            <td class="cell--number">5</td>
+            <td class="red strong cell--number t-file__coverage">53.33 %</td>
+            <td class="cell--number">26</td>
+            <td class="cell--number">15</td>
+            <td class="cell--number">8</td>
             <td class="cell--number">7</td>
-            <td class="cell--number">0.42</td>
+            <td class="cell--number">0.60</td>
             
           </tr>
         
@@ -99,7 +99,7 @@
             <td class="cell--number">4</td>
             <td class="cell--number">4</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">1.00</td>
+            <td class="cell--number">2.00</td>
             
           </tr>
         
@@ -121,7 +121,7 @@
             <td class="cell--number">5</td>
             <td class="cell--number">5</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">1.00</td>
+            <td class="cell--number">1.80</td>
             
           </tr>
         
@@ -132,7 +132,7 @@
             <td class="cell--number">9</td>
             <td class="cell--number">9</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">1.00</td>
+            <td class="cell--number">1.89</td>
             
           </tr>
         
@@ -238,9 +238,9 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#96e893e5bb215c3d59f9ea19aa7079b580e3f12d" class="src_link" title="config/routes.rb">config/routes.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">19</td>
-            <td class="cell--number">7</td>
-            <td class="cell--number">7</td>
+            <td class="cell--number">20</td>
+            <td class="cell--number">8</td>
+            <td class="cell--number">8</td>
             <td class="cell--number">0</td>
             <td class="cell--number">1.00</td>
             
@@ -321,7 +321,7 @@
     <h3>app/controllers/users_controller.rb</h3>
     <h4>
       <span class="red">
-  41.67%
+  53.33%
 </span>
 
       lines covered
@@ -330,8 +330,8 @@
     
 
     <div class="t-line-summary">
-      <b>12</b> relevant lines.
-      <span class="green"><b>5</b> lines covered</span> and
+      <b>15</b> relevant lines.
+      <span class="green"><b>8</b> lines covered</span> and
       <span class="red"><b>7</b> lines missed.</span>
     </div>
 
@@ -365,8 +365,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="3">
-            <span class="hits">1</span>
+          <li class="covered" data-hits="2" data-linenumber="3">
+            <span class="hits">2</span>
             
 
             
@@ -558,6 +558,72 @@
 
             
 
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="21">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def edit</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="22">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    @user = UserFacade.get_by_id(params[:id])</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="23">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    require &#39;pry&#39;; binding.pry</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="24">
+            
+            
+
+            
+
+            <code class="ruby">  end </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="25">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="26">
+            
+            
+
+            
+
             <code class="ruby">end</code>
           </li>
         </div>
@@ -616,8 +682,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="3">
-            <span class="hits">1</span>
+          <li class="covered" data-hits="3" data-linenumber="3">
+            <span class="hits">3</span>
             
 
             
@@ -627,8 +693,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="4">
-            <span class="hits">1</span>
+          <li class="covered" data-hits="3" data-linenumber="4">
+            <span class="hits">3</span>
             
 
             
@@ -799,8 +865,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="6">
-            <span class="hits">1</span>
+          <li class="covered" data-hits="3" data-linenumber="6">
+            <span class="hits">3</span>
             
 
             
@@ -810,8 +876,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="7">
-            <span class="hits">1</span>
+          <li class="covered" data-hits="3" data-linenumber="7">
+            <span class="hits">3</span>
             
 
             
@@ -896,8 +962,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="3">
-            <span class="hits">1</span>
+          <li class="covered" data-hits="3" data-linenumber="3">
+            <span class="hits">3</span>
             
 
             
@@ -940,8 +1006,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="7">
-            <span class="hits">1</span>
+          <li class="covered" data-hits="3" data-linenumber="7">
+            <span class="hits">3</span>
             
 
             
@@ -1006,8 +1072,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="13">
-            <span class="hits">1</span>
+          <li class="covered" data-hits="3" data-linenumber="13">
+            <span class="hits">3</span>
             
 
             
@@ -1017,8 +1083,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="14">
-            <span class="hits">1</span>
+          <li class="covered" data-hits="3" data-linenumber="14">
+            <span class="hits">3</span>
             
 
             
@@ -3261,8 +3327,8 @@
     
 
     <div class="t-line-summary">
-      <b>7</b> relevant lines.
-      <span class="green"><b>7</b> lines covered</span> and
+      <b>8</b> relevant lines.
+      <span class="green"><b>8</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -3439,13 +3505,13 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="16">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="16">
+            <span class="hits">1</span>
             
 
-            <code class="ruby"></code>
+            
+
+            <code class="ruby">  get &#39;/users/:id/edit&#39;, to: &#39;users#edit&#39;, as: :edit</code>
           </li>
         </div>
       
@@ -3456,12 +3522,23 @@
 
             
 
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="18">
+            
+            
+
+            
+
             <code class="ruby">  # Socials </code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="18">
+          <li class="covered" data-hits="1" data-linenumber="19">
             <span class="hits">1</span>
             
 
@@ -3472,7 +3549,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="19">
+          <li class="never" data-hits="" data-linenumber="20">
             
             
 
