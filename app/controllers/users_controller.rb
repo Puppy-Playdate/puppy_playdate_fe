@@ -24,6 +24,8 @@ class UsersController < ApplicationController
   def create
     if params[:password] == params[:password_confirmation]
       response = UsersFacade.create_user(params[:name], params[:email], params[:password])
+      ### thinking ahead for error handling and status codes ###
+
       # if response[:status] == 201
         # flash[:success] = "Account Created"
         session[:user_id] = response.user_id
@@ -31,9 +33,10 @@ class UsersController < ApplicationController
         redirect_to user_path(response)
       # else
       #   flash[:error] = response[:error]
+      #   redirect_back(fallback_lcoation: new_user_path)
       # end       
     else
-      flash[:error] = "Try again"
+      flash[:error] = "Passwords Must Match"
       redirect_back(fallback_location: new_user_path)
       # require 'pry'; binding.pry
     end
