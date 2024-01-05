@@ -19,7 +19,19 @@ class UsersController < ApplicationController
     redirect_to root_path
   end
 
-  def new;end
+  def new
 
-  def show;end
+  end
+
+  def create
+    if params[:password] == params[:password_confirmation]
+      response = UsersFacade.create_user(params[:name], params[:email], params[:password])
+      require 'pry'; binding.pry
+    end
+  end
+
+  def show
+
+  require 'pry'; binding.pry
+  end
 end
