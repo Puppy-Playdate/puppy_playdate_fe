@@ -12,32 +12,32 @@ These instructions will give you a copy of the project up and running on your lo
 
 ## Install Intructions
 
-In terminal(bash or zsh):
-'''git clone git@github.com:Puppy-Playdate/puppy_playdate_fe.git'''
-'''git clone git@github.com:Puppy-Playdate/puppy_playdate_be.git'''
-'''cd puppy_playdate_be'''
-Open up a second terminal:
-'''cd puppy_playdate_fe'''
-In both terminals:
-'''bundle install'''
-'''rails s'''
+In terminal(bash or zsh):  
+```git clone git@github.com:Puppy-Playdate/puppy_playdate_fe.git```  
+```git clone git@github.com:Puppy-Playdate/puppy_playdate_be.git```  
+```cd puppy_playdate_be```  
+Open up a second terminal:  
+```cd puppy_playdate_fe```  
+In both terminals:  
+```bundle install```  
+```rails s```  
 
-* The backend runs on ‘http://localhost:3000/’
-* The frontend runs on ‘http://localhost:5000/’ 
+* The backend runs on 'http://localhost:3000/'
+* The frontend runs on 'http://localhost:5000/'
 
 **GO HERE TO EXPLORE.**
 
 
 ## Running the tests
 
-'''bundle exec rspec'''
+```bundle exec rspec```  
 All tests should be passing.
 
 
 ## Contributors
 
 * Tommy Takahashi 
-    * [LinkedIn:] 
+    * [LinkedIn:](https://www.linkedin.com/in/tommy-takahashi/)
     * [Github:](https://github.com/ttakahashi1591)
 
 * Miranda Delaney 
@@ -45,15 +45,15 @@ All tests should be passing.
     * [Github:](https://github.com/delaneymiranda1)
 
 * Eric Belongea 
-    * [LinkedIn:]
+    * [LinkedIn:](https://www.linkedin.com/in/eric-belongea/)
     * [Github:](https://github.com/EricBelongea)
 
-* Blake S
-    * [LinkedIn:] 
+* Blake Sergesketter
+    * [LinkedIn:](https://www.linkedin.com/in/b-sergesketter/)
     * [Github:](https://github.com/bserge13)
 
 * Justin Lee
-    * [LinkedIn:] 
+    * [LinkedIn:](https://www.linkedin.com/in/justin-lee-438035294/)
     * [Github:](https://github.com/JustinSteel)
 
 
