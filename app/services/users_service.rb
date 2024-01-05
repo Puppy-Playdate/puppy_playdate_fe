@@ -8,6 +8,10 @@ class UsersService
     JSON.parse(response.body, symbolize_names: true)
   end
 
+  def self.find_user(id)
+    get_url("/api/v1/users/#{id}")
+  end
+
   def self.create_user(name, email, password)
     conn.post("/api/v1/users") do |request|
       request.headers['Content-Type'] = 'application/json'
