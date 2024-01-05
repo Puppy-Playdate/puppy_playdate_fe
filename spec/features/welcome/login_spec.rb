@@ -4,6 +4,7 @@ RSpec.describe 'User Login' do
   it 'exists' do 
     visit root_path
 
+    expect(page).to have_content("Puppy Playdate")
     expect(page).to have_link('Login')
     expect(page).to have_link('New User')
     expect(page).to have_link('Home')
@@ -34,5 +35,35 @@ RSpec.describe 'User Login' do
     expect(page).to have_field :password 
     expect(page).to have_button('Login')
     expect(page).to have_button('Login with Google')
+  end
+
+  it "Nav bar changes based on if someone is logged in", :vcr do
+    visit root_path
+
+    click_link("Create New User")
+
+    fill_in :name, with: "Eric"
+    fill_in :email, with: "superuniqueemail@yahoo.com"
+    fill_in :password, with: "SuperSecret"
+    fill_in :password_confirmation, with: "SuperSecret"
+    click_button("Create New User")
+
+    expect(page).to have_content("Account Created")
+    expect(page).to have_content("Eric")
+    expect(page).to have_content("superuniqueemail@yahoo.com")
+
+    expect(page).to have_link("Home")
+    expect(page).to have_link("My Dashboard")
+    expect(page).to have_link("Log out")
+    expect(page).to_not have_link("Create New User")
+    expect(page).to_not have_link("Login")
+
+    click_link("Log out")
+    expect(current_path).to eq(root_path)
+    expect(page).to have_link("Home")
+    expect(page).to_not have_link("My Dashboard")
+    expect(page).to_not have_link("Log out")
+    expect(page).to have_link("Create New User")
+    expect(page).to have_link("Login")
   end
 end 
