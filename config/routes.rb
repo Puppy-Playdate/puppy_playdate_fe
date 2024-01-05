@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   # post route for new user
   get '/users/:id', to: 'users#show', as: :user
   get '/users/:id/edit', to: 'users#edit', as: :edit
+  patch '/users/:id', to: 'users#edit', as: :update_user
 
   # Socials 
   get '/socials', to: 'socials#index', as: :socials

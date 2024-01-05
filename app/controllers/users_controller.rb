@@ -19,6 +19,19 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = UserFacade.get_by_id(params[:id])
+    user_attr = UserFacade.get_by_id(params[:id])
+    @user = UserDecorator.new(user_attr)
   end 
+
+  def update  
+    require 'pry'; binding.pry
+    # @user = UserFacade.get_by_id(params[:id])
+    # @user.update(user_params)
+  end
+
+  private 
+
+  # def user_params
+  #   params.require(:user).permit(:name, :email, :password) 
+  # end
 end
