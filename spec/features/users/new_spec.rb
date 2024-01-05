@@ -31,5 +31,8 @@ RSpec.describe "User Creation" do
 
       expect(page).to have_content("Passwords Must Match")
     end
+
+    # I think we need error handling for testing/ returning 
+    # an error code to validate unique emails.
   end
 end
