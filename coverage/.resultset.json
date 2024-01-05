@@ -227,9 +227,18 @@
           1,
           1,
           1,
+          null,
           1,
           1,
           null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
           null,
           1,
           null
@@ -241,11 +250,53 @@
           null
         ]
       },
+      "/Users/blakesergesketter/m3/projects/puppy_playdate_fe/spec/features/welcome/login_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
       "/Users/blakesergesketter/m3/projects/puppy_playdate_fe/app/controllers/users_controller.rb": {
         "lines": [
           1,
           1,
-          2,
+          6,
           null,
           null,
           1,
@@ -263,7 +314,6 @@
           null,
           null,
           null,
-          1,
           1,
           1,
           null,
@@ -281,8 +331,8 @@
         "lines": [
           1,
           1,
-          3,
-          3,
+          7,
+          7,
           null,
           null
         ]
@@ -291,18 +341,18 @@
         "lines": [
           1,
           1,
-          3,
+          7,
           null,
           null,
           1,
-          3,
+          7,
           null,
           null,
           1,
           null,
           1,
-          3,
-          3,
+          7,
+          7,
           null,
           null
         ]
@@ -314,13 +364,20 @@
           null,
           null,
           1,
-          3,
-          3,
+          7,
+          7,
           null,
+          null
+        ]
+      },
+      "/Users/blakesergesketter/m3/projects/puppy_playdate_fe/app/controllers/welcome_controller.rb": {
+        "lines": [
+          1,
+          1,
           null
         ]
       }
     },
-    "timestamp": 1704420350
+    "timestamp": 1704421765
   }
 }

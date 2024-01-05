@@ -21,5 +21,4 @@ class UsersController < ApplicationController
   def edit
     @user = UserFacade.get_by_id(params[:id])
   end 
-
 end

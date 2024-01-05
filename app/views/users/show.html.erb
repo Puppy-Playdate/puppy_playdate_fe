@@ -1,7 +1,7 @@
 <h2><%= @user.name %>'s Dashboard</h2>
 
 <br><%= link_to "Edit Profile", edit_path %>
-<br><%= button_to "Log Out" %>
-<br><%= button_to "Add Pet" %>
-<br><%= button_to "View Pets" %>
-<br><%= button_to "Discover Socials" %>
+<br><%= button_to "Log Out", root_path %>
+<br><%= button_to "Add Pet", add_dog_path %>
+<br><%= button_to "View Pets", dogs_path %>
+<br><%= button_to "Discover Socials", user_socials_path %>

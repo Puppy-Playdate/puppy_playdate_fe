@@ -12,9 +12,18 @@ Rails.application.routes.draw do
   get '/login', to: 'users#login_form'
   post '/login', to: 'users#login_user' 
   get '/register', to: 'users#new', as: :new_user
+  # post route for new user
   get '/users/:id', to: 'users#show'
   get '/users/:id/edit', to: 'users#edit', as: :edit
 
   # Socials 
-  get '/socials', to: 'socials#index', as: :socials  
+  get '/socials', to: 'socials#index', as: :socials
+
+  #User_Socials
+  get '/users/:id/socials', to: 'user_socials#index', as: :user_socials
+
+  # Dogs 
+  get '/users/:id/dogs/new', to: 'dogs#new', as: :add_dog
+  # post route for creating a users dog
+  get '/users/:id/dogs', to: 'dogs#index', as: :dogs 
 end

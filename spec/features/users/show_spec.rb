@@ -20,27 +20,27 @@ RSpec.describe 'Users Show' do
 
     it 'routes a user to an edit user page', :vcr do
       click_link "Edit Profile"
-      expect(current_path).to eq(edit_path) 
+      expect(current_path).to eq(edit_path(1)) 
     end 
 
-    xit 'logs a user out and returns back to the landing page', :vcr do
+    it 'logs a user out and returns back to the landing page', :vcr do
       click_button "Log Out"
       expect(current_path).to eq(root_path) 
     end 
 
-    xit 'routes a user to a form page to add a pet to a users profile', :vcr do
-      click_link "Add Pet"
-      expect(current_path).to eq() 
+    it 'routes a user to a form page to add a pet to a users profile', :vcr do
+      click_button "Add Pet"
+      expect(current_path).to eq(add_dog_path(1)) 
     end 
 
-    xit 'routes a user to an edit user page', :vcr do
-      click_link "View Pets"
-      expect(current_path).to eq() 
+    it 'routes a user to an edit user page', :vcr do
+      click_button "View Pets"
+      expect(current_path).to eq(dogs_path(1)) 
     end 
 
-    xit 'routes a user to an edit user page', :vcr do
-      click_link "Discover Socials"
-      expect(current_path).to eq() 
+    it 'routes a user to an edit user page', :vcr do
+      click_button "Discover Socials"
+      expect(current_path).to eq(user_socials_path(1)) 
     end 
   end
 end
