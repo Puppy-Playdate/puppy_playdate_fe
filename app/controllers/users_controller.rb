@@ -2,7 +2,8 @@ class UsersController < ApplicationController
   def login_form;end 
 
   def login_user
-    user = User.find_by(email: params[:email])
+    require 'pry'; binding.pry
+    user = UsersFacade.find_by_email(params[:email])
 
     if user.authenticate(params[:password])
       session[:user_id] = user.id

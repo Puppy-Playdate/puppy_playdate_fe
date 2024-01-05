@@ -19,4 +19,10 @@ class UsersFacade
     response = UsersService.find_user(id)
     User.new(response[:data])
   end
+
+  def self.find_by_email(email)
+    response = UsersServices.find_by_email(email)
+    User.new(response[:data])
+    
+  end
 end
