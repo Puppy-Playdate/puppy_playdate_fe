@@ -13,7 +13,10 @@
   <%= f.text_field :email, :value => @user.email %>
 
   <%= f.label :password, 'Password:' %>
-  <%= f. text_field :password %>
+  <%= f.password_field :password, required: true %><br>
+
+  <%= f.label :password_confirmation, 'Password Confirmation:' %>
+  <%= f.password_field :password_confirmation, required: true %><br>
 
   <br><%= f.submit 'Save' %>
 <% end %>

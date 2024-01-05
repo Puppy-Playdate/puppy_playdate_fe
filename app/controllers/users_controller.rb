@@ -25,8 +25,8 @@ class UsersController < ApplicationController
 
   def update  
     require 'pry'; binding.pry
-    # @user = UserFacade.get_by_id(params[:id])
-    # @user.update(user_params)
+    @user = UserFacade.get_by_id(params[:id])
+    @user.update(user_params)
   end
 
   private 
