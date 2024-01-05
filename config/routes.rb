@@ -10,12 +10,11 @@ Rails.application.routes.draw do
 
   #USERS
   resources :users, only: [:show, :create]
-  get '/register', to: 'users#new', as: :new_user
 
+  get '/register', to: 'users#new', as: :new_user
   get '/login', to: 'users#login_form'
   post '/login', to: 'users#login_user' 
   get "/log_out", to: "users#log_out"
-
   
   #SOCIALS
   resources :socials, only: [:index, :new]

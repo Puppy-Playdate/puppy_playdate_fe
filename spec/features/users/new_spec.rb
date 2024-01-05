@@ -13,12 +13,13 @@ RSpec.describe "User Creation" do
     fill_in :password_confirmation, with: "SuperSecret"
     click_button("Create New User")
 
+    expect(page).to have_content("Account Created")
     expect(page).to have_content("Eric")
     expect(page).to have_content("superuniqueemail@wahoo.com")
   end
 
   describe '#sad-path' do
-    it 'passwords must match' do
+    it 'passwords must match', :vcr do
       visit new_user_path
 
       fill_in :name, with: "Eric"
@@ -32,7 +33,19 @@ RSpec.describe "User Creation" do
       expect(page).to have_content("Passwords Must Match")
     end
 
-    # I think we need error handling for testing/ returning 
-    # an error code to validate unique emails.
+    it "Must have a unqiue email", :vcr do
+      visit new_user_path
+
+      fill_in :name, with: "Eric"
+      fill_in :email, with: "superuniqueemail@wahoo.com"
+      fill_in :password, with: "SuperSecret"
+      fill_in :password_confirmation, with: "SuperSecret"
+      click_button("Create New User")
+      
+      expect(current_path).to eq(new_user_path)
+
+      expect(page).to have_content("Email has already been taken")
+    end
+    
   end
 end
