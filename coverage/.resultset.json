@@ -299,8 +299,21 @@
           null,
           null
         ]
+      },
+      "/Users/blakesergesketter/m3/projects/puppy_playdate_fe/app/poros/user.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1704416692
+    "timestamp": 1704417857
   }
 }
