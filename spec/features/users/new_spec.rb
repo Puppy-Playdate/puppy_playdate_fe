@@ -22,14 +22,14 @@ RSpec.describe "User Creation" do
       visit new_user_path
 
       fill_in :name, with: "Eric"
-    fill_in :email, with: "superuniqueemail@wahoo.com"
-    fill_in :password, with: "SuperSecret"
-    fill_in :password_confirmation, with: "NotIt!"
-    click_button("Create New User")
+      fill_in :email, with: "superuniqueemail@wahoo.com"
+      fill_in :password, with: "SuperSecret"
+      fill_in :password_confirmation, with: "NotIt!"
+      click_button("Create New User")
 
-    expect(current_path).to eq(new_user_path)
+      expect(current_path).to eq(new_user_path)
 
-    expect(page).to have_content("Passwords Must Match")
+      expect(page).to have_content("Passwords Must Match")
     end
   end
 end
