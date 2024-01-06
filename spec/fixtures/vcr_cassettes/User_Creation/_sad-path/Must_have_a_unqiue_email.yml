@@ -37,16 +37,16 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - eb0961d3-b011-4586-9344-38d81b4494a4
+      - 7f69e7e1-61ce-45d9-a957-9bdf96516dbf
       X-Runtime:
-      - '0.010071'
+      - '0.251265'
       Server-Timing:
-      - start_processing.action_controller;dur=0.01, sql.active_record;dur=0.95, transaction.active_record;dur=1.80,
-        process_action.action_controller;dur=3.30
+      - start_processing.action_controller;dur=0.00, unpermitted_parameters.action_controller;dur=0.00,
+        sql.active_record;dur=1.44, transaction.active_record;dur=1.26, process_action.action_controller;dur=246.87
       Content-Length:
-      - '30'
+      - '42'
     body:
       encoding: UTF-8
-      string: '{"error":"Invalid parameters"}'
-  recorded_at: Sat, 06 Jan 2024 00:16:40 GMT
+      string: '{"error":["Email has already been taken"]}'
+  recorded_at: Sat, 06 Jan 2024 17:01:50 GMT
 recorded_with: VCR 6.2.0

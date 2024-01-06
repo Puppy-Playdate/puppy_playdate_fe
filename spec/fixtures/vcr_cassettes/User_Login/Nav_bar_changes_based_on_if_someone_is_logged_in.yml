@@ -17,8 +17,8 @@ http_interactions:
       - "*/*"
   response:
     status:
-      code: 401
-      message: Unauthorized
+      code: 201
+      message: Created
     headers:
       X-Frame-Options:
       - SAMEORIGIN
@@ -34,19 +34,70 @@ http_interactions:
       - application/json; charset=utf-8
       Vary:
       - Accept
+      Etag:
+      - W/"c8c06baa53fd6fb1ff7967aba5181c73"
       Cache-Control:
-      - no-cache
+      - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 88c96db1-5f88-40c2-a700-cbb1b92aa0be
+      - a6a2784f-7acd-48e9-86a6-4bda6c6d163e
       X-Runtime:
-      - '1.433164'
+      - '0.244915'
       Server-Timing:
-      - start_processing.action_controller;dur=0.01, sql.active_record;dur=1557.92,
-        transaction.active_record;dur=924.17, process_action.action_controller;dur=1311.86
+      - start_processing.action_controller;dur=0.00, unpermitted_parameters.action_controller;dur=0.00,
+        sql.active_record;dur=1.32, transaction.active_record;dur=1.69, process_action.action_controller;dur=242.20
       Content-Length:
-      - '30'
+      - '99'
     body:
       encoding: UTF-8
-      string: '{"error":"Invalid parameters"}'
-  recorded_at: Sat, 06 Jan 2024 00:19:27 GMT
+      string: '{"data":{"id":"6","type":"user","attributes":{"name":"Eric","email":"superuniqueemail@yahoo.com"}}}'
+  recorded_at: Sat, 06 Jan 2024 17:01:51 GMT
+- request:
+    method: get
+    uri: http://localhost:3000/api/v1/users/6
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.8.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Etag:
+      - W/"c8c06baa53fd6fb1ff7967aba5181c73"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - d321973f-998e-4440-b3e2-9b7390f2c0ea
+      X-Runtime:
+      - '0.003654'
+      Server-Timing:
+      - start_processing.action_controller;dur=0.00, sql.active_record;dur=0.17, instantiation.active_record;dur=0.02,
+        process_action.action_controller;dur=0.72
+      Content-Length:
+      - '99'
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"6","type":"user","attributes":{"name":"Eric","email":"superuniqueemail@yahoo.com"}}}'
+  recorded_at: Sat, 06 Jan 2024 17:01:51 GMT
 recorded_with: VCR 6.2.0
