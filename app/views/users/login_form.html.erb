@@ -1,15 +1,16 @@
-<%= form_with url: login_path, method: :get do |f| %>
-  <%= f.label :email, 'Email:' %>
-  <%= f.text_field :email %>
+<div id="login_form" align="center">
+  <h1>Existing Member Login</h1>
+  <%= form_with url: login_path, method: :post do |f| %>
+    <%= f.label :email, 'Email:' %>
+    <%= f.text_field :email %>
+    <%= f.label :name, 'Name:' %>
+    <%= f.text_field :name %>
+    <%= f.label :password, 'Password:' %>
+    <%= f.password_field :password %><br><br>
+    <%= f.submit 'Login' %>
+  <% end %>
 
-  <%= f.label :full_name, 'Full Name:' %>
-  <%= f.text_field :full_name %>
-
-  <%= f.label :password, 'Password:' %>
-  <%= f. text_field :password %>
-
-  <br><%= f.submit 'Login' %>
-<% end %>
 
 <br>
 <%= button_to "Login with Google"%>
+</div>

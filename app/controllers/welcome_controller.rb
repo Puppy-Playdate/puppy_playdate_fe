@@ -1,3 +1,3 @@
 class WelcomeController < ApplicationController
-  def inex;end
+  def index;end
 end

@@ -1,9 +1,9 @@
-class User 
-  attr_reader :name,
-              :email
+class User
+  attr_reader :name, :email, :user_id
 
-  def initialize(user_data)
-    @name = user_data[:name]
-    @email = user_data[:email]
+  def initialize(data)
+    @user_id = data[:id].to_i
+    @name = data[:attributes][:name]
+    @email = data[:attributes][:email]
   end
 end
