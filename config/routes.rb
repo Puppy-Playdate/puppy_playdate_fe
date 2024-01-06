@@ -9,13 +9,13 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   #USERS
-  resources :users, only: [:show, :create]
+  resources :users, only: [:show, :create, :edit]
 
   get '/register', to: 'users#new', as: :new_user
   get '/login', to: 'users#login_form'
   post '/login', to: 'users#login_user' 
   get "/log_out", to: "users#log_out"
-  get '/users/:id/edit', to: 'users#edit', as: :edit
+  # get '/users/:id/edit', to: 'users#edit', as: :edit
 
   #SOCIALS
   resources :socials, only: [:index, :new]
