@@ -1,24 +1,22 @@
 ---
 http_interactions:
 - request:
-    method: post
-    uri: http://localhost:3000/api/v1/users
+    method: get
+    uri: http://localhost:3000/api/v1/users/1
     body:
-      encoding: UTF-8
-      string: '{"name":"Eric","email":"superuniqueemail@wahoo.com","password":"SuperSecret"}'
+      encoding: US-ASCII
+      string: ''
     headers:
       User-Agent:
       - Faraday v2.8.1
-      Content-Type:
-      - application/json
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - "*/*"
   response:
     status:
-      code: 401
-      message: Unauthorized
+      code: 200
+      message: OK
     headers:
       X-Frame-Options:
       - SAMEORIGIN
@@ -34,19 +32,21 @@ http_interactions:
       - application/json; charset=utf-8
       Vary:
       - Accept
+      Etag:
+      - W/"7620830ce954407007e67eb3e0f01edb"
       Cache-Control:
-      - no-cache
+      - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 7f69e7e1-61ce-45d9-a957-9bdf96516dbf
+      - 3896246a-e0d8-4534-ae22-11f80f7b18fb
       X-Runtime:
-      - '0.251265'
+      - '0.004157'
       Server-Timing:
-      - start_processing.action_controller;dur=0.00, unpermitted_parameters.action_controller;dur=0.00,
-        sql.active_record;dur=1.44, transaction.active_record;dur=1.26, process_action.action_controller;dur=246.87
+      - start_processing.action_controller;dur=0.01, sql.active_record;dur=0.21, instantiation.active_record;dur=0.03,
+        process_action.action_controller;dur=1.08
       Content-Length:
-      - '42'
+      - '98'
     body:
       encoding: UTF-8
-      string: '{"error":["Email has already been taken"]}'
+      string: '{"data":{"id":"1","type":"user","attributes":{"name":"James Sullivan","email":"sully@gmail.com"}}}'
   recorded_at: Sat, 06 Jan 2024 17:01:50 GMT
 recorded_with: VCR 6.2.0

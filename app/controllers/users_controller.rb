@@ -2,7 +2,6 @@ class UsersController < ApplicationController
   def login_form;end 
 
   def login_user
-    require 'pry'; binding.pry
     # Not a real endpoint/ Facade yet
     user = UsersFacade.find_by_email(params[:email])
 
@@ -15,6 +14,10 @@ class UsersController < ApplicationController
       render :login_form    
     end  
   end
+
+  def edit
+    @user = UsersFacade.find_user(params[:id])
+  end 
 
   def log_out
     session.clear
@@ -41,6 +44,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = UsersFacade.find_user(current_user)
+    @user = UsersFacade.find_user(params[:id])
   end
 end

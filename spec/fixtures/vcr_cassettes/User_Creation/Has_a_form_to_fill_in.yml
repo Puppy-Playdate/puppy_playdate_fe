@@ -35,25 +35,26 @@ http_interactions:
       Vary:
       - Accept
       Etag:
-      - W/"f754559e7ce62cf85e2cda15bc55ddc1"
+      - W/"7cb2192b5fe93cd8aa989d72c0b97826"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 2800f73b-c9ba-40e9-aa7f-3331fdf61e87
+      - '0486344f-dffb-4018-836d-4df26e2836b1'
       X-Runtime:
-      - '0.284451'
+      - '0.392259'
       Server-Timing:
-      - start_processing.action_controller;dur=0.00, unpermitted_parameters.action_controller;dur=0.00,
-        sql.active_record;dur=9.00, transaction.active_record;dur=7.62, process_action.action_controller;dur=269.19
+      - sql.active_record;dur=26.45, start_processing.action_controller;dur=0.00,
+        unpermitted_parameters.action_controller;dur=0.00, transaction.active_record;dur=19.39,
+        process_action.action_controller;dur=286.14
       Content-Length:
-      - '100'
+      - '99'
     body:
       encoding: UTF-8
-      string: '{"data":{"id":"32","type":"user","attributes":{"name":"Eric","email":"superuniqueemail@wahoo.com"}}}'
-  recorded_at: Fri, 05 Jan 2024 17:19:09 GMT
+      string: '{"data":{"id":"5","type":"user","attributes":{"name":"Eric","email":"superuniqueemail@wahoo.com"}}}'
+  recorded_at: Sat, 06 Jan 2024 17:01:50 GMT
 - request:
     method: get
-    uri: http://localhost:3000/api/v1/users/32
+    uri: http://localhost:3000/api/v1/users/5
     body:
       encoding: US-ASCII
       string: ''
@@ -84,20 +85,20 @@ http_interactions:
       Vary:
       - Accept
       Etag:
-      - W/"f754559e7ce62cf85e2cda15bc55ddc1"
+      - W/"7cb2192b5fe93cd8aa989d72c0b97826"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 0cf3ac2a-2d5f-487e-899e-2af148fef5e7
+      - 6605a858-4a72-4529-aa73-f0908725a7cd
       X-Runtime:
-      - '0.003569'
+      - '0.009901'
       Server-Timing:
-      - start_processing.action_controller;dur=0.00, sql.active_record;dur=0.19, instantiation.active_record;dur=0.07,
-        process_action.action_controller;dur=1.08
+      - start_processing.action_controller;dur=0.00, sql.active_record;dur=0.75, instantiation.active_record;dur=0.08,
+        process_action.action_controller;dur=6.01
       Content-Length:
-      - '100'
+      - '99'
     body:
       encoding: UTF-8
-      string: '{"data":{"id":"32","type":"user","attributes":{"name":"Eric","email":"superuniqueemail@wahoo.com"}}}'
-  recorded_at: Fri, 05 Jan 2024 17:19:09 GMT
+      string: '{"data":{"id":"5","type":"user","attributes":{"name":"Eric","email":"superuniqueemail@wahoo.com"}}}'
+  recorded_at: Sat, 06 Jan 2024 17:01:50 GMT
 recorded_with: VCR 6.2.0

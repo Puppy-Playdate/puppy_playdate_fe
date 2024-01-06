@@ -1,4 +1,9 @@
 <h1>You've made it to the dashboard</h1>
 
 <h3>Name: <%= @user.name %></h3>
-<p>Email: <%= @user.email %></p>
+<p>Email: <%= @user.email %></p><h2><%= @user.name %>'s Dashboard</h2>
+
+<br><%= link_to "Edit Profile", edit_path %>
+<br><%= button_to "Add Pet", add_dog_path %>
+<br><%= button_to "View Pets", dogs_path %>
+<br><%= button_to "Discover Socials", user_socials_path %>
