@@ -17,8 +17,8 @@ http_interactions:
       - "*/*"
   response:
     status:
-      code: 201
-      message: Created
+      code: 401
+      message: Unauthorized
     headers:
       X-Frame-Options:
       - SAMEORIGIN
@@ -34,70 +34,19 @@ http_interactions:
       - application/json; charset=utf-8
       Vary:
       - Accept
-      Etag:
-      - W/"f754559e7ce62cf85e2cda15bc55ddc1"
       Cache-Control:
-      - max-age=0, private, must-revalidate
+      - no-cache
       X-Request-Id:
-      - 2800f73b-c9ba-40e9-aa7f-3331fdf61e87
+      - 4bb35b9d-c916-4517-8812-0260e34a3ffd
       X-Runtime:
-      - '0.284451'
+      - '0.163270'
       Server-Timing:
-      - start_processing.action_controller;dur=0.00, unpermitted_parameters.action_controller;dur=0.00,
-        sql.active_record;dur=9.00, transaction.active_record;dur=7.62, process_action.action_controller;dur=269.19
+      - start_processing.action_controller;dur=0.01, sql.active_record;dur=53.06,
+        transaction.active_record;dur=22.70, process_action.action_controller;dur=123.14
       Content-Length:
-      - '100'
+      - '30'
     body:
       encoding: UTF-8
-      string: '{"data":{"id":"32","type":"user","attributes":{"name":"Eric","email":"superuniqueemail@wahoo.com"}}}'
-  recorded_at: Fri, 05 Jan 2024 17:19:09 GMT
-- request:
-    method: get
-    uri: http://localhost:3000/api/v1/users/32
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v2.8.1
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Xss-Protection:
-      - '0'
-      X-Content-Type-Options:
-      - nosniff
-      X-Permitted-Cross-Domain-Policies:
-      - none
-      Referrer-Policy:
-      - strict-origin-when-cross-origin
-      Content-Type:
-      - application/json; charset=utf-8
-      Vary:
-      - Accept
-      Etag:
-      - W/"f754559e7ce62cf85e2cda15bc55ddc1"
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - 0cf3ac2a-2d5f-487e-899e-2af148fef5e7
-      X-Runtime:
-      - '0.003569'
-      Server-Timing:
-      - start_processing.action_controller;dur=0.00, sql.active_record;dur=0.19, instantiation.active_record;dur=0.07,
-        process_action.action_controller;dur=1.08
-      Content-Length:
-      - '100'
-    body:
-      encoding: UTF-8
-      string: '{"data":{"id":"32","type":"user","attributes":{"name":"Eric","email":"superuniqueemail@wahoo.com"}}}'
-  recorded_at: Fri, 05 Jan 2024 17:19:09 GMT
+      string: '{"error":"Invalid parameters"}'
+  recorded_at: Sat, 06 Jan 2024 00:16:40 GMT
 recorded_with: VCR 6.2.0
