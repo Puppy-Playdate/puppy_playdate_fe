@@ -44,27 +44,26 @@ class UsersController < ApplicationController
   end
     
   def edit
-    user_attr = UsersFacade.find_user(params[:id])
-    @user = UserDecorator.new(user_attr)
+    user = UsersFacade.find_user(params[:id])
+    @user = UserDecorator.new(user)
   end 
 
   def update  
     user = UsersFacade.find_user(params[:id])
-    new_name = params[:first_name] +" "+ params[:last_name] 
-    # require 'pry'; binding.pry
-    user.name = new_name
+    response = UsersFacade.update_user(user, params[:name], params[:email], params[:password])
 
-    user.object.update(user_params)
-    if user.save 
-      redirect_to user_path(user)
-    else 
-      render :edit 
-    end 
+    # user.update(user_params)
+
+    # if user.save 
+      redirect_to user_path(user.user_id)
+    # else 
+    #   render :edit 
+    # end 
   end
 
   private 
 
   def user_params 
-    params.require(:user).permit(:name, :email, :password)
+    params.permit(:name, :email, :password)
   end
 end

@@ -8,8 +8,7 @@ RSpec.describe 'Users Show' do
 
     it 'exists', :vcr do 
       expect(page).to have_content("Editing James Sullivan's Profile")
-      expect(page).to have_field :first_name, with: 'James'
-      expect(page).to have_field :last_name, with: 'Sullivan'
+      expect(page).to have_field :name, with: 'James Sullivan'
       expect(page).to have_field :email, with: 'sully@gmail.com'
       expect(page).to have_field :password 
       expect(page).to have_field :password_confirmation  
@@ -20,7 +19,7 @@ RSpec.describe 'Users Show' do
     end 
 
     it 'routes a user back to their dashboard page updated information', :vcr do 
-      fill_in :last_name, with: 'Sullivan Sr.'
+      fill_in :name, with: 'James Sullivan Sr.'
       fill_in :password, with: 'booWHO?'
       fill_in :password_confirmation, with: 'booWHO?'
       click_button('Save')
