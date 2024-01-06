@@ -18,7 +18,7 @@ RSpec.describe 'Users Show' do
 
     it 'routes a user to an edit user page', :vcr do
       click_link "Edit Profile"
-      expect(current_path).to eq(edit_path(1)) 
+      expect(current_path).to eq(edit_user_path(1)) 
     end 
 
     it 'routes a user to a form page to add a pet to a users profile', :vcr do
