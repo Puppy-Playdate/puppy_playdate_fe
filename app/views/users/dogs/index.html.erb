@@ -1,0 +1,13 @@
+<h3> 's Dogs </h3>
+
+<p> 
+  <ul>
+    <% @user.dogs.each do |dog| %>
+      <li><b> Name: </b><%= @dog.name %>
+      <li><b> Name: </b><%= @dog.breed %>
+      <li><b> Name: </b><%= @dog.age %>
+      <li><b> Name: </b><%= @dog.size %>
+      <li><b> Name: </b><%= @dog.fixed %>
+      <% end %>
+  </ul>
+</p>

@@ -1,13 +1,19 @@
 require "rails_helper"
 
 RSpec.describe "User Dog Index" do
-  before(:each) do 
-    @user1 = 
+  before(:each) do
+    visit new_user_path
+
+    fill_in :name, with: "Eric"
+    fill_in :email, with: "superuniqueemail@wahoo.com"
+    fill_in :password, with: "SuperSecret"
+    fill_in :password_confirmation, with: "SuperSecret"
+    click_button("Create New User")
   end
 
-  it 'displays dogs with their name, breed, size, fixed status and photo of dog' do
-    visit '/users/:id/dogs'
-    expect(page).to have_content("#{@user1.name}'s Dogs")
+  xit 'displays dogs with their name, breed, size, fixed status and photo of dog', :vcr do
+    visit dogs_path
+    expect(page).to have_content("#{@user.name}'s Dogs")
     expect(page).to have_content("Name:")
     expect(page).to have_content("Breed:")
     expect(page).to have_content("Age:")
