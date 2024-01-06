@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/blakesergesketter/m3/projects/puppy_playdate_fe/config/environment.rb": {
+      "/Users/ericbelongea/Documents/turing_work/3mod/puppy_play_date_fe/config/environment.rb": {
         "lines": [
           null,
           1,
@@ -10,7 +10,7 @@
           1
         ]
       },
-      "/Users/blakesergesketter/m3/projects/puppy_playdate_fe/config/application.rb": {
+      "/Users/ericbelongea/Documents/turing_work/3mod/puppy_play_date_fe/config/application.rb": {
         "lines": [
           1,
           null,
@@ -41,7 +41,7 @@
           null
         ]
       },
-      "/Users/blakesergesketter/m3/projects/puppy_playdate_fe/config/boot.rb": {
+      "/Users/ericbelongea/Documents/turing_work/3mod/puppy_play_date_fe/config/boot.rb": {
         "lines": [
           1,
           null,
@@ -49,7 +49,7 @@
           1
         ]
       },
-      "/Users/blakesergesketter/m3/projects/puppy_playdate_fe/config/environments/test.rb": {
+      "/Users/ericbelongea/Documents/turing_work/3mod/puppy_play_date_fe/config/environments/test.rb": {
         "lines": [
           1,
           null,
@@ -117,7 +117,7 @@
           null
         ]
       },
-      "/Users/blakesergesketter/m3/projects/puppy_playdate_fe/config/initializers/assets.rb": {
+      "/Users/ericbelongea/Documents/turing_work/3mod/puppy_play_date_fe/config/initializers/assets.rb": {
         "lines": [
           null,
           null,
@@ -133,7 +133,7 @@
           null
         ]
       },
-      "/Users/blakesergesketter/m3/projects/puppy_playdate_fe/config/initializers/content_security_policy.rb": {
+      "/Users/ericbelongea/Documents/turing_work/3mod/puppy_play_date_fe/config/initializers/content_security_policy.rb": {
         "lines": [
           null,
           null,
@@ -144,38 +144,6 @@
           null,
           null,
           null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/blakesergesketter/m3/projects/puppy_playdate_fe/config/initializers/filter_parameter_logging.rb": {
-        "lines": [
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/blakesergesketter/m3/projects/puppy_playdate_fe/config/initializers/inflections.rb": {
-        "lines": [
           null,
           null,
           null,
@@ -194,7 +162,39 @@
           null
         ]
       },
-      "/Users/blakesergesketter/m3/projects/puppy_playdate_fe/config/initializers/permissions_policy.rb": {
+      "/Users/ericbelongea/Documents/turing_work/3mod/puppy_play_date_fe/config/initializers/filter_parameter_logging.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/ericbelongea/Documents/turing_work/3mod/puppy_play_date_fe/config/initializers/inflections.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/ericbelongea/Documents/turing_work/3mod/puppy_play_date_fe/config/initializers/permissions_policy.rb": {
         "lines": [
           null,
           null,
@@ -211,7 +211,7 @@
           null
         ]
       },
-      "/Users/blakesergesketter/m3/projects/puppy_playdate_fe/config/routes.rb": {
+      "/Users/ericbelongea/Documents/turing_work/3mod/puppy_play_date_fe/config/routes.rb": {
         "lines": [
           1,
           null,
@@ -245,7 +245,7 @@
           null
         ]
       },
-      "/Users/blakesergesketter/m3/projects/puppy_playdate_fe/app/helpers/application_helper.rb": {
+      "/Users/ericbelongea/Documents/turing_work/3mod/puppy_play_date_fe/app/helpers/application_helper.rb": {
         "lines": [
           1,
           null
@@ -264,6 +264,10 @@
           0,
           0,
           0,
+          null,
+          0,
+          0,
+          null,
           null,
           0,
           0,
@@ -304,7 +308,7 @@
           null
         ]
       },
-      "/Users/blakesergesketter/m3/projects/puppy_playdate_fe/app/controllers/application_controller.rb": {
+      "/Users/ericbelongea/Documents/turing_work/3mod/puppy_play_date_fe/app/controllers/application_controller.rb": {
         "lines": [
           1,
           1,
@@ -371,7 +375,7 @@
           null
         ]
       },
-      "/Users/blakesergesketter/m3/projects/puppy_playdate_fe/app/poros/user.rb": {
+      "/Users/ericbelongea/Documents/turing_work/3mod/puppy_play_date_fe/app/services/users_service.rb": {
         "lines": [
           1,
           1,

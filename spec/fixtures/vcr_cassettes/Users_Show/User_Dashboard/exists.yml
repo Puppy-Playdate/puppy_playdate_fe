@@ -84,7 +84,7 @@ http_interactions:
       Vary:
       - Accept
       Etag:
-      - W/"7620830ce954407007e67eb3e0f01edb"
+      - W/"e881959116cd6c5d5ca879d08b685dd2"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
@@ -95,7 +95,7 @@ http_interactions:
       - start_processing.action_controller;dur=0.01, sql.active_record;dur=31.01,
         instantiation.active_record;dur=1.82, process_action.action_controller;dur=259.96
       Content-Length:
-      - '98'
+      - '630'
     body:
       encoding: UTF-8
       string: '{"data":{"id":"1","type":"user","attributes":{"name":"James Sullivan","email":"sully@gmail.com"}}}'
