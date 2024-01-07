@@ -33,22 +33,23 @@ http_interactions:
       Vary:
       - Accept
       Etag:
-      - W/"7620830ce954407007e67eb3e0f01edb"
+      - W/"1d730d250e25eccd17c4e91f0932df57"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 9a4186be-c593-4f34-9ffc-8bcf80a10775
+      - ab9eaf37-4aa6-4884-977d-5baebf1777b0
       X-Runtime:
-      - '0.004952'
+      - '0.003163'
       Server-Timing:
-      - start_processing.action_controller;dur=0.00, sql.active_record;dur=0.35, instantiation.active_record;dur=0.03,
-        process_action.action_controller;dur=1.29
+      - start_processing.action_controller;dur=0.00, sql.active_record;dur=0.11, instantiation.active_record;dur=0.02,
+        process_action.action_controller;dur=0.70
       Content-Length:
-      - '98'
+      - '102'
     body:
       encoding: UTF-8
-      string: '{"data":{"id":"1","type":"user","attributes":{"name":"James Sullivan","email":"sully@gmail.com"}}}'
-  recorded_at: Sat, 06 Jan 2024 17:01:50 GMT
+      string: '{"data":{"id":"1","type":"user","attributes":{"name":"James Sullivan
+        Sr.","email":"sully@gmail.com"}}}'
+  recorded_at: Sun, 07 Jan 2024 01:31:20 GMT
 - request:
     method: get
     uri: http://localhost:3000/api/v1/users/1
@@ -82,20 +83,21 @@ http_interactions:
       Vary:
       - Accept
       Etag:
-      - W/"7620830ce954407007e67eb3e0f01edb"
+      - W/"1d730d250e25eccd17c4e91f0932df57"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 4f9e1078-3efb-4a00-b24d-65a06b4a7824
+      - e51ba63b-c3c8-413a-a979-2712ef98a291
       X-Runtime:
-      - '0.004068'
+      - '0.003179'
       Server-Timing:
-      - start_processing.action_controller;dur=0.01, sql.active_record;dur=0.20, instantiation.active_record;dur=0.07,
-        process_action.action_controller;dur=1.44
+      - start_processing.action_controller;dur=0.00, sql.active_record;dur=0.27, instantiation.active_record;dur=0.03,
+        process_action.action_controller;dur=0.90
       Content-Length:
-      - '98'
+      - '102'
     body:
       encoding: UTF-8
-      string: '{"data":{"id":"1","type":"user","attributes":{"name":"James Sullivan","email":"sully@gmail.com"}}}'
-  recorded_at: Sat, 06 Jan 2024 17:01:50 GMT
+      string: '{"data":{"id":"1","type":"user","attributes":{"name":"James Sullivan
+        Sr.","email":"sully@gmail.com"}}}'
+  recorded_at: Sun, 07 Jan 2024 01:31:20 GMT
 recorded_with: VCR 6.2.0

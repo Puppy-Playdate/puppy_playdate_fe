@@ -7,7 +7,7 @@ RSpec.describe 'Users Show' do
     end
 
     it 'exists', :vcr do 
-      expect(page).to have_link('Edit Profile')
+      expect(page).to have_button('Edit Profile')
       expect(page).to have_button('Add Pet')
       expect(page).to have_button('View Pets')
       expect(page).to have_button('Discover Socials')
@@ -17,7 +17,7 @@ RSpec.describe 'Users Show' do
     end
 
     it 'routes a user to an edit user page', :vcr do
-      click_link "Edit Profile"
+      click_button "Edit Profile"
       expect(current_path).to eq(edit_user_path(1)) 
     end 
 

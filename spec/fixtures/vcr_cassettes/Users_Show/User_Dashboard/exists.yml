@@ -33,20 +33,21 @@ http_interactions:
       Vary:
       - Accept
       Etag:
-      - W/"7620830ce954407007e67eb3e0f01edb"
+      - W/"1d730d250e25eccd17c4e91f0932df57"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 7b6a3775-b092-4f0f-b2d1-ec8731f80033
+      - fa7eb66c-c9c2-4005-a6a1-229a55f47431
       X-Runtime:
-      - '0.003296'
+      - '0.003617'
       Server-Timing:
-      - start_processing.action_controller;dur=0.00, sql.active_record;dur=0.25, instantiation.active_record;dur=0.02,
-        process_action.action_controller;dur=0.84
+      - start_processing.action_controller;dur=0.00, sql.active_record;dur=0.17, instantiation.active_record;dur=0.07,
+        process_action.action_controller;dur=0.85
       Content-Length:
-      - '98'
+      - '102'
     body:
       encoding: UTF-8
-      string: '{"data":{"id":"1","type":"user","attributes":{"name":"James Sullivan","email":"sully@gmail.com"}}}'
-  recorded_at: Sat, 06 Jan 2024 17:01:50 GMT
+      string: '{"data":{"id":"1","type":"user","attributes":{"name":"James Sullivan
+        Sr.","email":"sully@gmail.com"}}}'
+  recorded_at: Sun, 07 Jan 2024 01:31:20 GMT
 recorded_with: VCR 6.2.0

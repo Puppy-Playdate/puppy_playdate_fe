@@ -3,7 +3,9 @@
 <h3>Name: <%= @user.name %></h3>
 <p>Email: <%= @user.email %></p><h2><%= @user.name %>'s Dashboard</h2>
 
-<br><%= link_to "Edit Profile", edit_user_path(@user.user_id) %>
-<br><%= button_to "Add Pet", add_dog_path %>
-<br><%= button_to "View Pets", dogs_path %>
-<br><%= button_to "Discover Socials", user_socials_path %>
+<div id="dashboard_nav" >
+  <p><%= button_to "Edit Profile", edit_user_path(@user.user_id), method: :get %></p>
+  <p><%= button_to "Add Pet", add_dog_path %></p>
+  <p><%= button_to "View Pets", dogs_path %></p>
+  <p><%= button_to "Discover Socials", user_socials_path %></p>
+</div>  
