@@ -37,19 +37,19 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - ab9eaf37-4aa6-4884-977d-5baebf1777b0
+      - 37079927-a64e-4095-be58-cc0d56f6c285
       X-Runtime:
-      - '0.003163'
+      - '0.003499'
       Server-Timing:
-      - start_processing.action_controller;dur=0.00, sql.active_record;dur=0.11, instantiation.active_record;dur=0.02,
-        process_action.action_controller;dur=0.70
+      - start_processing.action_controller;dur=0.00, sql.active_record;dur=0.15, instantiation.active_record;dur=0.02,
+        process_action.action_controller;dur=0.78
       Content-Length:
       - '102'
     body:
       encoding: UTF-8
       string: '{"data":{"id":"1","type":"user","attributes":{"name":"James Sullivan
         Sr.","email":"sully@gmail.com"}}}'
-  recorded_at: Sun, 07 Jan 2024 01:31:20 GMT
+  recorded_at: Sun, 07 Jan 2024 16:58:08 GMT
 - request:
     method: get
     uri: http://localhost:3000/api/v1/users/1
@@ -87,17 +87,17 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - e51ba63b-c3c8-413a-a979-2712ef98a291
+      - 899d91f6-88d6-4681-804c-4e1b221d05c3
       X-Runtime:
-      - '0.003179'
+      - '0.003653'
       Server-Timing:
-      - start_processing.action_controller;dur=0.00, sql.active_record;dur=0.27, instantiation.active_record;dur=0.03,
-        process_action.action_controller;dur=0.90
+      - start_processing.action_controller;dur=0.00, sql.active_record;dur=0.17, instantiation.active_record;dur=0.02,
+        process_action.action_controller;dur=0.79
       Content-Length:
       - '102'
     body:
       encoding: UTF-8
       string: '{"data":{"id":"1","type":"user","attributes":{"name":"James Sullivan
         Sr.","email":"sully@gmail.com"}}}'
-  recorded_at: Sun, 07 Jan 2024 01:31:20 GMT
+  recorded_at: Sun, 07 Jan 2024 16:58:08 GMT
 recorded_with: VCR 6.2.0

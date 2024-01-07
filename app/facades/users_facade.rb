@@ -28,7 +28,7 @@ class UsersFacade
   def self.update_user(user, name, email, password)
     response = UsersService.update_user(user, name, email, password)
     response_body = JSON.parse(response.body, symbolize_names: true)
-    if response.status == 201
+    if response.status == 202
       {
         status: response.status,
         user_id: response_body[:data][:id]

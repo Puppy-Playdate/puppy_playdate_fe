@@ -23,14 +23,12 @@ class UsersController < ApplicationController
     if params[:password] == params[:password_confirmation]
       user = UsersFacade.find_user(params[:id].to_i)
       response = UsersFacade.update_user(user, params[:name], params[:email], params[:password])
-      # require 'pry'; binding.pry
+      require 'pry'; binding.pry
       if response[:status] == 202
         flash[:success] = "Profile Updated"
-        require 'pry'; binding.pry
         session[:user_id] = response[:user_id].to_i
         redirect_to user_path(current_user)
       else
-        require 'pry'; binding.pry
         flash[:error] = response[:error].join(', ')
         redirect_back(fallback_location: edit_user_path(current_user))
       end
@@ -38,7 +36,6 @@ class UsersController < ApplicationController
       flash[:error] = "Passwords Must Match"
       redirect_back(fallback_location: edit_user_path(current_user))
     end
-    # require 'pry'; binding.pry
   end
 
   def log_out
@@ -66,7 +63,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    # require 'pry'; binding.pry
     @user = UsersFacade.find_user(params[:id])
   end
 
