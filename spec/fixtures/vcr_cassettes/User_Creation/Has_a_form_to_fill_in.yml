@@ -39,19 +39,18 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - '0486344f-dffb-4018-836d-4df26e2836b1'
+      - ca408953-3a64-4b71-92ef-f0c9d0b01c18
       X-Runtime:
-      - '0.392259'
+      - '0.254377'
       Server-Timing:
-      - sql.active_record;dur=26.45, start_processing.action_controller;dur=0.00,
-        unpermitted_parameters.action_controller;dur=0.00, transaction.active_record;dur=19.39,
-        process_action.action_controller;dur=286.14
+      - start_processing.action_controller;dur=0.00, unpermitted_parameters.action_controller;dur=0.00,
+        sql.active_record;dur=9.81, transaction.active_record;dur=4.32, process_action.action_controller;dur=251.85
       Content-Length:
       - '99'
     body:
       encoding: UTF-8
       string: '{"data":{"id":"5","type":"user","attributes":{"name":"Eric","email":"superuniqueemail@wahoo.com"}}}'
-  recorded_at: Sat, 06 Jan 2024 17:01:50 GMT
+  recorded_at: Sun, 07 Jan 2024 17:10:27 GMT
 - request:
     method: get
     uri: http://localhost:3000/api/v1/users/5
@@ -89,16 +88,16 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 6605a858-4a72-4529-aa73-f0908725a7cd
+      - 5a4377d1-e3f4-4c78-998a-5802b11e9c63
       X-Runtime:
-      - '0.009901'
+      - '0.003743'
       Server-Timing:
-      - start_processing.action_controller;dur=0.00, sql.active_record;dur=0.75, instantiation.active_record;dur=0.08,
-        process_action.action_controller;dur=6.01
+      - start_processing.action_controller;dur=0.00, sql.active_record;dur=0.15, instantiation.active_record;dur=0.03,
+        process_action.action_controller;dur=1.02
       Content-Length:
       - '99'
     body:
       encoding: UTF-8
       string: '{"data":{"id":"5","type":"user","attributes":{"name":"Eric","email":"superuniqueemail@wahoo.com"}}}'
-  recorded_at: Sat, 06 Jan 2024 17:01:50 GMT
+  recorded_at: Sun, 07 Jan 2024 17:10:27 GMT
 recorded_with: VCR 6.2.0
