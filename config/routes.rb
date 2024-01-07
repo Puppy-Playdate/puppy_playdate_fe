@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   #USERS
-  resources :users, only: [:show, :create, :edit]
+  resources :users, only: [:show, :create, :edit, :update]
 
   get '/register', to: 'users#new', as: :new_user
   get '/login', to: 'users#login_form'
