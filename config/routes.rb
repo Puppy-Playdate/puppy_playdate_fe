@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   #USERS
-  resources :users, only: [:show, :create, :edit]
+  resources :users, only: [:show, :create, :edit] do
+    resources :socials, only: [:index, :new, :create]
+  end
 
   get '/register', to: 'users#new', as: :new_user
   get '/login', to: 'users#login_form'
@@ -18,10 +20,10 @@ Rails.application.routes.draw do
   # get '/users/:id/edit', to: 'users#edit', as: :edit
 
   #SOCIALS
-  resources :socials, only: [:index, :new]
+  get '/socials', to: 'socials#guest_index'
 
   #USER_SOCIALS
-  get '/users/:id/socials', to: 'user_socials#index', as: :user_socials
+  # get '/users/:id/socials', to: 'user_socials#index', as: :user_socials
 
   # DOGS 
   get '/users/:id/dogs/new', to: 'dogs#new', as: :add_dog
