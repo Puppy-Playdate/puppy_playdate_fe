@@ -60,6 +60,20 @@ RSpec.describe 'Users Edit' do
       expect(page).to have_content("Email can't be blank, Email is invalid")
     end
 
+    it "must be an email", :vcr do
+      visit edit_user_path(4)
+
+      fill_in :name, with: 'Boo'
+      fill_in :email, with: 'noatsigndotcom'
+      fill_in :password, with: 'password'
+      fill_in :password_confirmation, with: 'password'
+      click_button('Save')
+
+      expect(current_path).to eq(edit_user_path(4))
+
+      expect(page).to have_content("Email is invalid")
+    end
+
     it "Name can't be blank do", :vcr do
       visit edit_user_path(4)
 
