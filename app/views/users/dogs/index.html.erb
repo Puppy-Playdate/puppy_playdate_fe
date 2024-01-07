@@ -1,13 +1,15 @@
-<h3> 's Dogs </h3>
+<h1><%= "#{@user.name}'s Dogs" %></h1>
 
-<p> 
-  <ul>
-    <% @user.dogs.each do |dog| %>
-      <li><b> Name: </b><%= @dog.name %>
-      <li><b> Name: </b><%= @dog.breed %>
-      <li><b> Name: </b><%= @dog.age %>
-      <li><b> Name: </b><%= @dog.size %>
-      <li><b> Name: </b><%= @dog.fixed %>
-      <% end %>
-  </ul>
-</p>
+<% @dogs_facade.dogs.each do |dog| %>
+  <div class="dog-box">
+    <p>Name: <%= dog.name %></p>
+    <p>Breed: <%= dog.breed %></p>
+    <p>Age: <%= dog.age %></p>
+    <p>Size: <%= dog.size %></p>
+    <p>Fixed: <%= dog.neutered ? 'True' : 'False' %></p>
+    <!-- Add photo display logic here -->
+    <!-- add button to edit doggos>
+  </div>
+<% end %>
+
+<%= button_to "Add Dog", add_dog_path(@user) %>

@@ -27,4 +27,5 @@ Rails.application.routes.draw do
   get '/users/:id/dogs/new', to: 'dogs#new', as: :add_dog
   # post route for creating a users dog
   get '/users/:id/dogs', to: 'dogs#index', as: :dogs 
+  
 end

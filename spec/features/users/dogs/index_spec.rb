@@ -2,23 +2,18 @@ require "rails_helper"
 
 RSpec.describe "User Dog Index" do
   before(:each) do
-    visit new_user_path
-
-    fill_in :name, with: "Eric"
-    fill_in :email, with: "superuniqueemail@wahoo.com"
-    fill_in :password, with: "SuperSecret"
-    fill_in :password_confirmation, with: "SuperSecret"
-    click_button("Create New User")
+    @user = UsersFacade.find_user(1)
   end
 
-  xit 'displays dogs with their name, breed, size, fixed status and photo of dog', :vcr do
-    visit dogs_path
+  it 'displays dogs with their name, breed, size, fixed status and photo of dog', :vcr do
+    visit dogs_path(@user)
+
     expect(page).to have_content("#{@user.name}'s Dogs")
     expect(page).to have_content("Name:")
     expect(page).to have_content("Breed:")
     expect(page).to have_content("Age:")
     expect(page).to have_content("Size:")
-    expect(page).to have_content("Fixed:")
+    expect(page).to have_content("Neutered:")
     # research how to test for dog photo
   end
 

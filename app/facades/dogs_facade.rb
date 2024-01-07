@@ -1,6 +1,6 @@
 class DogsFacade
-  def self.create_dog(name, breed, age, size, fixed)
-    response = DogsService.create_dog(name, breed, age, size, fixed)
+  def self.create_dog(name, breed, age, size, neutered)
+    response = DogsService.create_dog(name, breed, age, size, neutered)
     response_body = JSON.parse(response.body, symbolize_names: true)
     if response.status == 201
       {
@@ -19,3 +19,4 @@ class DogsFacade
     response = DogsService.find_dog(id)
     Dog.new(response[:data])
   end
+end

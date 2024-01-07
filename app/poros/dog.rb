@@ -1,5 +1,5 @@
 class Dog
-  attr_reader :name, :breed, :age, :size, :fixed
+  attr_reader :name, :breed, :age, :size, :neutered
 
   def initialize(data)
     @dog_id = data[:id].to_i
@@ -7,6 +7,6 @@ class Dog
     @breed = data[:attributes][:breed]
     @age = data[:attributes][:age]
     @size = data[:attributes][:size]
-    @fixed = data[:attributes][:fixed]
+    @neutered = data[:attributes][:neutered]
   end
 end

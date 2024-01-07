@@ -1,13 +1,10 @@
 class Users::DogsController < ApplicationController
   def index
     @user = UsersFacade.find_user(params[:id])
-    @dogs = @user.dogs.all
+    @dogs = DogsFacade.new(user: @user)
   end
 
-  def create
-    @user = UsersFacade.find_user(params[:id])
-    @dog = @user.dogs.new(dog_params)
-  end
+
 
   private
 
