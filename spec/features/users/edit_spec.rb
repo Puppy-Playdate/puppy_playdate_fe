@@ -45,5 +45,33 @@ RSpec.describe 'Users Edit' do
 
       expect(page).to have_content("Passwords Must Match")
     end
+
+    it "Email can't be blank", :vcr do
+      visit edit_user_path(4)
+
+      fill_in :name, with: 'Boo'
+      fill_in :email, with: ''
+      fill_in :password, with: 'password'
+      fill_in :password_confirmation, with: 'password'
+      click_button('Save')
+
+      expect(current_path).to eq(edit_user_path(4))
+
+      expect(page).to have_content("Email can't be blank, Email is invalid")
+    end
+
+    it "Name can't be blank do", :vcr do
+      visit edit_user_path(4)
+
+      fill_in :name, with: ''
+      fill_in :email, with: 'boo@gmail.com'
+      fill_in :password, with: 'password'
+      fill_in :password_confirmation, with: 'password'
+      click_button('Save')
+
+      expect(current_path).to eq(edit_user_path(4))
+
+      expect(page).to have_content("Name can't be blank")
+    end
   end
 end 
