@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Users Edit' do 
-  describe 'User Dashboard' do 
+  describe 'User Dashboard Updates' do 
     it 'exists', :vcr do 
       visit edit_user_path(1)
 
@@ -17,17 +17,33 @@ RSpec.describe 'Users Edit' do
     end 
 
     it 'routes a user back to their dashboard page updated information', :vcr do 
-      visit edit_user_path(1)
+      visit edit_user_path(2)
 
-      fill_in :name, with: 'James Sullivan Sr.'
-      fill_in :email, with: 'sully@gmail.com'
+      fill_in :name, with: 'Mikey Boi'
+      fill_in :email, with: 'mike@gmail.com'
       fill_in :password, with: 'password'
       fill_in :password_confirmation, with: 'password'
       click_button('Save')
 
-      expect(current_path).to eq(user_path(1))
+      expect(current_path).to eq(user_path(2))
 
-      expect(page).to have_content("James Sullivan Sr.'s Dashboard")
+      expect(page).to have_content("Mikey Boi's Dashboard")
     end
   end 
+
+  describe '#sad-path' do
+    it 'passwords must match', :vcr do
+      visit edit_user_path(4)
+
+      fill_in :name, with: 'Boo'
+      fill_in :email, with: 'boo@gmail.com'
+      fill_in :password, with: 'password'
+      fill_in :password_confirmation, with: 'ItsaMe'
+      click_button('Save')
+
+      expect(current_path).to eq(edit_user_path(4))
+
+      expect(page).to have_content("Passwords Must Match")
+    end
+  end
 end 

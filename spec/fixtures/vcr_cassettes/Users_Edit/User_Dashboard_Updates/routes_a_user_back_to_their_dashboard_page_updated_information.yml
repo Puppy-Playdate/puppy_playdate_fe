@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://localhost:3000/api/v1/users/1
+    uri: http://localhost:3000/api/v1/users/2
     body:
       encoding: US-ASCII
       string: ''
@@ -33,25 +33,25 @@ http_interactions:
       Vary:
       - Accept
       Etag:
-      - W/"7620830ce954407007e67eb3e0f01edb"
+      - W/"9590c10a8a03bae9af0cdab67ab2273d"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 6313c99e-ddb5-422e-ab98-b7b8e2a7baba
+      - 85546d69-9106-457e-992d-655ee937eab0
       X-Runtime:
-      - '0.015293'
+      - '0.004337'
       Server-Timing:
-      - start_processing.action_controller;dur=0.00, sql.active_record;dur=0.19, instantiation.active_record;dur=0.03,
-        process_action.action_controller;dur=1.34
+      - start_processing.action_controller;dur=0.00, sql.active_record;dur=0.29, instantiation.active_record;dur=0.04,
+        process_action.action_controller;dur=1.10
       Content-Length:
-      - '98'
+      - '96'
     body:
       encoding: UTF-8
-      string: '{"data":{"id":"1","type":"user","attributes":{"name":"James Sullivan","email":"sully@gmail.com"}}}'
-  recorded_at: Sun, 07 Jan 2024 16:57:56 GMT
+      string: '{"data":{"id":"2","type":"user","attributes":{"name":"Mike Wazowski","email":"mike@gmail.com"}}}'
+  recorded_at: Sun, 07 Jan 2024 17:10:26 GMT
 - request:
     method: get
-    uri: http://localhost:3000/api/v1/users/1
+    uri: http://localhost:3000/api/v1/users/2
     body:
       encoding: US-ASCII
       string: ''
@@ -82,28 +82,28 @@ http_interactions:
       Vary:
       - Accept
       Etag:
-      - W/"7620830ce954407007e67eb3e0f01edb"
+      - W/"9590c10a8a03bae9af0cdab67ab2273d"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 98aff2cb-8c33-4b37-a18b-62396934c09f
+      - 38f80471-1c81-4d80-b1aa-8b1370ad988b
       X-Runtime:
-      - '0.008496'
+      - '0.005406'
       Server-Timing:
-      - start_processing.action_controller;dur=0.00, sql.active_record;dur=0.75, instantiation.active_record;dur=0.02,
-        process_action.action_controller;dur=2.25
+      - start_processing.action_controller;dur=0.01, sql.active_record;dur=0.71, instantiation.active_record;dur=0.03,
+        process_action.action_controller;dur=1.73
       Content-Length:
-      - '98'
+      - '96'
     body:
       encoding: UTF-8
-      string: '{"data":{"id":"1","type":"user","attributes":{"name":"James Sullivan","email":"sully@gmail.com"}}}'
-  recorded_at: Sun, 07 Jan 2024 16:57:56 GMT
+      string: '{"data":{"id":"2","type":"user","attributes":{"name":"Mike Wazowski","email":"mike@gmail.com"}}}'
+  recorded_at: Sun, 07 Jan 2024 17:10:26 GMT
 - request:
     method: patch
-    uri: http://localhost:3000/api/v1/users/1
+    uri: http://localhost:3000/api/v1/users/2
     body:
       encoding: UTF-8
-      string: '{"name":"James Sullivan Sr.","email":"sully@gmail.com","password":"password"}'
+      string: '{"name":"Mikey Boi","email":"mike@gmail.com","password":"password"}'
     headers:
       User-Agent:
       - Faraday v2.8.1
@@ -135,23 +135,22 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - c9317bf6-54d4-4c13-b004-bd44479e4390
+      - 32b28d77-de1c-4a8d-9cb7-d15d8b7ddfca
       X-Runtime:
-      - '0.279033'
+      - '0.286478'
       Server-Timing:
-      - start_processing.action_controller;dur=0.00, sql.active_record;dur=17.97,
-        instantiation.active_record;dur=0.02, unpermitted_parameters.action_controller;dur=0.00,
-        transaction.active_record;dur=20.46, process_action.action_controller;dur=276.35
+      - start_processing.action_controller;dur=0.01, sql.active_record;dur=16.99,
+        instantiation.active_record;dur=0.03, unpermitted_parameters.action_controller;dur=0.00,
+        transaction.active_record;dur=15.47, process_action.action_controller;dur=282.07
       Content-Length:
-      - '102'
+      - '92'
     body:
       encoding: UTF-8
-      string: '{"data":{"id":"1","type":"user","attributes":{"name":"James Sullivan
-        Sr.","email":"sully@gmail.com"}}}'
-  recorded_at: Sun, 07 Jan 2024 16:57:56 GMT
+      string: '{"data":{"id":"2","type":"user","attributes":{"name":"Mikey Boi","email":"mike@gmail.com"}}}'
+  recorded_at: Sun, 07 Jan 2024 17:10:26 GMT
 - request:
     method: get
-    uri: http://localhost:3000/api/v1/users/1
+    uri: http://localhost:3000/api/v1/users/2
     body:
       encoding: US-ASCII
       string: ''
@@ -182,21 +181,20 @@ http_interactions:
       Vary:
       - Accept
       Etag:
-      - W/"1d730d250e25eccd17c4e91f0932df57"
+      - W/"f50b6709d7fbbbb8da2dbd28d008f1da"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 81c87e24-dfbb-4a99-adf6-1ca3a62f0f15
+      - 3a9d8a72-0a36-4bd1-bc6d-d5ea628974e4
       X-Runtime:
-      - '0.009072'
+      - '0.003675'
       Server-Timing:
-      - start_processing.action_controller;dur=0.00, sql.active_record;dur=0.95, instantiation.active_record;dur=0.27,
-        process_action.action_controller;dur=3.64
+      - start_processing.action_controller;dur=0.00, sql.active_record;dur=0.23, instantiation.active_record;dur=0.03,
+        process_action.action_controller;dur=0.85
       Content-Length:
-      - '102'
+      - '92'
     body:
       encoding: UTF-8
-      string: '{"data":{"id":"1","type":"user","attributes":{"name":"James Sullivan
-        Sr.","email":"sully@gmail.com"}}}'
-  recorded_at: Sun, 07 Jan 2024 16:58:08 GMT
+      string: '{"data":{"id":"2","type":"user","attributes":{"name":"Mikey Boi","email":"mike@gmail.com"}}}'
+  recorded_at: Sun, 07 Jan 2024 17:10:26 GMT
 recorded_with: VCR 6.2.0
