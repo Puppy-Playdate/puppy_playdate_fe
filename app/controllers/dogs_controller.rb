@@ -10,7 +10,6 @@ class DogsController < ApplicationController
   end 
 
   def new
-    @user = UsersFacade.find_user(params[:id].to_i)
   end
 
 

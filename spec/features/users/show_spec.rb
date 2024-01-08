@@ -26,12 +26,12 @@ RSpec.describe 'Users Show' do
       expect(current_path).to eq(new_user_dog_path(1)) 
     end 
 
-    it 'routes a user to an edit user page', :vcr do
+    it 'routes a user to their users dogs page', :vcr do
       click_button "View Pets"
       expect(current_path).to eq(user_dogs_path(1)) 
     end 
 
-    it 'routes a user to an edit user page', :vcr do
+    it 'routes a user to the socials page', :vcr do
       click_button "Discover Socials"
       expect(current_path).to eq(socials_path) 
     end 
