@@ -1,6 +1,7 @@
 class UsersFacade
   def self.create_user(name, email, password)
     response = UsersService.create_user(name, email, password)
+    # require 'pry'; binding.pry
     response_body = JSON.parse(response.body, symbolize_names: true)
     if response.status == 201
       {
@@ -17,6 +18,7 @@ class UsersFacade
 
   def self.find_user(id)
     response = UsersService.find_user(id)
+    # require 'pry'; binding.pry
     User.new(response[:data])
   end
 

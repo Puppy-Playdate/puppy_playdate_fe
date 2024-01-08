@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   def login_form;end 
 
   def login_user
+    require 'pry'; binding.pry
     # Not a real endpoint/ Facade yet
     user = UsersFacade.find_by_email(params[:email])
 
@@ -32,6 +33,7 @@ class UsersController < ApplicationController
       if response[:status] == 201
         flash[:success] = "Account Created"
         session[:user_id] = response[:user_id].to_i
+        # require 'pry'; binding.pry
         redirect_to user_path(current_user)
       else
         flash[:error] = response[:error].join(', ')
@@ -44,6 +46,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    # require 'pry'; binding.pry
     @user = UsersFacade.find_user(params[:id])
   end
 end

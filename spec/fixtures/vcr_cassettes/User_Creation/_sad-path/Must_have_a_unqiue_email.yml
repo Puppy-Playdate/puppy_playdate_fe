@@ -37,16 +37,16 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - 7f69e7e1-61ce-45d9-a957-9bdf96516dbf
+      - 30619c1f-e0c1-4196-a1d3-7248d55069b3
       X-Runtime:
-      - '0.251265'
+      - '0.251591'
       Server-Timing:
-      - start_processing.action_controller;dur=0.00, unpermitted_parameters.action_controller;dur=0.00,
-        sql.active_record;dur=1.44, transaction.active_record;dur=1.26, process_action.action_controller;dur=246.87
+      - start_processing.action_controller;dur=0.01, unpermitted_parameters.action_controller;dur=0.00,
+        sql.active_record;dur=1.85, transaction.active_record;dur=1.38, process_action.action_controller;dur=248.20
       Content-Length:
       - '42'
     body:
       encoding: UTF-8
       string: '{"error":["Email has already been taken"]}'
-  recorded_at: Sat, 06 Jan 2024 17:01:50 GMT
+  recorded_at: Mon, 08 Jan 2024 19:06:20 GMT
 recorded_with: VCR 6.2.0
