@@ -33,7 +33,6 @@ class UsersController < ApplicationController
       if response[:status] == 201
         flash[:success] = "Account Created"
         session[:user_id] = response[:user_id].to_i
-        # require 'pry'; binding.pry
         redirect_to user_path(current_user)
       else
         flash[:error] = response[:error].join(', ')
@@ -46,7 +45,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    # require 'pry'; binding.pry
     @user = UsersFacade.find_user(params[:id])
   end
 end
