@@ -6,10 +6,9 @@ class SocialsController < ApplicationController
   end
 
   def create
-    require 'pry'; binding.pry
-    address = [params[:locality], params[:addressLines]]
-    social = {name: params[:name], date: params[:date], time: [params["[time(4i)]"], params["[time(5i)]"]]}
-    address_response = GoogleFacade.verify_address(address_object, social)
+    # address = { locality: params[:locality], addressLines: params[:addressLines]}
+    # social = {name: params[:name], date: params[:date], time: [params["[time(4i)]"], params["[time(5i)]"]]}
+    address_response = GoogleFacade.verify_address(params)
     require 'pry'; binding.pry
   end
 
