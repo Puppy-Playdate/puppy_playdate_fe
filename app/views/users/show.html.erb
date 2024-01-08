@@ -5,7 +5,8 @@
 
 <div id="dashboard_nav" >
   <p><%= button_to "Edit Profile", edit_user_path(@user.user_id), method: :get %></p>
-  <p><%= button_to "Add Pet", add_dog_path %></p>
-  <p><%= button_to "View Pets", dogs_path %></p>
+  <p><%= button_to "Add New Dog", add_dog_path(@user.user_id) %></p>
+  <p><%= button_to "View Pets", dogs_path(@user.user_id) %></p>
   <p><%= button_to "Discover Socials", socials_path, method: :get %></p>
-</div>  
+</div>
+

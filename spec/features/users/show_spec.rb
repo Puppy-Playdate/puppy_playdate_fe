@@ -8,7 +8,7 @@ RSpec.describe 'Users Show' do
 
     it 'exists', :vcr do 
       expect(page).to have_button('Edit Profile')
-      expect(page).to have_button('Add Pet')
+      expect(page).to have_button('Add New Dog')
       expect(page).to have_button('View Pets')
       expect(page).to have_button('Discover Socials')
 
@@ -22,7 +22,7 @@ RSpec.describe 'Users Show' do
     end 
 
     it 'routes a user to a form page to add a pet to a users profile', :vcr do
-      click_button "Add Pet"
+      click_button "Add New Dog"
       expect(current_path).to eq(add_dog_path(1)) 
     end 
 

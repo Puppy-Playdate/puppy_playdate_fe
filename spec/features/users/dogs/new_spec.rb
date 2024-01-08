@@ -20,7 +20,7 @@ RSpec.describe "User Dog Index" do
     expect(page).to have_field("Breed:")
     expect(page).to have_field("Age:")
     expect(page).to have_field("Size:") # edit this to a drop down sm, med, lg selector
-    expect(page).to have_field("Neutered:") # selector for t/f
+    expect(page).to have_field("Neutered:") # selector for true/false
     expect(page).to have_button("Create Dog")
 
     fill_in :name, with: "Akila"
