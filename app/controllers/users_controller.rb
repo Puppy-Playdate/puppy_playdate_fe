@@ -3,7 +3,6 @@ class UsersController < ApplicationController
 
   def login_user
     user = UsersFacade.find_by_email(params[:email], params[:password])
-
     if user.name
       session[:user_id] = user.user_id
       flash[:success] = "Welcome #{user.name}!"
