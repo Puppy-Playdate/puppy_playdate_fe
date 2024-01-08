@@ -7,7 +7,6 @@ RSpec.describe "User Dog Index" do
 
   it 'displays dogs with their name, breed, size, fixed status', :vcr do
     visit dogs_path(1)
-    save_and_open_page
     expect(page).to have_content("#{@user.name}'s Dogs")
     expect(page).to have_content("Name: Fido")
     expect(page).to have_content("Breed: Lab")
@@ -23,16 +22,18 @@ RSpec.describe "User Dog Index" do
   end
 
   it 'has a button to edit dog and said button redirects to dog edit path', :vcr do
-    visit '/users/:id/dogs'
-    expect(page).to have_button("Edit Dog")
-    click_button "Edit Dog"
-    expect(current_path).to eq('/users/:user_id/dogs/edit')
+    visit dogs_path(1)
+    within(".dog-container .dog-box", match: :first) do
+      expect(page).to have_button("Edit Fido")
+      click_button "Edit Fido"
+      expect(current_path).to eq(edit_dog_path(1, 1))
+    end
   end
   
-  xit 'has a button to add dog and said button redirects to dog new path', :vcr do
-    visit '/users/:id/dogs'
-    expect(page).to have_button("Add Dog")
-    click_button "Add Dog"
-    expect(current_path).to eq('/users/:user_id/dogs/new')
+  it 'has a button to add dog and said button redirects to dog new path', :vcr do
+    visit dogs_path(1)
+    expect(page).to have_button("Add New Dog")
+    click_button "Add New Dog"
+    expect(current_path).to eq(add_dog_path(1))
   end
 end

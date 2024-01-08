@@ -9,6 +9,8 @@ class DogsController < ApplicationController
     @dogs_facade = DogsFacade.find_dog(@user.user_id)
   end 
 
+  def new; end
+
   private
 
   def dog_params

@@ -20,7 +20,7 @@ class DogsService
   end
 
   def self.update_dog(name, breed, age, size, neutered)
-    conn.patch("/api/v1/users/#{user_id}/dogs/#{dog_id}") do |request|
+    conn.patch("/api/v1/users/#{user_id}/dogs/#{dog.dog_id}") do |request|
       request.headers['Content-Type'] = 'application/json'
       request.body = { name: name, breed: breed, age: age, size: size, neutered: neutered }.to_json
     end

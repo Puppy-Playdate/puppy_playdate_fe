@@ -8,6 +8,8 @@
 
     h1 {
       margin-top: 20px; 
+      color: red;
+      font_weight: bold;
     }
 
     .dog-container {
@@ -19,7 +21,7 @@
     }
 
     .dog-box {
-      border: 1px solid #ddd;
+      border: 5px solid #ddd;
       padding: 10px;
       text-align: left;
       width: 200px; 
@@ -39,12 +41,12 @@
       <p>Size: <%= dog.size %></p>
       <p>Neutered: <%= dog.neutered ? 'true' : 'false' %></p>
       <!-- Add photo display logic here if we decide to -->
-      <%= button_to "Edit Dog", edit_dog_path(@user) %>
+      <%= button_to "Edit #{dog.name}", edit_dog_path(@user.user_id, dog.dog_id) %>
     </div>
   <% end %>
 </div>
 
-<%= button_to "Add Dog", add_dog_path(@user) %>
+<%= button_to "Add New Dog", add_dog_path(@user.user_id) %>
 
 </body>
 </html>
