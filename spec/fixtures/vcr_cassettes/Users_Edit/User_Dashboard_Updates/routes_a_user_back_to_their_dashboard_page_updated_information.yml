@@ -33,22 +33,22 @@ http_interactions:
       Vary:
       - Accept
       Etag:
-      - W/"9590c10a8a03bae9af0cdab67ab2273d"
+      - W/"ca562626bc2267f25b81a66d38d7f3c4"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 85546d69-9106-457e-992d-655ee937eab0
+      - 5b525f88-10c9-47a2-90d2-83acc93a2642
       X-Runtime:
-      - '0.004337'
+      - '0.012034'
       Server-Timing:
-      - start_processing.action_controller;dur=0.00, sql.active_record;dur=0.29, instantiation.active_record;dur=0.04,
-        process_action.action_controller;dur=1.10
+      - start_processing.action_controller;dur=0.01, sql.active_record;dur=1.05, instantiation.active_record;dur=0.06,
+        process_action.action_controller;dur=4.15
       Content-Length:
-      - '96'
+      - '147'
     body:
       encoding: UTF-8
-      string: '{"data":{"id":"2","type":"user","attributes":{"name":"Mike Wazowski","email":"mike@gmail.com"}}}'
-  recorded_at: Sun, 07 Jan 2024 17:10:26 GMT
+      string: '{"data":{"id":"2","type":"user","attributes":{"name":"Mike Wazowski","email":"mike@gmail.com","dog_count":0},"relationships":{"dogs":{"data":[]}}}}'
+  recorded_at: Mon, 08 Jan 2024 18:25:35 GMT
 - request:
     method: get
     uri: http://localhost:3000/api/v1/users/2
@@ -82,22 +82,22 @@ http_interactions:
       Vary:
       - Accept
       Etag:
-      - W/"9590c10a8a03bae9af0cdab67ab2273d"
+      - W/"ca562626bc2267f25b81a66d38d7f3c4"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 38f80471-1c81-4d80-b1aa-8b1370ad988b
+      - 5f1ee2a0-1941-4cfc-b511-ce717b748861
       X-Runtime:
-      - '0.005406'
+      - '0.006293'
       Server-Timing:
-      - start_processing.action_controller;dur=0.01, sql.active_record;dur=0.71, instantiation.active_record;dur=0.03,
-        process_action.action_controller;dur=1.73
+      - start_processing.action_controller;dur=0.00, sql.active_record;dur=0.53, instantiation.active_record;dur=0.03,
+        process_action.action_controller;dur=2.33
       Content-Length:
-      - '96'
+      - '147'
     body:
       encoding: UTF-8
-      string: '{"data":{"id":"2","type":"user","attributes":{"name":"Mike Wazowski","email":"mike@gmail.com"}}}'
-  recorded_at: Sun, 07 Jan 2024 17:10:26 GMT
+      string: '{"data":{"id":"2","type":"user","attributes":{"name":"Mike Wazowski","email":"mike@gmail.com","dog_count":0},"relationships":{"dogs":{"data":[]}}}}'
+  recorded_at: Mon, 08 Jan 2024 18:25:36 GMT
 - request:
     method: patch
     uri: http://localhost:3000/api/v1/users/2
@@ -135,19 +135,19 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - 32b28d77-de1c-4a8d-9cb7-d15d8b7ddfca
+      - 5ba43d1e-14e2-476f-b3be-cabb941cf52c
       X-Runtime:
-      - '0.286478'
+      - '0.272279'
       Server-Timing:
-      - start_processing.action_controller;dur=0.01, sql.active_record;dur=16.99,
-        instantiation.active_record;dur=0.03, unpermitted_parameters.action_controller;dur=0.00,
-        transaction.active_record;dur=15.47, process_action.action_controller;dur=282.07
+      - start_processing.action_controller;dur=0.02, sql.active_record;dur=7.04, instantiation.active_record;dur=0.03,
+        unpermitted_parameters.action_controller;dur=0.00, transaction.active_record;dur=8.04,
+        process_action.action_controller;dur=265.92
       Content-Length:
-      - '92'
+      - '143'
     body:
       encoding: UTF-8
-      string: '{"data":{"id":"2","type":"user","attributes":{"name":"Mikey Boi","email":"mike@gmail.com"}}}'
-  recorded_at: Sun, 07 Jan 2024 17:10:26 GMT
+      string: '{"data":{"id":"2","type":"user","attributes":{"name":"Mikey Boi","email":"mike@gmail.com","dog_count":0},"relationships":{"dogs":{"data":[]}}}}'
+  recorded_at: Mon, 08 Jan 2024 18:25:36 GMT
 - request:
     method: get
     uri: http://localhost:3000/api/v1/users/2
@@ -181,20 +181,20 @@ http_interactions:
       Vary:
       - Accept
       Etag:
-      - W/"f50b6709d7fbbbb8da2dbd28d008f1da"
+      - W/"c2549ef29441765d059e5d993afbbe42"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 3a9d8a72-0a36-4bd1-bc6d-d5ea628974e4
+      - acf1af03-d53b-4254-981d-09f0c60a6eb5
       X-Runtime:
-      - '0.003675'
+      - '0.004798'
       Server-Timing:
-      - start_processing.action_controller;dur=0.00, sql.active_record;dur=0.23, instantiation.active_record;dur=0.03,
-        process_action.action_controller;dur=0.85
+      - start_processing.action_controller;dur=0.00, sql.active_record;dur=0.88, instantiation.active_record;dur=0.03,
+        process_action.action_controller;dur=2.48
       Content-Length:
-      - '92'
+      - '143'
     body:
       encoding: UTF-8
-      string: '{"data":{"id":"2","type":"user","attributes":{"name":"Mikey Boi","email":"mike@gmail.com"}}}'
-  recorded_at: Sun, 07 Jan 2024 17:10:26 GMT
+      string: '{"data":{"id":"2","type":"user","attributes":{"name":"Mikey Boi","email":"mike@gmail.com","dog_count":0},"relationships":{"dogs":{"data":[]}}}}'
+  recorded_at: Mon, 08 Jan 2024 18:25:36 GMT
 recorded_with: VCR 6.2.0

@@ -33,22 +33,22 @@ http_interactions:
       Vary:
       - Accept
       Etag:
-      - W/"c095f472ff50be8688d5e31dad44bdc1"
+      - W/"cf72520bb769ff9a2fd7ef5b759f7894"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 8591ea05-991d-47f7-b4ec-3156f675a701
+      - 1e210bd2-e27c-4458-a0a8-2791d2a53b26
       X-Runtime:
-      - '0.089154'
+      - '0.004365'
       Server-Timing:
-      - start_processing.action_controller;dur=0.02, sql.active_record;dur=44.82,
-        instantiation.active_record;dur=0.29, process_action.action_controller;dur=82.28
+      - start_processing.action_controller;dur=0.00, sql.active_record;dur=0.59, instantiation.active_record;dur=0.03,
+        process_action.action_controller;dur=1.95
       Content-Length:
-      - '85'
+      - '136'
     body:
       encoding: UTF-8
-      string: '{"data":{"id":"4","type":"user","attributes":{"name":"Boo","email":"boo@gmail.com"}}}'
-  recorded_at: Sun, 07 Jan 2024 18:05:42 GMT
+      string: '{"data":{"id":"4","type":"user","attributes":{"name":"Boo","email":"boo@gmail.com","dog_count":0},"relationships":{"dogs":{"data":[]}}}}'
+  recorded_at: Mon, 08 Jan 2024 18:25:36 GMT
 - request:
     method: get
     uri: http://localhost:3000/api/v1/users/4
@@ -82,22 +82,22 @@ http_interactions:
       Vary:
       - Accept
       Etag:
-      - W/"c095f472ff50be8688d5e31dad44bdc1"
+      - W/"cf72520bb769ff9a2fd7ef5b759f7894"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 4a38d633-04b0-41e8-a3bf-4224583df0e2
+      - 25d73359-842f-4f37-af30-3771a54aaa11
       X-Runtime:
-      - '0.010492'
+      - '0.004643'
       Server-Timing:
-      - start_processing.action_controller;dur=0.00, sql.active_record;dur=0.11, instantiation.active_record;dur=0.03,
-        process_action.action_controller;dur=7.18
+      - start_processing.action_controller;dur=0.00, sql.active_record;dur=0.71, instantiation.active_record;dur=0.03,
+        process_action.action_controller;dur=2.09
       Content-Length:
-      - '85'
+      - '136'
     body:
       encoding: UTF-8
-      string: '{"data":{"id":"4","type":"user","attributes":{"name":"Boo","email":"boo@gmail.com"}}}'
-  recorded_at: Sun, 07 Jan 2024 18:05:42 GMT
+      string: '{"data":{"id":"4","type":"user","attributes":{"name":"Boo","email":"boo@gmail.com","dog_count":0},"relationships":{"dogs":{"data":[]}}}}'
+  recorded_at: Mon, 08 Jan 2024 18:25:36 GMT
 - request:
     method: patch
     uri: http://localhost:3000/api/v1/users/4
@@ -135,19 +135,19 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - 01c67f80-f1c4-4823-94b3-26935c1481c6
+      - 898f9979-79de-4b37-b588-6446e6592116
       X-Runtime:
-      - '0.266878'
+      - '0.242867'
       Server-Timing:
-      - start_processing.action_controller;dur=0.00, sql.active_record;dur=14.39,
-        instantiation.active_record;dur=0.02, unpermitted_parameters.action_controller;dur=0.00,
-        transaction.active_record;dur=6.64, process_action.action_controller;dur=263.77
+      - start_processing.action_controller;dur=0.00, sql.active_record;dur=1.17, instantiation.active_record;dur=0.02,
+        unpermitted_parameters.action_controller;dur=0.00, transaction.active_record;dur=0.96,
+        process_action.action_controller;dur=240.70
       Content-Length:
       - '30'
     body:
       encoding: UTF-8
       string: '{"error":["Email is invalid"]}'
-  recorded_at: Sun, 07 Jan 2024 18:05:42 GMT
+  recorded_at: Mon, 08 Jan 2024 18:25:37 GMT
 - request:
     method: get
     uri: http://localhost:3000/api/v1/users/4
@@ -181,20 +181,20 @@ http_interactions:
       Vary:
       - Accept
       Etag:
-      - W/"c095f472ff50be8688d5e31dad44bdc1"
+      - W/"cf72520bb769ff9a2fd7ef5b759f7894"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 61565f5b-1c46-49b8-afc4-39fc1c4f0654
+      - 4e15772c-ca8b-4197-85d7-1ac2e413c6b6
       X-Runtime:
-      - '0.003491'
+      - '0.004186'
       Server-Timing:
-      - start_processing.action_controller;dur=0.01, sql.active_record;dur=0.13, instantiation.active_record;dur=0.04,
-        process_action.action_controller;dur=0.94
+      - start_processing.action_controller;dur=0.00, sql.active_record;dur=0.54, instantiation.active_record;dur=0.03,
+        process_action.action_controller;dur=1.95
       Content-Length:
-      - '85'
+      - '136'
     body:
       encoding: UTF-8
-      string: '{"data":{"id":"4","type":"user","attributes":{"name":"Boo","email":"boo@gmail.com"}}}'
-  recorded_at: Sun, 07 Jan 2024 18:05:42 GMT
+      string: '{"data":{"id":"4","type":"user","attributes":{"name":"Boo","email":"boo@gmail.com","dog_count":0},"relationships":{"dogs":{"data":[]}}}}'
+  recorded_at: Mon, 08 Jan 2024 18:25:37 GMT
 recorded_with: VCR 6.2.0

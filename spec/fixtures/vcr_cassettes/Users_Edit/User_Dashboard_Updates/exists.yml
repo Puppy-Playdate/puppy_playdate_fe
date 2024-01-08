@@ -33,20 +33,20 @@ http_interactions:
       Vary:
       - Accept
       Etag:
-      - W/"7620830ce954407007e67eb3e0f01edb"
+      - W/"4e9bdf16f55783e388496bfc52d82dc9"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - d2f95321-16b1-4c67-89d5-99ea4cc9f0f2
+      - b537debf-1347-44b6-8cf0-f2ff1c4df412
       X-Runtime:
-      - '0.140115'
+      - '0.006728'
       Server-Timing:
-      - sql.active_record;dur=36.11, start_processing.action_controller;dur=0.00,
-        instantiation.active_record;dur=19.30, process_action.action_controller;dur=72.23
+      - start_processing.action_controller;dur=0.00, sql.active_record;dur=0.81, instantiation.active_record;dur=0.03,
+        process_action.action_controller;dur=2.91
       Content-Length:
-      - '98'
+      - '196'
     body:
       encoding: UTF-8
-      string: '{"data":{"id":"1","type":"user","attributes":{"name":"James Sullivan","email":"sully@gmail.com"}}}'
-  recorded_at: Sun, 07 Jan 2024 17:10:26 GMT
+      string: '{"data":{"id":"1","type":"user","attributes":{"name":"James Sullivan","email":"sully@gmail.com","dog_count":2},"relationships":{"dogs":{"data":[{"id":"1","type":"dog"},{"id":"2","type":"dog"}]}}}}'
+  recorded_at: Mon, 08 Jan 2024 18:25:35 GMT
 recorded_with: VCR 6.2.0
