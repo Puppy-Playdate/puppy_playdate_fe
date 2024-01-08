@@ -17,11 +17,11 @@ RSpec.describe "User Login" do
     expect(page).to have_button("Login with Google")
     # expect(page).to have_button("Login with GitHub")
 
-    fill_in :email, with: "superuniqueemail@wahoo.com"
-    fill_in :name, with: "Eric"
-    fill_in :password, with: "SuperSecret"
+    fill_in :email, with: "boo@gmail.com"
+    fill_in :name, with: "Boo"
+    fill_in :password, with: "password"
     click_button("Login")
-
-    expect(current_path).to eq(user_path(5))
+    # save_and_open_page
+    expect(current_path).to eq(user_path(4))
   end
 end

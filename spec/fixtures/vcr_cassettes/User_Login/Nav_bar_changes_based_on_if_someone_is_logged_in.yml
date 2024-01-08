@@ -39,18 +39,18 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 9eef08ba-19fd-499e-8c8d-cbf292a1b75f
+      - 90da37b6-44b8-46d5-971f-4b2682730b58
       X-Runtime:
-      - '0.246748'
+      - '0.245387'
       Server-Timing:
       - start_processing.action_controller;dur=0.00, unpermitted_parameters.action_controller;dur=0.00,
-        sql.active_record;dur=2.23, transaction.active_record;dur=1.93, process_action.action_controller;dur=243.88
+        sql.active_record;dur=2.32, transaction.active_record;dur=1.86, process_action.action_controller;dur=242.57
       Content-Length:
       - '150'
     body:
       encoding: UTF-8
       string: '{"data":{"id":"6","type":"user","attributes":{"name":"Eric","email":"superuniqueemail@yahoo.com","dog_count":0},"relationships":{"dogs":{"data":[]}}}}'
-  recorded_at: Mon, 08 Jan 2024 21:20:23 GMT
+  recorded_at: Mon, 08 Jan 2024 22:07:37 GMT
 - request:
     method: get
     uri: http://localhost:3000/api/v1/users/6
@@ -88,16 +88,16 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 4a2880dc-47aa-4380-9bfa-8efbb48daac4
+      - '03408c62-0b70-46a3-8d29-82830a354d3b'
       X-Runtime:
-      - '0.005403'
+      - '0.004681'
       Server-Timing:
-      - start_processing.action_controller;dur=0.00, sql.active_record;dur=1.52, instantiation.active_record;dur=0.03,
-        process_action.action_controller;dur=3.16
+      - start_processing.action_controller;dur=0.00, sql.active_record;dur=0.49, instantiation.active_record;dur=0.03,
+        process_action.action_controller;dur=2.07
       Content-Length:
       - '150'
     body:
       encoding: UTF-8
       string: '{"data":{"id":"6","type":"user","attributes":{"name":"Eric","email":"superuniqueemail@yahoo.com","dog_count":0},"relationships":{"dogs":{"data":[]}}}}'
-  recorded_at: Mon, 08 Jan 2024 21:20:23 GMT
+  recorded_at: Mon, 08 Jan 2024 22:07:37 GMT
 recorded_with: VCR 6.2.0
