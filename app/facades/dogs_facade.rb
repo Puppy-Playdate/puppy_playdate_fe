@@ -8,8 +8,8 @@ class DogsFacade
     @user.dogs
   end
 
-  def self.create_dog(name, breed, age, size, neutered)
-    response = DogsService.create_dog(name, breed, age, size, neutered)
+  def self.create_dog(name, breed, age, size, neutered, user_id)
+    response = DogsService.create_dog(name, breed, age, size, neutered, user_id)
     response_body = JSON.parse(response.body, symbolize_names: true)
     if response.status == 201
       {

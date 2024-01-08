@@ -61,6 +61,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    # require 'pry'; binding.pry
     @user = UsersFacade.find_user(params[:id])
   end
 

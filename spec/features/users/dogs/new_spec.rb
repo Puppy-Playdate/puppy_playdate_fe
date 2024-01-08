@@ -30,7 +30,7 @@ RSpec.describe "User Dog Index" do
     select "true", from: "Neutered"
     click_button("Create Dog")
     
-    expect(current_path).to eq(user_path(1))
+    expect(current_path).to eq(user_dogs_path(1))
     expect(page).to have_content("Akila")
     expect(page).to have_content("Great Pyrenees")
     expect(page).to have_content(8)
