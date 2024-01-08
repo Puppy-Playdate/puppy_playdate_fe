@@ -1,5 +1,7 @@
 class SocialsController < ApplicationController
-  def index;end
+  def index
+    #hit endpoint to see allllll socials
+  end
 
   def new
     # require 'pry'; binding.pry

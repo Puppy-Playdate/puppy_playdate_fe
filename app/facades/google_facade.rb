@@ -3,7 +3,6 @@ class GoogleFacade
     address_object = build_address_object(params)
 
     address_response = GoogleService.verify_address(address_object)
-    # Line below is only needed in order to build social object
     response_body = JSON.parse(address_response.body, symbolize_names: true)
 
     require 'pry'; binding.pry
