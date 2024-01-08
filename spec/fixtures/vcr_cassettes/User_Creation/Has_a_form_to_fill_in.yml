@@ -39,18 +39,18 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - f1b8d298-d011-4cd5-a83d-21eb63edc10c
+      - ba7cfd34-d4cf-4894-825d-ed67754ca071
       X-Runtime:
-      - '0.244020'
+      - '0.246749'
       Server-Timing:
       - start_processing.action_controller;dur=0.00, unpermitted_parameters.action_controller;dur=0.00,
-        sql.active_record;dur=2.46, transaction.active_record;dur=2.48, process_action.action_controller;dur=241.71
+        sql.active_record;dur=2.15, transaction.active_record;dur=2.08, process_action.action_controller;dur=244.01
       Content-Length:
       - '150'
     body:
       encoding: UTF-8
       string: '{"data":{"id":"5","type":"user","attributes":{"name":"Eric","email":"superuniqueemail@wahoo.com","dog_count":0},"relationships":{"dogs":{"data":[]}}}}'
-  recorded_at: Mon, 08 Jan 2024 18:25:37 GMT
+  recorded_at: Mon, 08 Jan 2024 22:09:07 GMT
 - request:
     method: get
     uri: http://localhost:3000/api/v1/users/5
@@ -88,16 +88,16 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 4bcda233-7d8f-4a04-9500-69bcc60acf89
+      - 8d6dd39c-2561-4928-a1f6-05958da02c1d
       X-Runtime:
-      - '0.006000'
+      - '0.004294'
       Server-Timing:
-      - start_processing.action_controller;dur=0.00, sql.active_record;dur=0.43, instantiation.active_record;dur=0.02,
-        process_action.action_controller;dur=1.61
+      - start_processing.action_controller;dur=0.00, sql.active_record;dur=0.50, instantiation.active_record;dur=0.03,
+        process_action.action_controller;dur=2.06
       Content-Length:
       - '150'
     body:
       encoding: UTF-8
       string: '{"data":{"id":"5","type":"user","attributes":{"name":"Eric","email":"superuniqueemail@wahoo.com","dog_count":0},"relationships":{"dogs":{"data":[]}}}}'
-  recorded_at: Mon, 08 Jan 2024 18:25:37 GMT
+  recorded_at: Mon, 08 Jan 2024 22:09:07 GMT
 recorded_with: VCR 6.2.0

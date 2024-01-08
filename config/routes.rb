@@ -9,8 +9,9 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   #USERS
-  resources :users, only: [:show, :create, :edit, :update]
-
+  resources :users, only: [:show, :create, :edit, :update] do
+    resources :dogs, only: [:index, :edit, :update, :new, :create]
+  end
   get '/register', to: 'users#new', as: :new_user
   get '/login', to: 'users#login_form'
   post '/login', to: 'users#login_user' 
@@ -23,11 +24,11 @@ Rails.application.routes.draw do
   #USER_SOCIALS
   get '/users/:id/socials', to: 'user_socials#index', as: :user_socials
 
-  # resources :dogs, only [:index, :edit, :update, :new, :create]
+  
   # DOGS 
-  get '/users/:id/dogs/new', to: 'dogs#new', as: :add_dog
-  post '/users/:id/dogs', to: 'dogs#create', as: :create_dog
-  get '/users/:id/dogs', to: 'dogs#index', as: :dogs 
-  get '/users/:id/dogs/:dog_id/edit', to: 'dogs#edit', as: :edit_dog
-  patch '/users/:id/dogs/:dog_id', to: 'dogs#update', as: :update_dog
+  # get '/users/:id/dogs/new', to: 'dogs#new', as: :add_dog
+  # post '/users/:id/dogs', to: 'dogs#create', as: :create_dog
+  # get '/users/:id/dogs', to: 'dogs#index', as: :dogs 
+  # get '/users/:id/dogs/:dog_id/edit', to: 'dogs#edit', as: :edit_dog
+  # patch '/users/:id/dogs/:dog_id', to: 'dogs#update', as: :update_dog
 end

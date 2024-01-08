@@ -19,7 +19,7 @@
 
 <h3> Please fill in your dogs information below. </h3>
 
-<%= form_for @dog, url: add_dogs_path(@user.user_id), method: :post, local: true do |f| %>
+<%= form_with url: user_dogs_path(@user.user_id), method: :post do |f| %>
   <div>
     <%= f.label :name %>
     <%= f.text_field :name, required: true %>
@@ -37,12 +37,12 @@
 
   <div>
     <%= f.label :size %>
-    <%= f.select :size, ['Small', 'Medium', 'Large'], prompt: 'Select size', required: true %>
+    <%= f.select :size, ['small', 'medium', 'large'], prompt: 'Select size', required: true %>
   </div>
 
   <div>
     <%= f.label :neutered %>
-    <%= f.select :neutered, [['True', true], ['False', false]], prompt: 'Select neutered status', required: true %>
+    <%= f.select :neutered, [['true', true], ['false', false]], prompt: 'Select neutered status', required: true %>
   </div>
 
   <div>
