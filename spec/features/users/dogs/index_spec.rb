@@ -6,14 +6,19 @@ RSpec.describe "User Dog Index" do
   end
 
   it 'displays dogs with their name, breed, size, fixed status and photo of dog', :vcr do
-    visit dogs_path(@user)
-
+    visit dogs_path(1)
+    save_and_open_page
     expect(page).to have_content("#{@user.name}'s Dogs")
-    expect(page).to have_content("Name:")
-    expect(page).to have_content("Breed:")
-    expect(page).to have_content("Age:")
-    expect(page).to have_content("Size:")
-    expect(page).to have_content("Neutered:")
+    expect(page).to have_content("Name: Fido")
+    expect(page).to have_content("Breed: Lab")
+    expect(page).to have_content("Age: 5")
+    expect(page).to have_content("Size: medium")
+    expect(page).to have_content("Neutered: true")
+    expect(page).to have_content("Name: Bob")
+    expect(page).to have_content("Breed: Pug")
+    expect(page).to have_content("Age: 3")
+    expect(page).to have_content("Size: small")
+    expect(page).to have_content("Neutered: false")
     # research how to test for dog photo
   end
 

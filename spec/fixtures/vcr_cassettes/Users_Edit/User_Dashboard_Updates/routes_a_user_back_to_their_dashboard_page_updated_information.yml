@@ -1,0 +1,200 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3000/api/v1/users/2
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.8.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Etag:
+      - W/"ca562626bc2267f25b81a66d38d7f3c4"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - ea0161d9-14bb-4075-a179-a283e69516dd
+      X-Runtime:
+      - '0.009779'
+      Server-Timing:
+      - start_processing.action_controller;dur=0.00, sql.active_record;dur=4.07, instantiation.active_record;dur=0.04,
+        process_action.action_controller;dur=6.31
+      Content-Length:
+      - '147'
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"2","type":"user","attributes":{"name":"Mike Wazowski","email":"mike@gmail.com","dog_count":0},"relationships":{"dogs":{"data":[]}}}}'
+  recorded_at: Mon, 08 Jan 2024 17:44:20 GMT
+- request:
+    method: get
+    uri: http://localhost:3000/api/v1/users/2
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.8.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Etag:
+      - W/"ca562626bc2267f25b81a66d38d7f3c4"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - ff34c39d-320a-4370-9485-b2513d090a76
+      X-Runtime:
+      - '0.029876'
+      Server-Timing:
+      - start_processing.action_controller;dur=0.01, sql.active_record;dur=1.20, instantiation.active_record;dur=0.06,
+        process_action.action_controller;dur=27.28
+      Content-Length:
+      - '147'
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"2","type":"user","attributes":{"name":"Mike Wazowski","email":"mike@gmail.com","dog_count":0},"relationships":{"dogs":{"data":[]}}}}'
+  recorded_at: Mon, 08 Jan 2024 17:44:20 GMT
+- request:
+    method: patch
+    uri: http://localhost:3000/api/v1/users/2
+    body:
+      encoding: UTF-8
+      string: '{"name":"Mikey Boi","email":"mike@gmail.com","password":"password"}'
+    headers:
+      User-Agent:
+      - Faraday v2.8.1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - a2de1359-eab2-4662-a480-151b1c34d4de
+      X-Runtime:
+      - '0.295199'
+      Server-Timing:
+      - start_processing.action_controller;dur=0.00, sql.active_record;dur=5.69, instantiation.active_record;dur=0.04,
+        unpermitted_parameters.action_controller;dur=0.00, transaction.active_record;dur=5.15,
+        process_action.action_controller;dur=291.77
+      Content-Length:
+      - '143'
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"2","type":"user","attributes":{"name":"Mikey Boi","email":"mike@gmail.com","dog_count":0},"relationships":{"dogs":{"data":[]}}}}'
+  recorded_at: Mon, 08 Jan 2024 17:44:20 GMT
+- request:
+    method: get
+    uri: http://localhost:3000/api/v1/users/2
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.8.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Etag:
+      - W/"c2549ef29441765d059e5d993afbbe42"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 589fdc9f-0cbb-4d14-8867-f50c702b3545
+      X-Runtime:
+      - '0.006041'
+      Server-Timing:
+      - start_processing.action_controller;dur=0.00, sql.active_record;dur=0.58, instantiation.active_record;dur=0.03,
+        process_action.action_controller;dur=2.69
+      Content-Length:
+      - '143'
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"2","type":"user","attributes":{"name":"Mikey Boi","email":"mike@gmail.com","dog_count":0},"relationships":{"dogs":{"data":[]}}}}'
+  recorded_at: Mon, 08 Jan 2024 17:44:20 GMT
+recorded_with: VCR 6.2.0

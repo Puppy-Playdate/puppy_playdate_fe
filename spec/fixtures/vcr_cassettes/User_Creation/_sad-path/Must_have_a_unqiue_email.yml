@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:3000/api/v1/users
+    body:
+      encoding: UTF-8
+      string: '{"name":"Eric","email":"superuniqueemail@wahoo.com","password":"SuperSecret"}'
+    headers:
+      User-Agent:
+      - Faraday v2.8.1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 7d91ba6f-a271-43ed-ba25-74bc30fa1bf1
+      X-Runtime:
+      - '0.267260'
+      Server-Timing:
+      - start_processing.action_controller;dur=0.00, unpermitted_parameters.action_controller;dur=0.00,
+        sql.active_record;dur=1.24, transaction.active_record;dur=1.22, process_action.action_controller;dur=264.81
+      Content-Length:
+      - '42'
+    body:
+      encoding: UTF-8
+      string: '{"error":["Email has already been taken"]}'
+  recorded_at: Mon, 08 Jan 2024 17:44:22 GMT
+recorded_with: VCR 6.2.0

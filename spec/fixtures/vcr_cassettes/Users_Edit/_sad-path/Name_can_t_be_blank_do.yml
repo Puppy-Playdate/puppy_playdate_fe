@@ -1,0 +1,200 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3000/api/v1/users/4
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.8.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Etag:
+      - W/"cf72520bb769ff9a2fd7ef5b759f7894"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - b3dd3849-58b4-4421-b36a-a35b675e526f
+      X-Runtime:
+      - '0.004767'
+      Server-Timing:
+      - start_processing.action_controller;dur=0.00, sql.active_record;dur=0.66, instantiation.active_record;dur=0.03,
+        process_action.action_controller;dur=2.27
+      Content-Length:
+      - '136'
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"4","type":"user","attributes":{"name":"Boo","email":"boo@gmail.com","dog_count":0},"relationships":{"dogs":{"data":[]}}}}'
+  recorded_at: Mon, 08 Jan 2024 17:44:21 GMT
+- request:
+    method: get
+    uri: http://localhost:3000/api/v1/users/4
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.8.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Etag:
+      - W/"cf72520bb769ff9a2fd7ef5b759f7894"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 925983fb-9eae-4c9d-b9aa-1d7a5d9b9c42
+      X-Runtime:
+      - '0.012207'
+      Server-Timing:
+      - start_processing.action_controller;dur=0.00, sql.active_record;dur=0.56, instantiation.active_record;dur=0.04,
+        process_action.action_controller;dur=9.62
+      Content-Length:
+      - '136'
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"4","type":"user","attributes":{"name":"Boo","email":"boo@gmail.com","dog_count":0},"relationships":{"dogs":{"data":[]}}}}'
+  recorded_at: Mon, 08 Jan 2024 17:44:21 GMT
+- request:
+    method: patch
+    uri: http://localhost:3000/api/v1/users/4
+    body:
+      encoding: UTF-8
+      string: '{"name":"","email":"boo@gmail.com","password":"password"}'
+    headers:
+      User-Agent:
+      - Faraday v2.8.1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 24ac92b9-0dcd-4a0c-bcac-37a3a02f3b39
+      X-Runtime:
+      - '0.270015'
+      Server-Timing:
+      - start_processing.action_controller;dur=0.00, sql.active_record;dur=2.33, instantiation.active_record;dur=0.03,
+        unpermitted_parameters.action_controller;dur=0.00, transaction.active_record;dur=1.15,
+        process_action.action_controller;dur=266.95
+      Content-Length:
+      - '33'
+    body:
+      encoding: UTF-8
+      string: '{"error":["Name can''t be blank"]}'
+  recorded_at: Mon, 08 Jan 2024 17:44:21 GMT
+- request:
+    method: get
+    uri: http://localhost:3000/api/v1/users/4
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.8.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Etag:
+      - W/"cf72520bb769ff9a2fd7ef5b759f7894"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - ea678c3d-fb57-476c-bf07-e9732f5745a4
+      X-Runtime:
+      - '0.005041'
+      Server-Timing:
+      - start_processing.action_controller;dur=0.00, sql.active_record;dur=0.59, instantiation.active_record;dur=0.03,
+        process_action.action_controller;dur=2.59
+      Content-Length:
+      - '136'
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"4","type":"user","attributes":{"name":"Boo","email":"boo@gmail.com","dog_count":0},"relationships":{"dogs":{"data":[]}}}}'
+  recorded_at: Mon, 08 Jan 2024 17:44:21 GMT
+recorded_with: VCR 6.2.0

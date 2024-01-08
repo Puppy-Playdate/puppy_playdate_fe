@@ -1,4 +1,13 @@
 class DogsFacade
+  attr_reader :user
+  def initialize(user)
+    @user = user
+  end
+
+  def dogs 
+    @user.dogs
+  end
+
   def self.create_dog(name, breed, age, size, neutered)
     response = DogsService.create_dog(name, breed, age, size, neutered)
     response_body = JSON.parse(response.body, symbolize_names: true)
@@ -15,8 +24,10 @@ class DogsFacade
     end
   end
 
-  def self.find_dog(id)
-    response = DogsService.find_dog(id)
-    Dog.new(response[:data])
+  def self.find_dog(user_id)
+    response = DogsService.find_dog(user_id)
+    response[:data].map do |dog|
+      Dog.new(dog)
+    end
   end
 end
