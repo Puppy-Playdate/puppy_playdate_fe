@@ -13,7 +13,6 @@ class UsersService
   end
 
   def self.find_by_email(email, pass)
-    # require 'pry'; binding.pry
     conn.get("/api/v1/find_by_email") do |request|
       request.headers['Content-Type'] = 'application/json'
       request.body = { email: email, pass: pass }.to_json

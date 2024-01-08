@@ -22,9 +22,12 @@ class UsersFacade
 
   def self.find_by_email(email, pass)
     response = UsersService.find_by_email(email, pass)
-    require 'pry'; binding.pry
     response_body = JSON.parse(response.body, symbolize_names: true)
-    User.new(response_body[:data])
+    if response.status == 200
+      User.new(response_body[:data])
+    else
+      AuthenticationError.new(response_body)
+    end
   end
 
   def self.update_user(user, name, email, password)

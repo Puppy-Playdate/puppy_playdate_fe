@@ -2,28 +2,16 @@ class UsersController < ApplicationController
   def login_form;end 
 
   def login_user
-    # require 'pry'; binding.pry
-    # Not a real endpoint/ Facade yet
-    # require 'pry'; binding.pry
     user = UsersFacade.find_by_email(params[:email], params[:password])
-    require 'pry'; binding.pry
 
     if user.name
       session[:user_id] = user.user_id
       flash[:success] = "Welcome #{user.name}!"
       redirect_to user_path(current_user)
     else
-      flash[:error] = "Sorry, your credentials are bad"
+      flash[:error] = user.error
       redirect_back(fallback_location: login_path)
     end
-    # if user.authenticate(params[:password])
-    #   session[:user_id] = user.id
-    #   flash[:success] = "Welcome, #{user.name}!"
-    #   redirect_to user_path(user)  
-    # else
-    #   flash[:error] = "Sorry, your credentials are bad."
-    #   render :login_form    
-    # end  
   end
 
   def edit

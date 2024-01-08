@@ -33,7 +33,7 @@ RSpec.describe 'Users Show' do
 
     it 'routes a user to an edit user page', :vcr do
       click_button "Discover Socials"
-      expect(current_path).to eq(socials_path) 
+      expect(current_path).to eq(user_socials_path(1)) 
     end 
   end
 end

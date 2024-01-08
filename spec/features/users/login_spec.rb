@@ -9,7 +9,7 @@ RSpec.describe "User Login" do
     expect(current_path).to eq(login_path)
   end
 
-  it "Can login a user via the app" do
+  it "Can login an existing user", :vcr do
     visit login_path
 
     expect(page).to have_content("Existing Member Login")
@@ -19,7 +19,7 @@ RSpec.describe "User Login" do
 
     fill_in :email, with: "superuniqueemail@wahoo.com"
     fill_in :name, with: "Eric"
-    fill_in :password, with: "123"
+    fill_in :password, with: "SuperSecret"
     click_button("Login")
 
     expect(current_path).to eq(user_path(5))
