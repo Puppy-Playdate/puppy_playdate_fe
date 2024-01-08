@@ -6,7 +6,10 @@ class SocialsController < ApplicationController
   end
 
   def create
-    # You have to send an address object as a post request to the Google Address Validator API
+    require 'pry'; binding.pry
+    address = [params[:locality], params[:addressLines]]
+    social = {name: params[:name], date: params[:date], time: [params["[time(4i)]"], params["[time(5i)]"]]}
+    address_response = GoogleFacade.verify_address(address_object, social)
     require 'pry'; binding.pry
   end
 
