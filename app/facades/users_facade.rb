@@ -20,9 +20,14 @@ class UsersFacade
     User.new(response[:data])
   end
 
-  def self.find_by_email(email)
-    response = UsersServices.find_by_email(email)
-    User.new(response[:data])
+  def self.find_by_email(email, pass)
+    response = UsersService.find_by_email(email, pass)
+    response_body = JSON.parse(response.body, symbolize_names: true)
+    if response.status == 200
+      User.new(response_body[:data])
+    else
+      AuthenticationError.new(response_body)
+    end
   end
 
   def self.update_user(user, name, email, password)

@@ -12,6 +12,13 @@ class UsersService
     get_url("/api/v1/users/#{id}")
   end
 
+  def self.find_by_email(email, pass)
+    conn.get("/api/v1/find_by_email") do |request|
+      request.headers['Content-Type'] = 'application/json'
+      request.body = { email: email, pass: pass }.to_json
+    end
+  end
+
   def self.create_user(name, email, password)
     conn.post("/api/v1/users") do |request|
       request.headers['Content-Type'] = 'application/json'

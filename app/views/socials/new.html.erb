@@ -1,4 +1,19 @@
 
+<div id="social_creation" align="center">
+  <h1>Create a Social</h1>
+  <%= form_with url: user_socials_path(current_user), method: :post do |f| %>
+    <p>Social Name: <%= f.text_field :name, required: true %></p>
+    <p>Date: <%= f.date_field :date, min: Date.today %></p>
+    <p>Time: <%= f.time_select :time, ampm: true, minute_setup: 15, default: { hour: 12, min:0 } %>
+    <p>City: <%= f.text_field :locality, required: true %></p>
+    <p>Address: <%= f.text_field :addressLines, required: true %></p>
+
+    <p><%= f.submit "Create Social" %></p>
+  <% end %>
+</div>
+
+
+
 <div id="google_map" class="map_container" align="center">
   <h1>Map Testing</h1>
   <iframe
