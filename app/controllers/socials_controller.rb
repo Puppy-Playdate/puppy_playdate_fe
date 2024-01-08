@@ -8,7 +8,7 @@ class SocialsController < ApplicationController
   end
 
   def create
-    address_response = GoogleFacade.verify_address_and_create_social(params)
+    response = GoogleFacade.verify_address_and_create_social(params)
     require 'pry'; binding.pry
   end
 

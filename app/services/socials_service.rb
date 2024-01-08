@@ -9,7 +9,6 @@ class SocialsService
   end
 
   def self.create_social(data)
-    require 'pry'; binding.pry
     conn.post("/api/v1/socials") do |request|
       request.headers['Content-Type'] = 'application/json'
       request.body = data.to_json

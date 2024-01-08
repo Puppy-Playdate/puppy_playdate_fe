@@ -3,19 +3,14 @@ class GoogleFacade
     address_object = build_address_object(params)
 
     address_response = GoogleService.verify_address(address_object)
-    response_body = JSON.parse(address_response.body, symbolize_names: true)
+    address_response_body = JSON.parse(address_response.body, symbolize_names: true)
 
-    require 'pry'; binding.pry
-    # if address_response.status == 200
-    #   social_response = SocialsFacade.create_social(data)
-    #   if social_response.status == 201
-    #     flash[:success] = "Social Created"
-    #   else
-    #     flash[:error] = social_response[:error]
-    #   end
-    # else
-    #   flash[:error] = address_response[:error]
-    # end
+    if address_response.status == 200
+      social_data = build_social_object(params, address_response_body)
+      create_social_and_handle_data(social_data)
+    else
+      return flash[:error] = address_response[:error]
+    end
   end
 
   private
@@ -31,12 +26,22 @@ class GoogleFacade
     }
   end
 
-  def self.build_social_object(params, response_body)
+  def self.build_social_object(params, address_response_body)
     {
       name: params[:name],
       date: params[:date],
       time:[params["[time(4i)]"], params["[time(5i)]"]].join(":"),
-      location: response_body[:result][:address][:formattedAddress]
+      location: address_response_body[:result][:address][:formattedAddress]
     }
+  end
+
+  def self.create_social_and_handle_data(social_data)
+    social_response = SocialsFacade.create_social(social_data)
+    if social_response.status == 201
+      return flash[:success] = "Social Created"
+    else
+      require 'pry'; binding.pry
+      return flash[:error] = social_response[:error]
+    end
   end
 end
