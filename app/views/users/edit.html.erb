@@ -1,0 +1,18 @@
+<div align="center">
+<h1> Editing <%= @user.name %>'s Profile </h1>
+<br><%= link_to "Back to User Dashboard", user_path(@user.user_id) %><br>
+
+<br><%= form_with url: user_path(@user.user_id), method: :patch do |f| %>
+  <%= f.label :name, 'Name:' %>
+  <%= f.text_field :name, :value => @user.name %>
+  <%= f.label :email, 'Email:' %>
+  <%= f.text_field :email, :value => @user.email %>
+  <%= f.label :password, 'Password:' %>
+  <%= f.password_field :password, required: true %><br>
+
+  <%= f.label :password_confirmation, 'Password Confirmation:' %>
+  <%= f.password_field :password_confirmation, required: true %><br>
+
+  <br><%= f.submit 'Save' %>
+<% end %>
+</div>

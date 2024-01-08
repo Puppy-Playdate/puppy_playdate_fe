@@ -30,6 +30,25 @@ class UsersController < ApplicationController
     @user = UsersFacade.find_user(params[:id])
   end 
 
+  def update
+    if params[:password] == params[:password_confirmation]
+      user = UsersFacade.find_user(params[:id].to_i)
+      response = UsersFacade.update_user(user, params[:name], params[:email], params[:password])
+      session[:user_id] = response[:user_id].to_i
+      if response[:status] == 202
+        flash[:success] = "Profile Updated"
+        redirect_to user_path(current_user)
+      else
+        flash[:error] = response[:error].join(', ')
+        redirect_back(fallback_location: edit_user_path(current_user))
+      end
+    else
+      session[:user_id] = params[:id]
+      flash[:error] = "Passwords Must Match"
+      redirect_back(fallback_location: edit_user_path(current_user))
+    end
+  end
+
   def log_out
     session.clear
     redirect_to root_path
@@ -56,5 +75,11 @@ class UsersController < ApplicationController
 
   def show
     @user = UsersFacade.find_user(params[:id])
+  end
+
+  private
+
+  def user_params
+    params.permit(:name, :email, :password)
   end
 end

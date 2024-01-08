@@ -26,4 +26,11 @@ class UsersService
       request.body = { name: name, email: email, password: password }.to_json
     end
   end
+
+  def self.update_user(user, name, email, password)
+    conn.patch("/api/v1/users/#{user.user_id}") do |request|
+      request.headers['Content-Type'] = 'application/json'
+      request.body = { name: name, email: email, password: password }.to_json
+    end
+  end
 end
