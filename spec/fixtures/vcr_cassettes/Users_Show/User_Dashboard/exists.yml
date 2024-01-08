@@ -37,16 +37,16 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 1842af5b-7bcf-4330-a7a7-d6473066e6b4
+      - '092f4ad9-4116-4909-8b85-e330fc11231d'
       X-Runtime:
-      - '0.004465'
+      - '0.005128'
       Server-Timing:
-      - start_processing.action_controller;dur=0.00, sql.active_record;dur=0.41, instantiation.active_record;dur=0.03,
-        process_action.action_controller;dur=2.09
+      - start_processing.action_controller;dur=0.00, sql.active_record;dur=0.65, instantiation.active_record;dur=0.03,
+        process_action.action_controller;dur=2.61
       Content-Length:
       - '196'
     body:
       encoding: UTF-8
       string: '{"data":{"id":"1","type":"user","attributes":{"name":"James Sullivan","email":"sully@gmail.com","dog_count":2},"relationships":{"dogs":{"data":[{"id":"1","type":"dog"},{"id":"2","type":"dog"}]}}}}'
-  recorded_at: Mon, 08 Jan 2024 22:09:07 GMT
+  recorded_at: Mon, 08 Jan 2024 22:07:36 GMT
 recorded_with: VCR 6.2.0

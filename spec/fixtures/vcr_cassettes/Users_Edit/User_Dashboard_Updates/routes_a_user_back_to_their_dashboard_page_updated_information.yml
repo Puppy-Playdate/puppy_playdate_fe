@@ -37,18 +37,18 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - d67d14b7-e84c-486d-be83-761090fb0bab
+      - b087f4dd-20ed-4a0c-b92c-f2b90948df24
       X-Runtime:
-      - '0.008175'
+      - '0.005098'
       Server-Timing:
-      - start_processing.action_controller;dur=0.00, sql.active_record;dur=3.31, instantiation.active_record;dur=0.03,
-        process_action.action_controller;dur=5.48
+      - start_processing.action_controller;dur=0.00, sql.active_record;dur=0.45, instantiation.active_record;dur=0.03,
+        process_action.action_controller;dur=2.07
       Content-Length:
       - '147'
     body:
       encoding: UTF-8
       string: '{"data":{"id":"2","type":"user","attributes":{"name":"Mike Wazowski","email":"mike@gmail.com","dog_count":0},"relationships":{"dogs":{"data":[]}}}}'
-  recorded_at: Mon, 08 Jan 2024 22:09:05 GMT
+  recorded_at: Mon, 08 Jan 2024 22:07:30 GMT
 - request:
     method: get
     uri: http://localhost:3000/api/v1/users/2
@@ -86,18 +86,18 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 7fc6ffb4-795e-40f0-98db-289d4a2d8c11
+      - 8ca3782b-bd30-476c-afde-bd6d54c8e33b
       X-Runtime:
-      - '0.013423'
+      - '0.004283'
       Server-Timing:
-      - start_processing.action_controller;dur=0.01, sql.active_record;dur=4.37, instantiation.active_record;dur=0.04,
-        process_action.action_controller;dur=10.41
+      - start_processing.action_controller;dur=0.00, sql.active_record;dur=0.53, instantiation.active_record;dur=0.02,
+        process_action.action_controller;dur=1.91
       Content-Length:
       - '147'
     body:
       encoding: UTF-8
       string: '{"data":{"id":"2","type":"user","attributes":{"name":"Mike Wazowski","email":"mike@gmail.com","dog_count":0},"relationships":{"dogs":{"data":[]}}}}'
-  recorded_at: Mon, 08 Jan 2024 22:09:05 GMT
+  recorded_at: Mon, 08 Jan 2024 22:07:30 GMT
 - request:
     method: patch
     uri: http://localhost:3000/api/v1/users/2
@@ -135,19 +135,19 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - ad3bd4f2-a6f1-4121-9980-5efb13813611
+      - d45df8ee-83d9-4b08-8f44-79d0aacf58c5
       X-Runtime:
-      - '0.263009'
+      - '0.333188'
       Server-Timing:
-      - start_processing.action_controller;dur=0.00, sql.active_record;dur=5.13, instantiation.active_record;dur=0.03,
-        unpermitted_parameters.action_controller;dur=0.00, transaction.active_record;dur=6.08,
-        process_action.action_controller;dur=259.70
+      - start_processing.action_controller;dur=0.01, sql.active_record;dur=50.69,
+        instantiation.active_record;dur=0.02, unpermitted_parameters.action_controller;dur=0.00,
+        transaction.active_record;dur=15.95, process_action.action_controller;dur=330.55
       Content-Length:
       - '143'
     body:
       encoding: UTF-8
       string: '{"data":{"id":"2","type":"user","attributes":{"name":"Mikey Boi","email":"mike@gmail.com","dog_count":0},"relationships":{"dogs":{"data":[]}}}}'
-  recorded_at: Mon, 08 Jan 2024 22:09:06 GMT
+  recorded_at: Mon, 08 Jan 2024 22:07:31 GMT
 - request:
     method: get
     uri: http://localhost:3000/api/v1/users/2
@@ -185,16 +185,16 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - f669557f-dbd8-44db-a0e5-417affcb4fe8
+      - fd81c264-91cf-4157-ab28-353a6475c69a
       X-Runtime:
-      - '0.004193'
+      - '0.007203'
       Server-Timing:
-      - start_processing.action_controller;dur=0.00, sql.active_record;dur=0.42, instantiation.active_record;dur=0.03,
-        process_action.action_controller;dur=1.85
+      - start_processing.action_controller;dur=0.00, sql.active_record;dur=0.94, instantiation.active_record;dur=0.05,
+        process_action.action_controller;dur=4.21
       Content-Length:
       - '143'
     body:
       encoding: UTF-8
       string: '{"data":{"id":"2","type":"user","attributes":{"name":"Mikey Boi","email":"mike@gmail.com","dog_count":0},"relationships":{"dogs":{"data":[]}}}}'
-  recorded_at: Mon, 08 Jan 2024 22:09:06 GMT
+  recorded_at: Mon, 08 Jan 2024 22:07:31 GMT
 recorded_with: VCR 6.2.0

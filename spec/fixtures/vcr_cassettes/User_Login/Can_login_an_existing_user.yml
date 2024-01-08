@@ -1,11 +1,11 @@
 ---
 http_interactions:
 - request:
-    method: post
-    uri: http://localhost:3000/api/v1/users
+    method: get
+    uri: http://localhost:3000/api/v1/find_by_email
     body:
       encoding: UTF-8
-      string: '{"name":"Eric","email":"superuniqueemail@yahoo.com","password":"SuperSecret"}'
+      string: '{"email":"boo@gmail.com","pass":"password"}'
     headers:
       User-Agent:
       - Faraday v2.8.1
@@ -17,8 +17,8 @@ http_interactions:
       - "*/*"
   response:
     status:
-      code: 201
-      message: Created
+      code: 200
+      message: OK
     headers:
       X-Frame-Options:
       - SAMEORIGIN
@@ -35,25 +35,25 @@ http_interactions:
       Vary:
       - Accept
       Etag:
-      - W/"85c4093753a39f984d2eefa431b38034"
+      - W/"cf72520bb769ff9a2fd7ef5b759f7894"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 90da37b6-44b8-46d5-971f-4b2682730b58
+      - 882b4174-373f-40c4-b40f-ab10b04fe823
       X-Runtime:
-      - '0.245387'
+      - '0.250993'
       Server-Timing:
-      - start_processing.action_controller;dur=0.00, unpermitted_parameters.action_controller;dur=0.00,
-        sql.active_record;dur=2.32, transaction.active_record;dur=1.86, process_action.action_controller;dur=242.57
+      - start_processing.action_controller;dur=0.00, sql.active_record;dur=0.92, instantiation.active_record;dur=0.03,
+        process_action.action_controller;dur=247.83
       Content-Length:
-      - '150'
+      - '136'
     body:
       encoding: UTF-8
-      string: '{"data":{"id":"6","type":"user","attributes":{"name":"Eric","email":"superuniqueemail@yahoo.com","dog_count":0},"relationships":{"dogs":{"data":[]}}}}'
-  recorded_at: Mon, 08 Jan 2024 22:07:37 GMT
+      string: '{"data":{"id":"4","type":"user","attributes":{"name":"Boo","email":"boo@gmail.com","dog_count":0},"relationships":{"dogs":{"data":[]}}}}'
+  recorded_at: Mon, 08 Jan 2024 22:07:32 GMT
 - request:
     method: get
-    uri: http://localhost:3000/api/v1/users/6
+    uri: http://localhost:3000/api/v1/users/4
     body:
       encoding: US-ASCII
       string: ''
@@ -84,20 +84,20 @@ http_interactions:
       Vary:
       - Accept
       Etag:
-      - W/"85c4093753a39f984d2eefa431b38034"
+      - W/"cf72520bb769ff9a2fd7ef5b759f7894"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - '03408c62-0b70-46a3-8d29-82830a354d3b'
+      - 3f8fcfab-e415-441b-9847-edfd981fe544
       X-Runtime:
-      - '0.004681'
+      - '0.011253'
       Server-Timing:
-      - start_processing.action_controller;dur=0.00, sql.active_record;dur=0.49, instantiation.active_record;dur=0.03,
-        process_action.action_controller;dur=2.07
+      - start_processing.action_controller;dur=0.01, sql.active_record;dur=0.99, instantiation.active_record;dur=0.29,
+        process_action.action_controller;dur=6.26
       Content-Length:
-      - '150'
+      - '136'
     body:
       encoding: UTF-8
-      string: '{"data":{"id":"6","type":"user","attributes":{"name":"Eric","email":"superuniqueemail@yahoo.com","dog_count":0},"relationships":{"dogs":{"data":[]}}}}'
-  recorded_at: Mon, 08 Jan 2024 22:07:37 GMT
+      string: '{"data":{"id":"4","type":"user","attributes":{"name":"Boo","email":"boo@gmail.com","dog_count":0},"relationships":{"dogs":{"data":[]}}}}'
+  recorded_at: Mon, 08 Jan 2024 22:07:36 GMT
 recorded_with: VCR 6.2.0

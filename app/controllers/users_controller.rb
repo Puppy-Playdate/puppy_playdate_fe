@@ -2,17 +2,15 @@ class UsersController < ApplicationController
   def login_form;end 
 
   def login_user
-    # Not a real endpoint/ Facade yet
-    user = UsersFacade.find_by_email(params[:email])
-
-    if user.authenticate(params[:password])
-      session[:user_id] = user.id
-      flash[:success] = "Welcome, #{user.name}!"
-      redirect_to user_path(user)  
+    user = UsersFacade.find_by_email(params[:email], params[:password])
+    if user.name
+      session[:user_id] = user.user_id
+      flash[:success] = "Welcome #{user.name}!"
+      redirect_to user_path(current_user)
     else
-      flash[:error] = "Sorry, your credentials are bad."
-      render :login_form    
-    end  
+      flash[:error] = user.error
+      redirect_back(fallback_location: login_path)
+    end
   end
 
   def edit
