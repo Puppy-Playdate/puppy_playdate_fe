@@ -4,7 +4,10 @@ class DogsController < ApplicationController
     @dogs_facade = DogsFacade.find_dog(@user.user_id)
   end
 
-
+  def edit
+    @user = UsersFacade.find_user(params[:id])
+    @dogs_facade = DogsFacade.find_dog(@user.user_id)
+  end 
 
   private
 

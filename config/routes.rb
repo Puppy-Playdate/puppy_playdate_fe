@@ -25,7 +25,8 @@ Rails.application.routes.draw do
 
   # DOGS 
   get '/users/:id/dogs/new', to: 'dogs#new', as: :add_dog
-  # post route for creating a users dog
+  post '/users/:id/dogs', to: 'dogs#create', as: :create_dog
   get '/users/:id/dogs', to: 'dogs#index', as: :dogs 
-  
+  get '/users/:user_id/dogs/edit', to: 'dogs#edit', as: :edit_dog
+  patch '/users/:id/dogs', to: 'dogs#update', as: :update_dog
 end

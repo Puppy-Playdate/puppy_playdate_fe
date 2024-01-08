@@ -30,4 +30,20 @@ class DogsFacade
       Dog.new(dog)
     end
   end
+
+  def self.update_dog(name, breed, age, size, neutered)
+    response = DogsService.update_dog(name, breed, age, size, neutered)
+    response_body = JSON.parse(response.body, symbolize_names: true)
+    if response.status == 202
+      {
+        status: response.status,
+        user_id: response_body[:data][:id]
+      }
+    else
+      {
+        status: response.status,
+        error: response_body[:error]
+      }
+    end
+  end
 end

@@ -2,7 +2,6 @@ class Dog
   attr_reader :dog_id, :name, :breed, :age, :size, :neutered
 
   def initialize(data)
-    # require 'pry'; binding.pry
     @dog_id = data[:id].to_i
     @name = data[:attributes][:name]
     @breed = data[:attributes][:breed]
