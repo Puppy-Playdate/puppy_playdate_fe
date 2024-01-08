@@ -20,8 +20,10 @@ class UsersFacade
     User.new(response[:data])
   end
 
-  def self.find_by_email(email)
-    response = UsersServices.find_by_email(email)
-    User.new(response[:data])
+  def self.find_by_email(email, pass)
+    response = UsersService.find_by_email(email, pass)
+    require 'pry'; binding.pry
+    response_body = JSON.parse(response.body, symbolize_names: true)
+    User.new(response_body[:data])
   end
 end
