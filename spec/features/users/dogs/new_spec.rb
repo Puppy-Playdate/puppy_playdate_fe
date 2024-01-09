@@ -47,7 +47,7 @@ RSpec.describe "User Dog Index" do
       select "large", from: "Size"
       select "true", from: "Neutered"
       click_button("Create Dog")
-      save_and_open_page
+  
       expect(current_path).to eq(new_user_dog_path(1))
       expect(page).to have_content("**PLEASE MAKE SURE ALL FIELDS ARE FILLED IN.**")
     end
