@@ -1,6 +1,5 @@
 class DogsController < ApplicationController
   def index
-    
     @user = UsersFacade.find_user(params[:user_id].to_i)
     @dogs_facade = DogsFacade.find_dog(@user.user_id)
   end
@@ -9,6 +8,24 @@ class DogsController < ApplicationController
     @user = UsersFacade.find_user(params[:user_id])
     @dogs_facade = DogsFacade.find_dog(@user.user_id)
   end 
+
+  def update 
+    @user = UsersFacade.find_user(params[:user_id].to_i)
+    if required_fields_present?
+      dog = DogsFacade.find_dog(params[:id].to_i)
+      response = DogsFacade.update_dog(params[:name], params[:breed], params[:age], params[:size], params[:neutered], @user.user_id)
+      
+      if response[:status] == 202
+        redirect_to user_dogs_path(@user.user_id)
+      else
+        flash[:error] = "**NO FIELDS CAN BE LEFT BLANK.**"
+        redirect_back(fallback_location: edit_user_dog_path(@user.user_id))
+      end
+    else
+      flash[:error] = "**NO FIELDS CAN BE LEFT BLANK.**"
+      redirect_back(fallback_location: edit_user_dog_path(@user.user_id))
+    end
+  end
 
   def new
     @user = UsersFacade.find_user(params[:user_id].to_i)
