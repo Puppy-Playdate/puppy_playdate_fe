@@ -5,6 +5,26 @@ Does your dog seem bored? Are you curious about any dog park meet ups or social 
 ### Come check out the app here!
 * Insert link to deployment here.
 
+## Built With
+<img src="https://logowik.com/content/uploads/images/heroku8748.jpg" alt="drawing" width="100"/>
+<img src="https://mikewilliamson.files.wordpress.com/2010/05/rails_on_ruby.jpg" alt="drawing" width="75"/>
+<img src="https://codekitapp.com/images/help/free-bootstrap-icon@2x.png" alt="drawing" width="100"/>
+<!-- <img src="https://logowik.com/content/uploads/images/circleci8026.jpg" alt="drawing" width="100"/> -->
+<img src="https://www.loginradius.com/blog/static/a9dad0fc4bf1af95243aa5e2d017bc22/a8669/google_cover.jpg" alt="drawing" width="100"/>
+
+## Gems and testing 
+- [Faraday](https://github.com/lostisland/faraday) gem to interact with APIs
+- [JSONAPI Serializer](https://github.com/jsonapi-serializer/jsonapi-serializer) gem for formatting JSON responses
+- [SimpleCov](https://github.com/simplecov-ruby/simplecov) gem for code coverage tracking
+<!-- - [Sidekiq](https://sidekiq.org/) gem for background workers -->
+- [ShouldaMatchers](https://github.com/thoughtbot/shoulda-matchers) gem for testing assertions
+- [Capybara](https://github.com/morris-lab/Capybara) gem for end to end testing 
+- [Lanchy](https://github.com/copiousfreetime/launchy) gem for inspection and debugging
+<!-- - [jsbundling-rails](https://github.com/rails/jsbundling-rails) / [cssbundling-rails](https://github.com/rails/cssbundling-rails) gems for styling  -->
+- [omniauth](https://github.com/omniauth/omniauth) / [omniauth-rails_csrf_protection](https://github.com/cookpad/omniauth-rails_csrf_protection) / [omniauth-google-oauth2](https://github.com/zquestz/omniauth-google-oauth2) gems for OAuth
+
+- [Postman](https://www.postman.com/) to check API endpoints
+- [VCR](https://github.com/vcr/vcr) / [Webmock](https://github.com/bblimke/webmock) to stub HTTP requests in tests to simulate API interactions
 
 ## Getting Started
 These instructions will give you a copy of the project up and running on your local machine for development and testing purposes. 
@@ -12,15 +32,26 @@ These instructions will give you a copy of the project up and running on your lo
 
 ## Install Intructions
 
-In terminal(bash or zsh):  
-```git clone git@github.com:Puppy-Playdate/puppy_playdate_fe.git```  
+#### Backend
+
+Clone Repo:  
 ```git clone git@github.com:Puppy-Playdate/puppy_playdate_be.git```  
+Open in Code editor: <br>
 ```cd puppy_playdate_be```  
-Open up a second terminal:  
-```cd puppy_playdate_fe```  
-In both terminals:  
+Install Gems: <br>
 ```bundle install```  
+Setup the Database: <br>
+```rails db:{drop,create,seed,migrate}```<br>
+Launch Server:<br>
 ```rails s```  
+
+#### Frontend
+Clone Repo:  <br>
+```git clone git@github.com:Puppy-Playdate/puppy_playdate_fe.git```  <br>
+Open in Code editor: <br>
+```cd puppy_playdate_fe```<br>
+Launch Server: <br>
+```rails s```
 
 * The backend runs on 'http://localhost:3000/'
 * The frontend runs on 'http://localhost:5000/'
@@ -30,8 +61,16 @@ In both terminals:
 
 ## Running the tests
 
-```bundle exec rspec```  
-All tests should be passing.
+To run all test use ```bundle exec rspec```. 
+
+All tests should be passing, if not..
+-   Backend
+    - don't forget to `bundle install`
+    - `rails db:{drop,create,seed,migrate}`
+- Frontend
+    - Clear all cassettes. Right click and delete `vcr_cassettes` folder
+
+Make use of simplecov with `open coverage/index.html`
 
 
 ## Contributors
