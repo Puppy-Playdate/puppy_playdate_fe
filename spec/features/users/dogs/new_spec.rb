@@ -13,6 +13,15 @@ RSpec.describe "User Dog Index" do
     expect(current_path).to eq(new_user_dog_path(1))
   end
 
+  it 'the user dog index has an add dog button and it takes you to the add dog path', :vcr do
+    visit user_dogs_path(1)
+
+    expect(page).to have_content("Add New Dog")
+    click_button("Add New Dog")
+    expect(current_path).to eq(new_user_dog_path(1))
+  end
+
+
   it 'has a form to fill in', :vcr do
     visit new_user_dog_path(1)
     
@@ -22,7 +31,7 @@ RSpec.describe "User Dog Index" do
     expect(page).to have_select("Size") 
     expect(page).to have_select("Neutered")
     expect(page).to have_button("Create Dog")
-
+    
     fill_in :name, with: "Akila"
     fill_in :breed, with: "Great Pyrenees"
     fill_in :age, with: "8"
