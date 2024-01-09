@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   #USERS
   resources :users, only: [:show, :create, :edit, :update] do
+    resources :dogs, only: [:index, :edit, :update, :new, :create]
     resources :socials, only: [:index, :new, :create]
   end
 
@@ -22,14 +23,12 @@ Rails.application.routes.draw do
   #SOCIALS
   get '/socials', to: 'socials#guest_index'
 
-  #USER_SOCIALS
   # get '/users/:id/socials', to: 'user_socials#index', as: :user_socials
-
-  # resources :dogs, only [:index, :edit, :update, :new, :create]
+  
   # DOGS 
-  get '/users/:id/dogs/new', to: 'dogs#new', as: :add_dog
-  post '/users/:id/dogs', to: 'dogs#create', as: :create_dog
-  get '/users/:id/dogs', to: 'dogs#index', as: :dogs 
-  get '/users/:id/dogs/:dog_id/edit', to: 'dogs#edit', as: :edit_dog
-  patch '/users/:id/dogs/:dog_id', to: 'dogs#update', as: :update_dog
+  # get '/users/:id/dogs/new', to: 'dogs#new', as: :add_dog
+  # post '/users/:id/dogs', to: 'dogs#create', as: :create_dog
+  # get '/users/:id/dogs', to: 'dogs#index', as: :dogs 
+  # get '/users/:id/dogs/:dog_id/edit', to: 'dogs#edit', as: :edit_dog
+  # patch '/users/:id/dogs/:dog_id', to: 'dogs#update', as: :update_dog
 end

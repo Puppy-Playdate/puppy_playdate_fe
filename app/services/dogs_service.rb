@@ -12,7 +12,7 @@ class DogsService
     get_url("/api/v1/users/#{user_id}/dogs")
   end
 
-  def self.create_dog(name, breed, age, size, neutered)
+  def self.create_dog(name, breed, age, size, neutered, user_id)
     conn.post("/api/v1/users/#{user_id}/dogs") do |request|
       request.headers['Content-Type'] = 'application/json'
       request.body = { name: name, breed: breed, age: age, size: size, neutered: neutered }.to_json

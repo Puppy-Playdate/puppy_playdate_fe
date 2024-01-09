@@ -17,6 +17,7 @@ class UsersFacade
 
   def self.find_user(id)
     response = UsersService.find_user(id)
+    # require 'pry'; binding.pry
     User.new(response[:data])
   end
 
