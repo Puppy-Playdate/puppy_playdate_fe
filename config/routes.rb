@@ -16,8 +16,9 @@ Rails.application.routes.draw do
 
   get '/register', to: 'users#new', as: :new_user
   get '/login', to: 'users#login_form'
-  post '/login', to: 'users#login_user' 
+  post '/login', to: 'users#login_user'
   get "/log_out", to: "users#log_out"
+  get '/auth/github/callback', to: 'sessions#create'
   # get '/users/:id/edit', to: 'users#edit', as: :edit
 
   #SOCIALS

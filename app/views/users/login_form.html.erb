@@ -9,8 +9,10 @@
     <%= f.password_field :password %><br><br>
     <%= f.submit 'Login' %>
   <% end %>
+</div>
 
 
-<br>
-<%= button_to "Login with Google"%>
+<div id="oauth" align="center">
+  <%= link_to "Login",
+  "https://github.com/login/oauth/authorize?client_id=aae04c62b896b4d08290&scope=user" %>
 </div>
