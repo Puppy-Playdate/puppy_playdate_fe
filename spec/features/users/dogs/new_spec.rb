@@ -47,9 +47,9 @@ RSpec.describe "User Dog Index" do
       select "large", from: "Size"
       select "true", from: "Neutered"
       click_button("Create Dog")
-      
+      save_and_open_page
       expect(current_path).to eq(new_user_dog_path(1))
-      expect(page).to have_content("Please make sure all fields are filled in.")
+      expect(page).to have_content("**PLEASE MAKE SURE ALL FIELDS ARE FILLED IN.**")
     end
 
     it 'dog can not be created without breed filled in', :vcr do 
@@ -63,7 +63,7 @@ RSpec.describe "User Dog Index" do
       click_button("Create Dog")
 
       expect(current_path).to eq(new_user_dog_path(1))
-      expect(page).to have_content("Please make sure all fields are filled in.")
+      expect(page).to have_content("**PLEASE MAKE SURE ALL FIELDS ARE FILLED IN.**")
     end
 
     it 'dog can not be created without age filled in', :vcr do 
@@ -77,7 +77,7 @@ RSpec.describe "User Dog Index" do
       click_button("Create Dog")
 
       expect(current_path).to eq(new_user_dog_path(1))
-      expect(page).to have_content("Please make sure all fields are filled in.")
+      expect(page).to have_content("**PLEASE MAKE SURE ALL FIELDS ARE FILLED IN.**")
     end
 
     it 'dog can not be created without size filled in', :vcr do 
@@ -91,7 +91,7 @@ RSpec.describe "User Dog Index" do
       click_button("Create Dog")
 
       expect(current_path).to eq(new_user_dog_path(1))
-      expect(page).to have_content("Please make sure all fields are filled in.")
+      expect(page).to have_content("**PLEASE MAKE SURE ALL FIELDS ARE FILLED IN.**")
     end
 
     it 'dog can not be created without neutered filled in', :vcr do 
@@ -105,7 +105,7 @@ RSpec.describe "User Dog Index" do
       click_button("Create Dog")
 
       expect(current_path).to eq(new_user_dog_path(1))
-      expect(page).to have_content("Please make sure all fields are filled in.")
+      expect(page).to have_content("**PLEASE MAKE SURE ALL FIELDS ARE FILLED IN.**")
     end
   end
 end

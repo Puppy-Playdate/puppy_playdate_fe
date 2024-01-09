@@ -11,39 +11,45 @@
       color: red;
       font_weight: bold;
     }
+
   </style>
 </head>
 <body>
 
 <h1> Puppy Playdate </h1>
 
-<h3> Please fill in your dogs information below. </h3>
+<p> Please fill in your dogs information below. </p>
 
 <%= form_with url: user_dogs_path(@user.user_id), method: :post do |f| %>
   <div>
     <%= f.label :name %>
     <%= f.text_field :name, required: true %>
   </div>
+  <br/>
 
   <div>
     <%= f.label :breed %>
     <%= f.text_field :breed, required: true %>
   </div>
+  <br/>
 
   <div>
     <%= f.label :age %>
     <%= f.number_field :age, required: true %>
   </div>
+  <br/>
 
   <div>
     <%= f.label :size %>
     <%= f.select :size, ['small', 'medium', 'large'], prompt: 'Select size', required: true %>
   </div>
+  <br/>
 
   <div>
     <%= f.label :neutered %>
     <%= f.select :neutered, [['true', true], ['false', false]], prompt: 'Select neutered status', required: true %>
   </div>
+  <br/>
 
   <div>
     <%= f.submit 'Create Dog' %>

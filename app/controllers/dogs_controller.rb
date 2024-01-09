@@ -14,7 +14,6 @@ class DogsController < ApplicationController
     @user = UsersFacade.find_user(params[:user_id].to_i)
   end
 
-
   def create
     @user = UsersFacade.find_user(params[:user_id].to_i)
     if required_fields_present?
@@ -23,11 +22,11 @@ class DogsController < ApplicationController
       if response[:status] == 201
         redirect_to user_dogs_path(@user.user_id)
       else
-        flash[:error] = "Please make sure all fields are filled in."
+        flash[:error] = "**PLEASE MAKE SURE ALL FIELDS ARE FILLED IN.**"
         redirect_back(fallback_location: new_user_dog_path(@user.user_id))
       end
     else
-      flash[:error] = "Please make sure all fields are filled in."
+      flash[:error] = "**PLEASE MAKE SURE ALL FIELDS ARE FILLED IN.**"
       redirect_back(fallback_location: new_user_dog_path(@user.user_id))
     end
   end
