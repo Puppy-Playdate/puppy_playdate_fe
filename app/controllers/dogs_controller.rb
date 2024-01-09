@@ -17,22 +17,26 @@ class DogsController < ApplicationController
 
   def create
     @user = UsersFacade.find_user(params[:user_id].to_i)
-    if dog_params.values.all?(&:present?)
+    if required_fields_present?
       response = DogsFacade.create_dog(params[:name], params[:breed], params[:age], params[:size], params[:neutered], @user.user_id)
       
       if response[:status] == 201
         redirect_to user_dogs_path(@user.user_id)
       else
         flash[:error] = "Please make sure all fields are filled in."
-        redirect_back(fallback_location: add_dog_path(@user.user_id))
+        redirect_back(fallback_location: new_user_dog_path(@user.user_id))
       end
+    else
+      flash[:error] = "Please make sure all fields are filled in."
+      redirect_back(fallback_location: new_user_dog_path(@user.user_id))
     end
   end
 
   private
 
-  def dog_params
-    params.permit(:name, :breed, :age, :size, :neutered)
+  def required_fields_present?
+    required_params = [:name, :breed, :age, :size, :neutered]
+    required_params.all? { |param| params[param].present? }
   end
   
   def user_params

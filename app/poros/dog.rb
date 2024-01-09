@@ -9,4 +9,5 @@ class Dog
     @size = data[:attributes][:size]
     @neutered = data[:attributes][:neutered]
   end
+
 end
