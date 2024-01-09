@@ -37,18 +37,18 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 132b7d30-ba51-4334-954a-cd69d87f88b9
+      - f6d97fdb-f8e8-4576-ae18-d822d6b01bf4
       X-Runtime:
-      - '0.004423'
+      - '0.006927'
       Server-Timing:
-      - start_processing.action_controller;dur=0.00, sql.active_record;dur=0.43, instantiation.active_record;dur=0.03,
-        process_action.action_controller;dur=1.94
+      - start_processing.action_controller;dur=0.00, sql.active_record;dur=0.40, instantiation.active_record;dur=0.03,
+        process_action.action_controller;dur=1.96
       Content-Length:
       - '220'
     body:
       encoding: UTF-8
       string: '{"data":{"id":"1","type":"user","attributes":{"name":"James Sullivan","email":"sully@gmail.com","dog_count":3},"relationships":{"dogs":{"data":[{"id":"1","type":"dog"},{"id":"2","type":"dog"},{"id":"3","type":"dog"}]}}}}'
-  recorded_at: Mon, 08 Jan 2024 23:28:26 GMT
+  recorded_at: Tue, 09 Jan 2024 23:17:36 GMT
 - request:
     method: get
     uri: http://localhost:3000/api/v1/users/1
@@ -86,18 +86,18 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - d027d58c-3601-47c1-a0ca-84247a9fd59f
+      - d35c0e0b-0a42-4cfe-ab91-7fc1946c9e21
       X-Runtime:
-      - '0.005287'
+      - '0.006542'
       Server-Timing:
-      - start_processing.action_controller;dur=0.00, sql.active_record;dur=0.49, instantiation.active_record;dur=0.04,
-        process_action.action_controller;dur=2.40
+      - start_processing.action_controller;dur=0.00, sql.active_record;dur=0.70, instantiation.active_record;dur=0.03,
+        process_action.action_controller;dur=2.61
       Content-Length:
       - '220'
     body:
       encoding: UTF-8
       string: '{"data":{"id":"1","type":"user","attributes":{"name":"James Sullivan","email":"sully@gmail.com","dog_count":3},"relationships":{"dogs":{"data":[{"id":"1","type":"dog"},{"id":"2","type":"dog"},{"id":"3","type":"dog"}]}}}}'
-  recorded_at: Mon, 08 Jan 2024 23:28:26 GMT
+  recorded_at: Tue, 09 Jan 2024 23:17:36 GMT
 - request:
     method: get
     uri: http://localhost:3000/api/v1/users/1/dogs
@@ -135,17 +135,17 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 378a5bae-136d-4338-8517-d175acc54183
+      - 8869e00e-1ed5-4eb2-a758-6bce2ea5723d
       X-Runtime:
-      - '0.004128'
+      - '0.004845'
       Server-Timing:
-      - start_processing.action_controller;dur=0.00, sql.active_record;dur=0.28, instantiation.active_record;dur=0.05,
-        process_action.action_controller;dur=1.00
+      - start_processing.action_controller;dur=0.00, sql.active_record;dur=0.36, instantiation.active_record;dur=0.05,
+        process_action.action_controller;dur=1.06
       Content-Length:
       - '341'
     body:
       encoding: UTF-8
       string: '{"data":[{"id":"1","type":"dog","attributes":{"name":"Fido","breed":"Lab","age":5,"size":"medium","neutered":true}},{"id":"2","type":"dog","attributes":{"name":"Bob","breed":"Pug","age":3,"size":"small","neutered":false}},{"id":"3","type":"dog","attributes":{"name":"Akila","breed":"Great
         Pyrenees","age":8,"size":"large","neutered":true}}]}'
-  recorded_at: Mon, 08 Jan 2024 23:28:26 GMT
+  recorded_at: Tue, 09 Jan 2024 23:17:36 GMT
 recorded_with: VCR 6.2.0
