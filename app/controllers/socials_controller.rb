@@ -1,8 +1,6 @@
 class SocialsController < ApplicationController
   def index
-    #hit endpoint to see allllll socials
     @socials = SocialsFacade.find_socials(current_user)
-    require 'pry'; binding.pry
   end
 
   def new;end
