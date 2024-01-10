@@ -29,11 +29,11 @@ RSpec.describe "Socials Show" do
       social = socials.last
       host = UsersFacade.find_user(4)
 
-      expect(current_path).to eq(user_social_path(4, social[:id].to_i))
+      expect(current_path).to eq(user_social_path(4, social.id))
 
-      expect(page).to have_content("#{social[:name]}")
-      expect(page).to have_content("#{social[:description]}")
-      expect(page).to have_content("#{social[:event_type]}")
+      expect(page).to have_content("#{social.name}")
+      expect(page).to have_content("#{social.description}")
+      expect(page).to have_content("#{social.event_type}")
       expect(page).to have_content("Host User: #{host.name}")
 
       # This is checking that the map is there

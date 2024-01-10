@@ -1,5 +1,5 @@
 class Social
-  attr_reader :name, :description, :location, :event_date, :event_type
+  attr_reader :id, :name, :description, :location, :event_date, :event_type
 
   def initialize(data)
     @id = data[:id].to_i
