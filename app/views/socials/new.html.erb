@@ -3,7 +3,7 @@
   <h1>Create a Social</h1>
   <%= form_with url: user_socials_path(current_user), method: :post do |f| %>
     <p>Social Name: <%= f.text_field :name, required: true %></p>
-    <p>Description: <%= f.text_area :description, require: true %></p>
+    <p>Description: <%= f.text_area :description, required: true %></p>
     
     <p>Type: <%= f.select :event_type, [["Chill", 0], ["Playdate", 1], ["Walk", 2]], prompt: "Select an Event Type", required: true %></p>
     <p>City: <%= f.text_field :locality, required: true %></p>
