@@ -39,7 +39,7 @@ class DogsFacade
   def self.update_dog(name, breed, age, size, neutered, user_id, dog_id)
     response = DogsService.update_dog(name, breed, age, size, neutered, user_id, dog_id)
     response_body = JSON.parse(response.body, symbolize_names: true)
-    if response.status == 202
+    if response.status == 200
       {
         status: response.status,
         user_id: response_body[:data][:id]

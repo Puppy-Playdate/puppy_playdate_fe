@@ -37,18 +37,18 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 7a086e2a-882d-48a1-b320-a96154650dff
+      - 9d8c21b1-bc2a-4f46-9459-44c596d05641
       X-Runtime:
-      - '0.006140'
+      - '0.006902'
       Server-Timing:
-      - start_processing.action_controller;dur=0.00, sql.active_record;dur=1.01, instantiation.active_record;dur=0.03,
-        process_action.action_controller;dur=3.59
+      - start_processing.action_controller;dur=0.00, sql.active_record;dur=0.56, instantiation.active_record;dur=0.03,
+        process_action.action_controller;dur=3.81
       Content-Length:
       - '220'
     body:
       encoding: UTF-8
       string: '{"data":{"id":"1","type":"user","attributes":{"name":"James Sullivan","email":"sully@gmail.com","dog_count":3},"relationships":{"dogs":{"data":[{"id":"1","type":"dog"},{"id":"2","type":"dog"},{"id":"3","type":"dog"}]}}}}'
-  recorded_at: Mon, 08 Jan 2024 23:28:26 GMT
+  recorded_at: Wed, 10 Jan 2024 19:00:01 GMT
 - request:
     method: get
     uri: http://localhost:3000/api/v1/users/1
@@ -86,16 +86,16 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - cc15816a-afeb-4e08-a7e6-d99455ca4706
+      - a101ba08-0f4e-49ea-805a-2e9ecf64455f
       X-Runtime:
-      - '0.005593'
+      - '0.016731'
       Server-Timing:
-      - start_processing.action_controller;dur=0.00, sql.active_record;dur=0.48, instantiation.active_record;dur=0.04,
-        process_action.action_controller;dur=3.05
+      - start_processing.action_controller;dur=0.00, sql.active_record;dur=2.80, instantiation.active_record;dur=0.04,
+        process_action.action_controller;dur=10.39
       Content-Length:
       - '220'
     body:
       encoding: UTF-8
       string: '{"data":{"id":"1","type":"user","attributes":{"name":"James Sullivan","email":"sully@gmail.com","dog_count":3},"relationships":{"dogs":{"data":[{"id":"1","type":"dog"},{"id":"2","type":"dog"},{"id":"3","type":"dog"}]}}}}'
-  recorded_at: Mon, 08 Jan 2024 23:28:26 GMT
+  recorded_at: Wed, 10 Jan 2024 19:00:01 GMT
 recorded_with: VCR 6.2.0
