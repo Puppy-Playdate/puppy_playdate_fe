@@ -15,6 +15,14 @@ RSpec.describe DogsFacade do
         dog_params[:user_id]
       )
       expect(loki[:status]).to eq(201) 
+      potato = DogsService.find_dog(1)
+      expect(potato[:data].last).to be_a Hash
+      expect(potato[:data].last[:attributes]).to be_a Hash
+      expect(potato[:data].last[:attributes][:name]).to eq("Loki")
+      expect(potato[:data].last[:attributes][:breed]).to eq("Pitbull")
+      expect(potato[:data].last[:attributes][:age]).to eq(4)
+      expect(potato[:data].last[:attributes][:size]).to eq("large")
+      expect(potato[:data].last[:attributes][:neutered]).to eq(true)
     end 
   end 
 
