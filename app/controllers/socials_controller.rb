@@ -9,7 +9,6 @@ class SocialsController < ApplicationController
 
   def create
     response = GoogleFacade.verify_address_and_create_social(params)
-    require 'pry'; binding.pry
   end
 
   def guest_index

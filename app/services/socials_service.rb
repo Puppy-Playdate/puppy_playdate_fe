@@ -9,7 +9,7 @@ class SocialsService
   end
 
   def self.create_social(data)
-    conn.post("/api/v1/socials") do |request|
+    conn.post("/api/v1/users/#{data[:user_id]}/socials") do |request|
       request.headers['Content-Type'] = 'application/json'
       request.body = data.to_json
     end

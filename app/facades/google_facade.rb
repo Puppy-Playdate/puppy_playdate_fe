@@ -40,7 +40,6 @@ class GoogleFacade
     if social_response.status == 201
       return flash[:success] = "Social Created"
     else
-      require 'pry'; binding.pry
       return flash[:error] = social_response[:error]
     end
   end
