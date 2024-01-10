@@ -41,6 +41,15 @@ RSpec.describe "User Creation" do
       fill_in :password, with: "SuperSecret"
       fill_in :password_confirmation, with: "SuperSecret"
       click_button("Create New User")
+
+      
+      visit new_user_path
+
+      fill_in :name, with: "Eric"
+      fill_in :email, with: "superuniqueemail@wahoo.com"
+      fill_in :password, with: "SuperSecret"
+      fill_in :password_confirmation, with: "SuperSecret"
+      click_button("Create New User")
       
       expect(current_path).to eq(new_user_path)
 
