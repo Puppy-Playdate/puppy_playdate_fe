@@ -46,7 +46,43 @@ RSpec.describe 'Socials New' do
     expect(page).to have_content("Social Created")
   end
 
+  it 'can fill in any old address and create a successful map', :vcr do
+    visit new_user_social_path(3)
+
+    fill_in :name, with: "You"
+    fill_in :description, with: "Crank that"
+    select("Chill", from: :event_type)
+    fill_in :locality, with: "Boone"
+    fill_in :addressLines, with: "River Steet"
+    fill_in('datetime', with: '2024-01-20T12:34')
+
+    click_button "Create Social"
+
+    expect(current_path).to_not eq(new_user_social_path(3))
+    expect(page).to have_content("Social Created")
+  end
+
   describe '#sad-path' do
+    it "Address doesn't need to be specific". :vcr do
+      # Not full city name
+      # Baseball team name and the word stadium, expecting 'Smith's Ballpark'
+      # This test is to see how loose one can be with putting in the address
+          # Most people know the trailhead name, but not the trailhead parking address
+
+      visit new_user_social_path(3)
+
+      fill_in :name, with: "You"
+      fill_in :description, with: "Crank that"
+      select("Chill", from: :event_type)
+      fill_in :locality, with: "Salt Lake"
+      fill_in :addressLines, with: "Bee's Stadium"
+      fill_in('datetime', with: '2024-01-20T12:34')
+
+      click_button "Create Social"
+
+      expect(current_path).to_not eq(new_user_social_path(3))
+      expect(page).to have_content("Social Created")
+    end
     describe '#filling out fields' do
       it 'Name', :vcr do
         visit new_user_social_path(3)
@@ -80,7 +116,7 @@ RSpec.describe 'Socials New' do
         expect(page).to have_content("Description can't be blank")
       end
 
-      
+
       # Event_Type and Locality still actually create the Social in the testing here
       # when on local host you aren't allowed to leave these fields blank, but I still 
       # wanted to test for it. 
