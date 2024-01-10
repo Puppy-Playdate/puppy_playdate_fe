@@ -48,10 +48,8 @@ class UsersFacade
   end
 
   def self.github_oauth(params)
-    json = service.github_oauth(params)
+    response = service.github_oauth(params)
 
-    User.new(json[:data])
-    end
-
+    User.new(response[:data])
   end
 end
