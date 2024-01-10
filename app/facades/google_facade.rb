@@ -3,10 +3,12 @@ class GoogleFacade
     address_object = build_address_object(params)
 
     address_response = GoogleService.verify_address(address_object)
+    require 'pry'; binding.pry
     address_response_body = JSON.parse(address_response.body, symbolize_names: true)
 
     if address_response.status == 200
       social_data = build_social_object(params, address_response_body)
+      require 'pry'; binding.pry
       create_social_and_handle_data(social_data)
     else
       return flash[:error] = address_response[:error]

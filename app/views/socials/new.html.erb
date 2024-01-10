@@ -3,10 +3,21 @@
   <h1>Create a Social</h1>
   <%= form_with url: user_socials_path(current_user), method: :post do |f| %>
     <p>Social Name: <%= f.text_field :name, required: true %></p>
-    <p>Date: <%= f.date_field :date, min: Date.today %></p>
-    <p>Time: <%= f.time_select :time, ampm: true, minute_setup: 15, default: { hour: 12, min:0 } %>
+    <p>Description: <%= f.text_area :description, require: true %></p>
+    
+    <p>Type: <%= f.select :event_type, [["Chill", 0], ["Playdate", 1], ["Walk", 2]], prompt: "Select an Event Type", required: true %></p>
     <p>City: <%= f.text_field :locality, required: true %></p>
     <p>Address: <%= f.text_field :addressLines, required: true %></p>
+    <p><label for="datetime">Choose Date and Time:</label></p>
+    <p><input type="datetime-local" id="datetime" name="datetime" required min = "currentDate"></p>
+
+    <script>
+      // Get the current date and time in the format expected by datetime-local input
+      const currentDate = new Date().toISOString().slice(0, 16);
+
+      // Set the minimum attribute dynamically
+      document.getElementById("datetime").min = currentDate;
+    </script>
 
     <p><%= f.submit "Create Social" %></p>
   <% end %>
@@ -25,3 +36,5 @@
       allowfullscreen>
   </iframe>
 </div>
+
+<%# # @social.location %>
