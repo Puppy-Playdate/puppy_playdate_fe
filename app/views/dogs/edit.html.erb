@@ -1,18 +1,18 @@
 <div align="center">
-<h1> Editing <%= @user.dogs.name %> </h1>
+<h1> Editing <%= "#{@dog.name}" %> </h1>
 <br><%= link_to "Back to User Dashboard", user_path(@user.user_id) %><br>
 
-<br><%= form_with url: user_dogs_path(@user.user_id), method: :patch do |f| %>
+<br><%= form_with url: user_dog_path(@user.user_id, @dog.dog_id), method: :patch do |f| %>
   <%= f.label :name, 'Name:' %>
-  <%= f.text_field :name, :value => @user.dogs.name %>
+  <%= f.text_field :name, :value => @dog.name %>
   <%= f.label :breed, 'Breed:' %>
-  <%= f.text_field :breed, :value => @user.dogs.breed %>
+  <%= f.text_field :breed, :value => @dog.breed %>
   <%= f.label :age, 'Age:' %>
-  <%= f.text_field :age, :value => @user.dogs.age %>
+  <%= f.text_field :age, :value => @dog.age %>
   <%= f.label :size, 'Size:' %>
-  <%= f.select_field :size, :value => @user.dogs.size %>
+  <%= f.select :size, options_for_select(['small', 'medium', 'large'], @dog.size) %>
   <%= f.label :neutered, 'Neutered:' %>
-  <%= f.select_field :neutered, :value => @user.dogs.neutered %>
+  <%= f.select :neutered, options_for_select(['true', 'false'], @dog.neutered) %>
   <br>
 
   <br><%= f.submit 'Update' %>

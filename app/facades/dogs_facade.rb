@@ -31,8 +31,13 @@ class DogsFacade
     end
   end
 
-  def self.update_dog(name, breed, age, size, neutered)
-    response = DogsService.update_dog(name, breed, age, size, neutered)
+  def self.find_dog_by_id(user_id, dog_id)
+    response = DogsService.find_dog_by_id(user_id, dog_id)
+    Dog.new(response[:data]) if response[:data]
+  end
+
+  def self.update_dog(name, breed, age, size, neutered, user_id, dog_id)
+    response = DogsService.update_dog(name, breed, age, size, neutered, user_id, dog_id)
     response_body = JSON.parse(response.body, symbolize_names: true)
     if response.status == 202
       {
