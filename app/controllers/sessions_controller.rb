@@ -29,7 +29,7 @@ class SessionsController < ApplicationController
       user = user_facade.github_oauth(
       {
         uid: data[:id],
-        login: data[:login],
+        email: data[:email],
         access_token: access_token
       }
     )
