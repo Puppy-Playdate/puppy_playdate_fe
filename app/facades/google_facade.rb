@@ -2,31 +2,44 @@ class GoogleFacade
   def self.verify_address_and_create_social(params)
     address_object = build_address_object(params)
 
-    address_response = GoogleService.verify_address(address_object)
-    address_response_body = JSON.parse(address_response.body, symbolize_names: true)
-    
-    if address_response.status == 200
-      social_data = build_social_object(params, address_response_body)
-      create_social_and_handle_data(social_data)
-    else
+    if address_object[:status] == 422
       {
-        status: address_response.status,
-        error: address_response_body[:error]
+        status: address_object[:status],
+        error: address_object[:error]
       }
+    else
+      address_response = GoogleService.verify_address(address_object)
+      address_response_body = JSON.parse(address_response.body, symbolize_names: true)
+      if address_response.status == 200
+        social_data = build_social_object(params, address_response_body)
+        create_social_and_handle_data(social_data)
+      else
+        {
+          status: address_response.status,
+          error: address_response_body[:error]
+        }
+      end
     end
   end
 
   private
 
   def self.build_address_object(params)
-    {
-      "address": {
-        "regionCode": "US",
-        "locality": params[:locality],
-        "addressLines": params[:addressLines]
-      },
-      "enableUspsCass": true
-    }
+    if params[:locality].blank?
+      {
+        status: 422,
+        error: "City and address must be filled in"
+      }
+    else
+      {
+        "address": {
+          "regionCode": "US",
+          "locality": params[:locality],
+          "addressLines": params[:addressLines]
+        },
+        "enableUspsCass": true
+      }
+    end
   end
 
   def self.build_social_object(params, address_response_body)

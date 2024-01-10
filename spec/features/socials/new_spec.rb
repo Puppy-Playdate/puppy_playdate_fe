@@ -121,13 +121,13 @@ RSpec.describe 'Socials New' do
       # when on local host you aren't allowed to leave these fields blank, but I still 
       # wanted to test for it. 
 
-
+      # Event_type defaults to 0 if left blank
       xit 'Event_Type', :vcr do
         visit new_user_social_path(3)
-        # save_and_open_page
+
         fill_in :name, with: "You"
         fill_in :description, with: "Crank that"
-        # select("", from: :event_type)
+        select("", from: :event_type)
         fill_in :locality, with: "Mountain View"
         fill_in :addressLines, with: "1600 Amphitheatre Parkway"
         fill_in('datetime', with: '2024-01-20T12:34')
@@ -138,20 +138,20 @@ RSpec.describe 'Socials New' do
         expect(page).to have_content("Event type can't be blank")
       end
 
-      xit 'locality', :vcr do
+      it 'locality', :vcr do
         visit new_user_social_path(3)
 
         fill_in :name, with: "You"
         fill_in :description, with: "Crank that"
         select("Chill", from: :event_type)
-        # fill_in :locality, with: ""
-        fill_in :addressLines, with: "1600 Amphitheatre Parkway"
+        fill_in :locality, with: ""
+        fill_in :addressLines, with: "1470 400 W"
         fill_in('datetime', with: '2024-01-20T12:34')
 
         click_button "Create Social"
 
         expect(current_path).to eq(new_user_social_path(3))
-        expect(page).to have_content("Locality can't be blank")
+        expect(page).to have_content("City and address must be filled in")
       end
 
       it 'addressLines', :vcr do
