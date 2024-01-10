@@ -46,7 +46,7 @@ RSpec.describe 'Socials New' do
     expect(page).to have_content("Social Created")
   end
 
-  it 'can fill in any old address and create a successful map', :vcr do
+  it 'dynamic addresses create a successful map', :vcr do
     visit new_user_social_path(3)
 
     fill_in :name, with: "You"
@@ -116,26 +116,26 @@ RSpec.describe 'Socials New' do
         expect(page).to have_content("Description can't be blank")
       end
 
-
-      # Event_Type and Locality still actually create the Social in the testing here
-      # when on local host you aren't allowed to leave these fields blank, but I still 
-      # wanted to test for it. 
-
-      # Event_type defaults to 0 if left blank
-      xit 'Event_Type', :vcr do
+      it 'Event_Type', :vcr do
         visit new_user_social_path(3)
 
         fill_in :name, with: "You"
         fill_in :description, with: "Crank that"
-        select("", from: :event_type)
+        # select("", from: :event_type)
         fill_in :locality, with: "Mountain View"
         fill_in :addressLines, with: "1600 Amphitheatre Parkway"
         fill_in('datetime', with: '2024-01-20T12:34')
 
         click_button "Create Social"
 
-        expect(current_path).to eq(new_user_social_path(3))
-        expect(page).to have_content("Event type can't be blank")
+        expect(current_path).to_not eq(new_user_social_path(3))
+        expect(page).to have_content("Social Created")
+
+        # come back and finish this test. Socials are chill by default  
+
+        # socials = SocialFacade.all_socials
+        # social = socials.last
+        # expect(social.event_type).to eq("Chill")
       end
 
       it 'locality', :vcr do
