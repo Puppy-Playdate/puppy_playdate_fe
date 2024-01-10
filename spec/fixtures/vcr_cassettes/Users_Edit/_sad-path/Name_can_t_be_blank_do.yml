@@ -37,18 +37,18 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - d4c54bfc-4263-471e-b621-74bb2fd5b76e
+      - f5bc12ff-6d6a-4644-81a9-02c71fecdfad
       X-Runtime:
-      - '0.005396'
+      - '0.011668'
       Server-Timing:
-      - start_processing.action_controller;dur=0.00, sql.active_record;dur=0.55, instantiation.active_record;dur=0.03,
-        process_action.action_controller;dur=2.45
+      - start_processing.action_controller;dur=0.00, sql.active_record;dur=1.63, instantiation.active_record;dur=0.36,
+        process_action.action_controller;dur=7.59
       Content-Length:
       - '136'
     body:
       encoding: UTF-8
       string: '{"data":{"id":"4","type":"user","attributes":{"name":"Boo","email":"boo@gmail.com","dog_count":0},"relationships":{"dogs":{"data":[]}}}}'
-  recorded_at: Mon, 08 Jan 2024 23:28:24 GMT
+  recorded_at: Wed, 10 Jan 2024 18:59:58 GMT
 - request:
     method: get
     uri: http://localhost:3000/api/v1/users/4
@@ -86,18 +86,18 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - c574bb9a-dc8f-46d9-8c0e-f0f43931b680
+      - d6d7585e-a246-4840-a43b-f87d601b3a59
       X-Runtime:
-      - '0.004679'
+      - '0.011848'
       Server-Timing:
-      - start_processing.action_controller;dur=0.00, sql.active_record;dur=0.40, instantiation.active_record;dur=0.03,
-        process_action.action_controller;dur=2.25
+      - start_processing.action_controller;dur=0.01, sql.active_record;dur=0.69, instantiation.active_record;dur=0.04,
+        process_action.action_controller;dur=5.05
       Content-Length:
       - '136'
     body:
       encoding: UTF-8
       string: '{"data":{"id":"4","type":"user","attributes":{"name":"Boo","email":"boo@gmail.com","dog_count":0},"relationships":{"dogs":{"data":[]}}}}'
-  recorded_at: Mon, 08 Jan 2024 23:28:24 GMT
+  recorded_at: Wed, 10 Jan 2024 18:59:58 GMT
 - request:
     method: patch
     uri: http://localhost:3000/api/v1/users/4
@@ -135,19 +135,19 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - 0e996da3-efec-4db0-9b8b-fcc23a18403c
+      - d76faf51-a8f2-4184-9214-b12249c5c8df
       X-Runtime:
-      - '0.273209'
+      - '0.447079'
       Server-Timing:
-      - start_processing.action_controller;dur=0.00, sql.active_record;dur=2.38, instantiation.active_record;dur=0.04,
-        unpermitted_parameters.action_controller;dur=0.00, transaction.active_record;dur=1.05,
-        process_action.action_controller;dur=270.44
+      - start_processing.action_controller;dur=0.01, sql.active_record;dur=1.40, instantiation.active_record;dur=0.04,
+        unpermitted_parameters.action_controller;dur=0.00, transaction.active_record;dur=1.13,
+        process_action.action_controller;dur=441.71
       Content-Length:
       - '33'
     body:
       encoding: UTF-8
       string: '{"error":["Name can''t be blank"]}'
-  recorded_at: Mon, 08 Jan 2024 23:28:24 GMT
+  recorded_at: Wed, 10 Jan 2024 18:59:59 GMT
 - request:
     method: get
     uri: http://localhost:3000/api/v1/users/4
@@ -185,16 +185,16 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 230a5398-401c-4af4-a517-9a3547cefef2
+      - b407606f-c1c7-4a26-9148-47821ce06156
       X-Runtime:
-      - '0.004626'
+      - '0.013161'
       Server-Timing:
-      - start_processing.action_controller;dur=0.00, sql.active_record;dur=0.51, instantiation.active_record;dur=0.03,
-        process_action.action_controller;dur=2.10
+      - start_processing.action_controller;dur=0.00, sql.active_record;dur=0.70, instantiation.active_record;dur=0.05,
+        process_action.action_controller;dur=6.88
       Content-Length:
       - '136'
     body:
       encoding: UTF-8
       string: '{"data":{"id":"4","type":"user","attributes":{"name":"Boo","email":"boo@gmail.com","dog_count":0},"relationships":{"dogs":{"data":[]}}}}'
-  recorded_at: Mon, 08 Jan 2024 23:28:24 GMT
+  recorded_at: Wed, 10 Jan 2024 18:59:59 GMT
 recorded_with: VCR 6.2.0
