@@ -51,7 +51,5 @@ class UsersFacade
     json = service.github_oauth(params)
 
     User.new(json[:data])
-    end
-
   end
 end
