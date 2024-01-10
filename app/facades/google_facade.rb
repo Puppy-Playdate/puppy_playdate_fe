@@ -9,7 +9,6 @@ class GoogleFacade
       social_data = build_social_object(params, address_response_body)
       create_social_and_handle_data(social_data)
     else
-      # require 'pry'; binding.pry
       {
         status: address_response.status,
         error: address_response_body[:error]

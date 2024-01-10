@@ -80,6 +80,12 @@ RSpec.describe 'Socials New' do
         expect(page).to have_content("Description can't be blank")
       end
 
+      
+      # Event_Type and Locality still actually create the Social in the testing here
+      # when on local host you aren't allowed to leave these fields blank, but I still 
+      # wanted to test for it. 
+
+
       xit 'Event_Type', :vcr do
         visit new_user_social_path(3)
         # save_and_open_page

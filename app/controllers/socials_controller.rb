@@ -3,9 +3,7 @@ class SocialsController < ApplicationController
     #hit endpoint to see allllll socials
   end
 
-  def new
-    # require 'pry'; binding.pry
-  end
+  def new;end
 
   def create
     response = GoogleFacade.verify_address_and_create_social(params)
