@@ -9,7 +9,6 @@ class SocialsController < ApplicationController
 
   def create
     response = GoogleFacade.verify_address_and_create_social(params)
-    # require 'pry'; binding.pry
     if response[:status] == 201
       flash[:success] = "Social Created"
       redirect_to user_social_path(current_user, response[:social_id])
@@ -20,8 +19,8 @@ class SocialsController < ApplicationController
   end
   
   def show
-    require 'pry'; binding.pry
-    @social = SocialsFacade.find_social(params[:id])
+    @social = SocialsFacade.find_social(params[:user_id], params[:id])
+    @host = UsersFacade.find_user(params[:user_id])
   end
 
   def guest_index
