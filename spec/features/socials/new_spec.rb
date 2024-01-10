@@ -133,9 +133,9 @@ RSpec.describe 'Socials New' do
 
         # come back and finish this test. Socials are chill by default  
 
-        # socials = SocialFacade.all_socials
-        # social = socials.last
-        # expect(social.event_type).to eq("Chill")
+        socials = SocialsFacade.find_socials(3)
+        social = socials.last
+        expect(social.event_type).to eq("chill")
       end
 
       it 'locality', :vcr do

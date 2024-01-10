@@ -3,14 +3,16 @@ class SocialsFacade
     response = SocialsService.create_social(data)
   end
 
+  #show: specifc social
   def self.find_social(user_id, social_id)
     response = SocialsService.find_social(user_id, social_id)
     Social.new(response[:data])
   end
 
+  #index: all socials
   def self.find_socials(user_id)
     response = SocialsService.find_socials(user_id)
-    response[:data].each do |social|
+    response[:data].map do |social|
       Social.new(social)
     end
   end
