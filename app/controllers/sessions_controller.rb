@@ -1,8 +1,10 @@
 class SessionsController < ApplicationController
   def create
-    client_id = "aae04c62b896b4d08290"
-    client_secret = "c50b2f9533becbbbfd2f87ea444c9c908b691f51"
-    code = params[:code]
+    # require 'pry'; binding.pry
+    client_id = "1bb80c73f29664e63ddf"
+    client_secret = "87ce605d17840a01d49c6a3eb1a104e47ba74d2b"
+    code = params[:code] # "code"=>"639935e066b55a4d3124
+    
     conn = Faraday.new(url: 'https://github.com', headers: {'Accept': 'application/json'})
     
     response = conn.post('/login/oauth/access_token') do |req|
@@ -10,19 +12,33 @@ class SessionsController < ApplicationController
       req.params['client_id'] = client_id
       req.params['client_secret'] = client_secret
     end
-    require 'pry'; binding.pry
+    # require 'pry'; binding.pry
     
     data = JSON.parse(response.body, symbolize_names: true)
     access_token = data[:access_token]
     
     conn = Faraday.new(
-    url: 'https://api.github.com',
-    headers: {
+      url: 'https://api.github.com',
+      headers: {
         'Authorization': "token #{access_token}"
       }
+      )
+      response = conn.get('/user')
+      data = JSON.parse(response.body, symbolize_names: true)
+      
+      user = user_facade.github_oauth(
+      {
+        uid: data[:id],
+        login: data[:login],
+        access_token: access_token
+      }
     )
-    response = conn.get('/user')
-    data = JSON.parse(response.body, symbolize_names: true)
-require 'pry'; binding.pry
+
+    session[:user_id] = user.id
+    redirect_to user_path(user.id)
+  end
+
+  def user_facade
+    UserFacade.new(params[:id])
   end
 end

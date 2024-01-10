@@ -32,4 +32,14 @@ class UsersService
       request.body = { name: name, email: email, password: password }.to_json
     end
   end
+
+  def self.github_oauth(params)
+    response = conn.post("/api/v1/users/oauth") do |req|
+      req.params["login"] = params[:login]
+      req.params["uid"] = params[:uid]
+      req.params["access_token"] = params[:access_token]
+    end
+
+    JSON.parse(response.body, symbolize_names: true)
+  end
 end

@@ -46,4 +46,12 @@ class UsersFacade
       }
     end
   end
+
+  def self.github_oauth(params)
+    json = service.github_oauth(params)
+
+    User.new(json[:data])
+    end
+
+  end
 end
