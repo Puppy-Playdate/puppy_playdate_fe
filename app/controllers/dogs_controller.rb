@@ -1,6 +1,5 @@
 class DogsController < ApplicationController
   def index
-    
     @user = UsersFacade.find_user(params[:user_id].to_i)
     @dogs_facade = DogsFacade.find_dog(@user.user_id)
   end
