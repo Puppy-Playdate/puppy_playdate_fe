@@ -63,7 +63,7 @@ RSpec.describe 'Socials New' do
   end
 
   describe '#sad-path' do
-    it "Address doesn't need to be specific". :vcr do
+    it "Address doesn't need to be specific", :vcr do
       # Not full city name
       # Baseball team name and the word stadium, expecting 'Smith's Ballpark'
       # This test is to see how loose one can be with putting in the address

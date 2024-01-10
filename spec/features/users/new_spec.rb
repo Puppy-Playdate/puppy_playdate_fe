@@ -8,14 +8,14 @@ RSpec.describe "User Creation" do
     expect(page).to have_button("Create New User")
 
     fill_in :name, with: "Eric"
-    fill_in :email, with: "superuniqueemail@wahoo.com"
+    fill_in :email, with: "slim@shady.com"
     fill_in :password, with: "SuperSecret"
     fill_in :password_confirmation, with: "SuperSecret"
     click_button("Create New User")
 
     expect(page).to have_content("Account Created")
     expect(page).to have_content("Eric")
-    expect(page).to have_content("superuniqueemail@wahoo.com")
+    expect(page).to have_content("slim@shady.com")
   end
 
   describe '#sad-path' do
