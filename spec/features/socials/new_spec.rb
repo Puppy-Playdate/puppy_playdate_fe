@@ -131,8 +131,6 @@ RSpec.describe 'Socials New' do
         expect(current_path).to_not eq(new_user_social_path(3))
         expect(page).to have_content("Social Created")
 
-        # come back and finish this test. Socials are chill by default  
-
         socials = SocialsFacade.find_socials(3)
         social = socials.last
         expect(social.event_type).to eq("chill")
