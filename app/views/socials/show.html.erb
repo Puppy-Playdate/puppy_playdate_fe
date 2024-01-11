@@ -3,6 +3,7 @@
 <p>event_type: <%= @social.event_type %></p>
 <p>Event Date:<%= @social.event_date %></p>
 <p>Host User: <%= @host.name %></p>
+<%= button_to "Edit Social", edit_user_social_path(@host.user_id, @social.id) %>
 
 
 

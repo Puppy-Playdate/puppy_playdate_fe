@@ -1,0 +1,21 @@
+<div align="center">
+  <h1> Edit an Existing Social </h1>
+  <%# Change the link_to below to go back to socials#index %>
+  <br><%= link_to "Back to User Dashboard", user_path(@user.user_id) %><br>
+
+  <br><%= form_with url: user_social_path(@user.user_id, @social.id), method: :patch do |f| %>
+    <%= f.label :name, 'Name:' %>
+    <%= f.text_field :name, :value => @social.name %>
+    <%= f.label :description, 'Description:' %>
+    <%= f.text_field :description, :value => @social.description %>
+    <%= f.label :event_type, 'Event Type:' %>
+    <%= f.select :event_type, [['Chill', 0], ['Playdate', 1], ['Walk', 2]], :value => @social.event_type %>
+    <%= f.label :location, 'Address:' %>
+    <%= f.text_field :location, :value => @social.location %>
+    <%= f.label :event_date, 'Date/Time:' %>
+    <%= f.text_field :event_date, :value => @social.event_date %>
+    <br>
+
+    <br><%= f.submit 'Update' %>
+  <% end %>
+</div>

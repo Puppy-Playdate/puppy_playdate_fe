@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   #USERS
   resources :users, only: [:show, :create, :edit, :update] do
     resources :dogs, only: [:index, :edit, :update, :new, :create]
-    resources :socials, only: [:index, :new, :create, :show]
+    resources :socials, only: [:index, :new, :create, :show, :edit, :update]
   end
 
   get '/register', to: 'users#new', as: :new_user

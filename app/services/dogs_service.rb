@@ -1,6 +1,6 @@
 class DogsService
   def self.conn
-    Faraday.new(url: "http://localhost:3000/")
+    Faraday.new(url: Rails.configuration.x.sessions_service_url)
   end
   
   def self.get_url(url)
