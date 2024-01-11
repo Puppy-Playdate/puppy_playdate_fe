@@ -2,7 +2,8 @@ require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-
+  config.x.sessions_service_url = "https://git.heroku.com/puppy-play-date-be.git"
+  
   # Code is not reloaded between requests.
   config.enable_reloading = false
 
