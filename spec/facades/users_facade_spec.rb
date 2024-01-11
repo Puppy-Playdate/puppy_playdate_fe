@@ -27,7 +27,15 @@ RSpec.describe UsersFacade do
 
   describe '#find_by_email(email, pass)' do 
     it 'finds a user by its email and password', :vcr do 
+      params = { email: "up_dog@yahoo.com", password: "puppy" }
+      justin = UsersFacade.find_by_email(
+        params[:email],
+        params[:password]
+      )
 
+      expect(justin).to be_a User 
+      expect(justin.name).to eq("Justin Winchester")
+      expect(justin.email).to eq("up_dog@yahoo.com")
     end
   end
 
