@@ -16,7 +16,7 @@ class SocialsService
   end
 
   def self.find_social(user_id, social_id)
-    get_url("/api/v1/users/#{user_id}/socials/#{social_id[:social_id]}")
+    get_url("/api/v1/users/#{user_id}/socials/#{social_id}")
   end
 
   def self.find_socials(user_id)
