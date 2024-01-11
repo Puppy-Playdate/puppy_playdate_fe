@@ -7,7 +7,8 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root 'welcome#index'
-
+  
+  get '/auth/github/callback', to: 'sessions#create'
   #USERS
   resources :users, only: [:show, :create, :edit, :update] do
     resources :dogs, only: [:index, :edit, :update, :new, :create]

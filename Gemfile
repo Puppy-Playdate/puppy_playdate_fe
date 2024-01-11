@@ -46,6 +46,8 @@ gem "bootsnap", require: false
 
 gem 'faraday'
 gem 'draper'
+gem 'omniauth-github', '~> 2.0.0'
+gem 'omniauth-rails_csrf_protection'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
