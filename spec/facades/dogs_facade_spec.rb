@@ -66,7 +66,6 @@ RSpec.describe DogsFacade do
       new_params = { name: "Karl", breed: "Weiner Dog", size: "small", age: 1, neutered: true }
 
       new_dog = DogsFacade.update_dog(fido.dog_id, user.user_id, new_params[:name], new_params[:breed], new_params[:size], new_params[:age], new_params[:neutered])
-require 'pry'; binding.pry
 # new dog is returning a 404 error while fido is returning a Dog object with old_params 
       karl = new_dog[:data]
       expect(karl[:attributes][:name]).to_not eq("Fido")
