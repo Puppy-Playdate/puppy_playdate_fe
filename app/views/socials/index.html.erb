@@ -1,1 +1,58 @@
-<h1>All Socials</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <div id="social_header" align="center">
+    <h1>All Socials</h1>
+  </div>
+  <style>
+    body {
+      text-align: center; 
+    }
+
+    h1 {
+      margin-top: 20px; 
+      color: red;
+      font_weight: bold;
+    }
+
+    .social-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px; 
+      margin-top: 20px; 
+    }
+
+    .social-box {
+      border: 5px solid #ddd;
+      padding: 10px;
+      text-align: left;
+      width: 400px; 
+    }
+  </style>
+</head>
+<body>
+
+<div class="social-container">
+  <% @socials.each do |social| %>
+    <div class="social-box">
+      <h3>Social Name: <%= social.name %></h3>
+      <p>Description: <%= social.description %></p>
+      <p>Type: <%= social.event_type %></p>
+      <p>Date & Time: <%= social.event_date %></p>
+      <div id="google_map" class="map_container" align="center">
+        <h4>Find on Maps</h4>
+        <iframe
+            width="400"
+            height="300"
+            frameborder="0" style="border:0"
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps/embed/v1/place?key=<%= Rails.application.credentials.google[:maps_api] %>&q=<%= social.location %>&zoom=13&maptype=satellite"
+            allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  <% end %>
+</div>
+</body>
+</html>

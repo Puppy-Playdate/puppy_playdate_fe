@@ -32,8 +32,20 @@ RSpec.describe 'Users Show' do
     end 
 
     it 'routes a user to the socials page', :vcr do
+      visit root_path
+
+      click_link "Login"
+
+      fill_in :email, with: "boo@gmail.com"
+      fill_in :name, with: "Boo"
+      fill_in :password, with: "password"
+
+      click_button "Login"
+      
+      visit user_path(4)
+
       click_button "Discover Socials"
-      expect(current_path).to eq(user_socials_path(1)) 
+      expect(current_path).to eq(user_socials_path(4)) 
     end 
   end
 end

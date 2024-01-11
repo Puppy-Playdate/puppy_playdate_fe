@@ -1,0 +1,21 @@
+<h1> Name: <%= @social.name %></h1>
+<p>Desciption: <%= @social.description %></p>
+<p>event_type: <%= @social.event_type %></p>
+<p>Event Date:<%= @social.event_date %></p>
+<p>Host User: <%= @host.name %></p>
+
+
+
+
+
+<div id="google_map" class="map_container" align="center">
+  <h1>Find on Maps</h1>
+  <iframe
+      width="650"
+      height="450"
+      frameborder="0" style="border:0"
+      referrerpolicy="no-referrer-when-downgrade"
+      src="https://www.google.com/maps/embed/v1/place?key=<%= Rails.application.credentials.google[:maps_api] %>&q=<%= @social.location %>&zoom=13&maptype=satellite"
+      allowfullscreen>
+  </iframe>
+</div>
