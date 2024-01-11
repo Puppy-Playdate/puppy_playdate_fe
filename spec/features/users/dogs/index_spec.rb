@@ -23,7 +23,7 @@ RSpec.describe "User Dog Index" do
   end
 
   it 'has a button to edit dog and said button redirects to dog edit path', :vcr do
-    @user = UsersFacade.find_user(1)
+    @user = UsersFacade.find_user(1)  # change to dog name interpolation
     visit user_dogs_path(1)
     within(".dog-container .dog-box", match: :first) do
       expect(page).to have_button("Edit Fido")
