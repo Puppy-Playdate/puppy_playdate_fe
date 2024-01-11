@@ -36,7 +36,7 @@
 <div class="social-container">
   <% @socials.each do |social| %>
     <div class="social-box">
-      <%= button_to "Edit #{social.name}", edit_user_dog_path(@user.user_id, dog.dog_id) %>
+      <%= button_to "Edit Social", edit_user_social_path(current_user, social.id) %>
       <h3>Social Name: <%= social.name %></h3>
       <p>Description: <%= social.description %></p>
       <p>Type: <%= social.event_type %></p>

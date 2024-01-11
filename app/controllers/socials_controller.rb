@@ -17,6 +17,7 @@ class SocialsController < ApplicationController
   end
   
   def show
+    # @user = UsersFacade.find_user(params[:user_id].to_i)
     @social = SocialsFacade.find_social(params[:user_id], params[:id])
     @host = UsersFacade.find_user(params[:user_id])
   end
@@ -31,8 +32,11 @@ class SocialsController < ApplicationController
   end
 
   def update
+    @user = UsersFacade.find_user(params[:user_id].to_i)
+    @socials_facade = SocialsFacade.find_social(@user.user_id, params[:id])
+
     if required_fields_present?
-      response = SocialsFacade.update_social(params[:name], params[:description], params[:event_type], params[:addressLines], params[:locality], params[:datetime] @user.user_id, @socials_facade.social_id)
+      response = SocialsFacade.update_social(params[:name], params[:description], params[:event_type], params[:addressLines], params[:locality], params[:datetime], @user.user_id, @socials_facade.social_id)
       # require 'pry'; binding.pry
       if response[:status] == 200
         redirect_to user_social_path(@user.user_id, @social.socia_id)
