@@ -25,7 +25,6 @@ RSpec.describe DogsFacade do
       expect(potato[:data].last[:attributes][:age]).to eq(4)
       expect(potato[:data].last[:attributes][:size]).to eq("large")
       expect(potato[:data].last[:attributes][:neutered]).to eq(true)
-      require 'pry'; binding.pry
     end 
   end 
 
