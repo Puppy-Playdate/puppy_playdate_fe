@@ -8,7 +8,7 @@
   <%= f.label :description, 'Description:' %>
   <%= f.text_field :description, :value => @socials_facade.description %>
   <%= f.label :event_type, 'Event Type:' %>
-  <%= f.select :event_type, options_for_select(["Chill", "Playdate", "Walk"], @socials_facade.event_type) %>
+  <%= f.select :event_type, options_for_select(['Chill', 'Playdate', 'Walk'], @socials_facade.event_type) %>
   <%= f.label :locality, 'City:' %>
   <%= f.text_field :locality, :value => @socials_facade.location %>
   <%= f.label :addressLines, 'Address:' %>

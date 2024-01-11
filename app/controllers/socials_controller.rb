@@ -36,24 +36,24 @@ class SocialsController < ApplicationController
     @socials_facade = SocialsFacade.find_social(@user.user_id, params[:id])
 
     if required_fields_present?
-      response = SocialsFacade.update_social(params[:name], params[:description], params[:event_type], params[:addressLines], params[:locality], params[:datetime], @user.user_id, @socials_facade.social_id)
-      # require 'pry'; binding.pry
+      response = SocialsFacade.update_social(params[:name], params[:description], params[:event_type], params[:addressLines], params[:locality], params[:datetime], @user.user_id, @socials_facade.id)
+      require 'pry'; binding.pry
       if response[:status] == 200
-        redirect_to user_social_path(@user.user_id, @social.socia_id)
+        redirect_to user_social_path(@user.user_id, @social.id)
       else
         flash[:error] = "**NO FIELDS CAN BE LEFT BLANK.**"
-        redirect_back(fallback_location: edit_user_social_path(@user.user_id, @socials_facade.social_id))
+        redirect_back(fallback_location: edit_user_social_path(@user.user_id, @socials_facade.id))
       end
     else
       flash[:error] = "**NO FIELDS CAN BE LEFT BLANK.**"
-      redirect_back(fallback_location: edit_user_social_path(@user.user_id, @socials_facade.social_id))
+      redirect_back(fallback_location: edit_user_social_path(@user.user_id, @socials_facade.id))
     end
   end
 
   private
 
   def required_fields_present?
-    required_params = [:name, :description, :event_type, :locality, :addressLines, :datetime, :user_id]
+    required_params = [:name, :description, :event_type, :location, :event_date, :id]
     required_params.all? { |param| params[param].present? }
   end
 end

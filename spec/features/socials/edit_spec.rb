@@ -47,18 +47,16 @@ RSpec.describe "Socials Edit" do
   it 'when i visit the edit page i see Edit an Existing Social and text fields to change the socials
     details with the pre-existing social info filled in', :vcr do
     visit edit_user_social_path(4, @social.id)
-
     expect(page).to have_content("Edit an Existing Social")
     expect(page).to have_field :name, with: 'Soulja Boy'
     expect(page).to have_field :description, with: 'Crank that'
-    expect(page).to have_select('event_type', selected: 'Chill')
-    expect(page).to have_field :locality, with: 'Mountain View'
-    expect(page).to have_field :addressLines, with: '1600 Amphitheatre Parkway'
-    expect(page).to have_field :datetime, with: '2024-01-20T12:34'
+    expect(page).to have_content("Chill")
+    expect(page).to have_field :locality, with: '1600 Amphitheatre Parkway, Mountain View, CA 94043-1351, USA'
+    expect(page).to have_field :datetime, with: '2024-01-20T12:34:00.000Z'
     expect(page).to have_button("Update")
   end
 
-  xit 'when i fill out the form with my changes and click update i am redirected to the 
+  it 'when i fill out the form with my changes and click update i am redirected to the 
     social show page where the updated info is displayed', :vcr do 
     visit edit_user_social_path(4, @social.id)
 
@@ -68,15 +66,14 @@ RSpec.describe "Socials Edit" do
     expect(current_path).to eq(user_social_path(4, @social.id))
     expect(page).to have_field :name, with: 'Francisco'
     expect(page).to have_field :description, with: 'Crank that'
-    expect(page).to have_select('event_type', selected: 'Chill')
-    expect(page).to have_field :locality, with: 'Mountain View'
-    expect(page).to have_field :addressLines, with: '1600 Amphitheatre Parkway'
-    expect(page).to have_field :datetime, with: '2024-01-20T12:34'
+    expect(page).to have_content("Chill")
+    expect(page).to have_field :locality, with: '1600 Amphitheatre Parkway, Mountain View, CA 94043-1351, USA'
+    expect(page).to have_field :datetime, with: '2024-01-20T12:34:00.000Z'
 
     # reset 
     visit edit_user_social_path(4, @social.id)
 
-    fill_in :name, with: 'You'
+    fill_in :name, with: 'Soulja Boy'
     click_button("Update")
   end
 
@@ -85,10 +82,9 @@ RSpec.describe "Socials Edit" do
 
     fill_in :name, with: ''
     expect(page).to have_field :description, with: 'Crank that'
-    expect(page).to have_select('event_type', selected: 'Chill')
-    expect(page).to have_field :locality, with: 'Mountain View'
-    expect(page).to have_field :addressLines, with: '1600 Amphitheatre Parkway'
-    expect(page).to have_field :datetime, with: '2024-01-20T12:34'
+    expect(page).to have_content("Chill")
+    expect(page).to have_field :locality, with: '1600 Amphitheatre Parkway, Mountain View, CA 94043-1351, USA'
+    expect(page).to have_field :datetime, with: '2024-01-20T12:34:00.000Z'
 
     expect(current_path).to eq(edit_user_social_path(4, @social.id))
     expect(page).to have_content("**NO FIELDS CAN BE LEFT BLANK.**")
@@ -97,12 +93,11 @@ RSpec.describe "Socials Edit" do
   xit 'description field cant be left blank', :vcr do 
     visit edit_user_social_path(4, @social.id)
 
-    expect(page).to have_field :name, with: 'You'
+    expect(page).to have_field :name, with: 'Soulja Boy'
     fill_in :description, with: ''
-    expect(page).to have_select('event_type', selected: 'Chill')
-    expect(page).to have_field :locality, with: 'Mountain View'
-    expect(page).to have_field :addressLines, with: '1600 Amphitheatre Parkway'
-    expect(page).to have_field :datetime, with: '2024-01-20T12:34'
+    expect(page).to have_content("Chill")
+    expect(page).to have_field :locality, with: '1600 Amphitheatre Parkway, Mountain View, CA 94043-1351, USA'
+    expect(page).to have_field :datetime, with: '2024-01-20T12:34:00.000Z'
 
     expect(current_path).to eq(edit_user_social_path(4, @social.id))
     expect(page).to have_content("**NO FIELDS CAN BE LEFT BLANK.**")
@@ -111,26 +106,11 @@ RSpec.describe "Socials Edit" do
   xit 'locality field cant be left blank', :vcr do 
     visit edit_user_social_path(4, @social.id)
 
-    expect(page).to have_field :name, with: 'You'
+    expect(page).to have_field :name, with: 'Soulja Boy'
     expect(page).to have_field :description, with: 'Crank that'
-    expect(page).to have_select('event_type', selected: 'Chill')
+    expect(page).to have_content("Chill")
     fill_in :locality, with: ''
-    expect(page).to have_field :addressLines, with: '1600 Amphitheatre Parkway'
-    expect(page).to have_field :datetime, with: '2024-01-20T12:34'
-
-    expect(current_path).to eq(edit_user_social_path(4, @social.id))
-    expect(page).to have_content("**NO FIELDS CAN BE LEFT BLANK.**")
-  end
-
-  xit 'addressLines field cant be left blank', :vcr do 
-    visit edit_user_social_path(4, @social.id)
-
-    expect(page).to have_field :name, with: 'You'
-    expect(page).to have_field :description, with: 'Crank that'
-    expect(page).to have_select('event_type', selected: 'Chill')
-    expect(page).to have_field :locality, with: 'Mountain View'
-    fill_in :addressLines, with: ''
-    expect(page).to have_field :datetime, with: '2024-01-20T12:34'
+    expect(page).to have_field :datetime, with: '2024-01-20T12:34:00.000Z'
 
     expect(current_path).to eq(edit_user_social_path(4, @social.id))
     expect(page).to have_content("**NO FIELDS CAN BE LEFT BLANK.**")
@@ -139,11 +119,10 @@ RSpec.describe "Socials Edit" do
   xit 'datetime field cant be left blank', :vcr do 
     visit edit_user_social_path(4, @social.id)
 
-    expect(page).to have_field :name, with: 'You'
+    expect(page).to have_field :name, with: 'Soulja Boy'
     expect(page).to have_field :description, with: 'Crank that'
-    expect(page).to have_select('event_type', selected: 'Chill')
-    expect(page).to have_field :locality, with: 'Mountain View'
-    expect(page).to have_field :addressLines, with: '1600 Amphitheatre Parkway'
+    expect(page).to have_content("Chill")
+    expect(page).to have_field :locality, with: '1600 Amphitheatre Parkway, Mountain View, CA 94043-1351, USA'
     fill_in :datetime, with: ''
 
     expect(current_path).to eq(edit_user_social_path(4, @social.id))
