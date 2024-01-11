@@ -25,20 +25,21 @@ class SessionsController < ApplicationController
       )
       response = conn.get('/user')
       data = JSON.parse(response.body, symbolize_names: true)
+      require 'pry'; binding.pry
       
-      user = user_facade.github_oauth(
+      user = UsersFacade.github_oauth(
       {
         uid: data[:id],
-        email: data[:email],
+        name: data[:name],
         access_token: access_token
       }
     )
-
-    session[:user_id] = user.id
-    redirect_to user_path(user.id)
-  end
-
-  def user_facade
-    UserFacade.new(params[:id])
+    # require 'pry'; binding.pry
+    # if user.is_a?(User)
+      session[:user_id] = user.uid
+      redirect_to user_path(user.uid)
+    # else
+    #   render json: { error: user[:error] }
+    # end
   end
 end

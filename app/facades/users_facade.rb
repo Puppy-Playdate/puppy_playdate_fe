@@ -48,8 +48,13 @@ class UsersFacade
   end
 
   def self.github_oauth(params)
-    response = service.github_oauth(params)
+    # require 'pry'; binding.pry
+    response = UsersService.github_oauth(params)
 
-    User.new(response[:data])
-  end
+    if response[:data]
+      User.new(response[:data])
+    else
+      { error: response[:error] }
+    end
+  end 
 end
