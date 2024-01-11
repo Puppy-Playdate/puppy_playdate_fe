@@ -49,29 +49,34 @@ RSpec.describe DogsFacade do
     it 'updates a dogs information', :vcr do 
       user = UsersFacade.find_user(2)
 
-      params = { name: "Fido", breed: "Labrador", age: 4, 
+      old_params = { name: "Fido", breed: "Labrador", age: 4, 
                 size: "large", neutered: true, 
                 user_id: user.user_id }
 
       old_dog = DogsFacade.create_dog(
-        params[:name],
-        params[:breed],
-        params[:age],
-        params[:size],
-        params[:neutered],
-        params[:user_id]
+        old_params[:name],
+        old_params[:breed],
+        old_params[:age],
+        old_params[:size],
+        old_params[:neutered],
+        old_params[:user_id]
       )
 
-      new_dog = DogsFacade.find_dog(2)
+      fido = DogsFacade.find_dog_by_id(user.user_id, old_dog[:dog_id].to_i)
       new_params = { name: "Karl", breed: "Weiner Dog", size: "small", age: 1, neutered: true }
-      dog_id = new_dog.last.dog_id
-      DogsFacade.update_dog(dog_id, user.user_id, new_params[:name], new_params[:breed], new_params[:size], new_params[:age], new_params[:neutered])
-      
-      require 'pry'; binding.pry
-      expect(new_dog[:data].last[:attributes][:name]).to_not eq("Fido")
-      expect(new_dog[:data].last[:attributes][:name]).to eq("Karl")
-      expect(new_dog[:data].last[:attributes][:size]).to_not eq("large")
-      expect(new_dog[:data].last[:attributes][:size]).to eq("small")
+
+      new_dog = DogsFacade.update_dog(fido.dog_id, user.user_id, new_params[:name], new_params[:breed], new_params[:size], new_params[:age], new_params[:neutered])
+require 'pry'; binding.pry
+# new dog is returning a 404 error while fido is returning a Dog object with old_params 
+      karl = new_dog[:data]
+      expect(karl[:attributes][:name]).to_not eq("Fido")
+      expect(karl[:attributes][:name]).to eq("Karl")
+      expect(karl[:attributes][:size]).to_not eq("large")
+      expect(karl[:attributes][:size]).to eq("small")
+      expect(karl[:attributes][:age]).to_not eq(4)
+      expect(karl[:attributes][:age]).to eq(1)
+      expect(karl[:attributes][:breed]).to_not eq("Labrador")
+      expect(karl[:attributes][:breed]).to eq("Weiner Dog")
     end
   end
 

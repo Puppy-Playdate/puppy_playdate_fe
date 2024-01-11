@@ -1,6 +1,18 @@
 class SocialsFacade
   def self.create_social(data)
     response = SocialsService.create_social(data)
+    response_body = JSON.parse(response.body, symbolize_names: true)
+    if response.status == 201
+      {
+        status: response.status,
+        social_id: response_body[:data][:id]
+      }
+    else
+      {
+        status: response.status,
+        error: response_body[:error]
+      }
+    end
   end
 
   #show: specifc social
