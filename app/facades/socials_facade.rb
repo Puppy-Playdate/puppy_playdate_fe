@@ -17,14 +17,14 @@ class SocialsFacade
     end
   end
 
-  #edit: a social
-  def self.update_social(name, description, event_type, locality, addressLines, datetime, user_id, social_id)
-    response = SocialsService.update_social(name, description, event_type, locality, addressLines, datetime, user_id, social_id)
+  def self.update_social(data)
+    social_object = update_social_object(data)
+    response = SocialsService.update_social(social_object)
     response_body = JSON.parse(response.body, symbolize_names: true)
     if response.status == 200
       {
         status: response.status,
-        user_id: response_body[:data][:id]
+        id: response_body[:data][:id]
       }
     else
       {
@@ -32,5 +32,19 @@ class SocialsFacade
         error: response_body[:error]
       }
     end
+  end
+
+  private
+
+  def self.update_social_object(data)
+    {
+      name: data[:name],
+      description: data[:description],
+      event_date: data[:event_date],
+      event_type: data[:event_type].to_i,
+      location: data[:location],
+      user_id: data[:user_id].to_i,
+      id: data[:id].to_i
+    }
   end
 end
