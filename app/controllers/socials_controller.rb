@@ -1,6 +1,6 @@
 class SocialsController < ApplicationController
   def index
-    require 'pry'; binding.pry
+    # require 'pry'; binding.pry
     @socials = SocialsFacade.find_socials(current_user)
   end
 
@@ -28,6 +28,7 @@ class SocialsController < ApplicationController
   end
 
   def edit
+    require 'pry'; binding.pry
     @user = UsersFacade.find_user(params[:user_id].to_i)
     @social = SocialsFacade.find_social(@user.user_id, params[:id])
   end
