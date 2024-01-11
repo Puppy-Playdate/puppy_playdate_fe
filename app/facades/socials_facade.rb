@@ -16,4 +16,21 @@ class SocialsFacade
       Social.new(social)
     end
   end
+
+  #edit: a social
+  def self.update_social(name, description, event_type, locality, addressLines, datetime, user_id, social_id)
+    response = DogsService.update_social(name, description, event_type, locality, addressLines, datetime, user_id, social_id)
+    response_body = JSON.parse(response.body, symbolize_names: true)
+    if response.status == 200
+      {
+        status: response.status,
+        user_id: response_body[:data][:id]
+      }
+    else
+      {
+        status: response.status,
+        error: response_body[:error]
+      }
+    end
+  end
 end

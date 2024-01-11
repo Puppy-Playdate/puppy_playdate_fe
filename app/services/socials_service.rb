@@ -22,4 +22,12 @@ class SocialsService
   def self.find_socials(user_id)
     get_url("/api/v1/users/#{user_id}/socials")
   end
+
+
+  def self.update_dog(name, description, event_type, locality, addressLines, datetime, user_id, social_id)
+    conn.patch("/api/v1/users/#{user_id}/socials/#{social_id}") do |request|
+      request.headers['Content-Type'] = 'application/json'
+      request.body = { name: name, description: description, event_type: event_type, locality: locality, addressLines: addressLines, datetime: datetime }.to_json
+    end
+  end
 end
