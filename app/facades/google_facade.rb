@@ -9,6 +9,7 @@ class GoogleFacade
       }
     else
       address_response = GoogleService.verify_address(address_object)
+      # require 'pry'; binding.pry
       address_response_body = JSON.parse(address_response.body, symbolize_names: true)
       if address_response.status == 200
         social_data = build_social_object(params, address_response_body)
@@ -55,16 +56,16 @@ class GoogleFacade
 
   def self.create_social_and_handle_data(social_data)
     social_response = SocialsFacade.create_social(social_data)
-    social_response_body = JSON.parse(social_response.body, symbolize_names: true)
-    if social_response.status == 201
+    if social_response[:status] == 201
       {
-        status: social_response.status,
-        social_id: social_response_body[:data][:id].to_i
+        status: social_response[:status],
+        social_id: social_response[:social_id].to_i
       }
     else
+      # require 'pry'; binding.pry
       {
-        status: social_response.status,
-        error: social_response_body[:error]
+        status: social_response[:status],
+        error: social_response[:error]
       }
     end
   end
