@@ -7,6 +7,7 @@ class SocialsController < ApplicationController
 
   def create
     response = GoogleFacade.verify_address_and_create_social(params)
+    # require 'pry'; binding.pry
     if response[:status] == 201
       flash[:success] = "Social Created"
       redirect_to user_social_path(current_user, response[:social_id])
