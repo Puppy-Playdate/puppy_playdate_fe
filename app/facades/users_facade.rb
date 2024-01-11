@@ -48,7 +48,6 @@ class UsersFacade
 
   def self.github_oauth(params)
     response = UsersService.github_oauth(params)
-    # require 'pry'; binding.pry
     response_body = JSON.parse(response.body, symbolize_names: true)
 
     User.new(response_body[:data])
