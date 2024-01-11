@@ -7,6 +7,6 @@ class User
     @name = data[:attributes][:name]
     @email = data[:attributes][:email]
     @uid = data[:attributes][:uid]
-    @oauth_token = data[:attributes][:oauth_token]
+    @oauth_token = data[:attributes][:access_token]
   end
 end

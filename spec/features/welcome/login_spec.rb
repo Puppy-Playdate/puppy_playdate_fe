@@ -34,7 +34,7 @@ RSpec.describe 'User Login' do
     expect(page).to have_field :email 
     expect(page).to have_field :password 
     expect(page).to have_button('Login')
-    expect(page).to have_button('Login with Google')
+    expect(page).to have_button('Login with GitHub')
   end
 
   it "Nav bar changes based on if someone is logged in", :vcr do

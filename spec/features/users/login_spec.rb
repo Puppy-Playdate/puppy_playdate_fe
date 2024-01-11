@@ -14,8 +14,7 @@ RSpec.describe "User Login" do
 
     expect(page).to have_content("Existing Member Login")
     expect(page).to have_button("Login")
-    expect(page).to have_button("Login with Google")
-    # expect(page).to have_button("Login with GitHub")
+    expect(page).to have_button("Login with GitHub")
     within("div#navigation_station") do
       expect(page).to have_link("Home")
       expect(page).to have_link("Create New User")
