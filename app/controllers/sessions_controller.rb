@@ -25,12 +25,12 @@ class SessionsController < ApplicationController
       )
       response = conn.get('/user')
       data = JSON.parse(response.body, symbolize_names: true)
-      require 'pry'; binding.pry
+      # require 'pry'; binding.pry
       
       user = UsersFacade.github_oauth(
       {
         uid: data[:id],
-        name: data[:name],
+        email: data[:email],
         access_token: access_token
       }
     )

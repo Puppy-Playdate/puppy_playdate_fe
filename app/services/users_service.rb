@@ -36,7 +36,7 @@ class UsersService
   def self.github_oauth(params)
     # require 'pry'; binding.pry
     response = conn.post("/api/v1/users/oauth") do |req|
-      req.params["name"] = params[:name]
+      req.params["email"] = params[:email]
       req.params["uid"] = params[:uid]
       req.params["access_token"] = params[:access_token]
     end
