@@ -27,14 +27,13 @@ class SocialsController < ApplicationController
 
   def edit
     @user = UsersFacade.find_user(params[:user_id].to_i)
-    @social = SocialsFacade.find_social(@user.user_id, params[:id])
+    @social = SocialsFacade.find_social(@user.user_id, params[:id].to_i)
   end
 
   def update
     @social = SocialsFacade.find_social(current_user, params[:id])
     if social_update_params
       response = SocialsFacade.update_social(social_update_params)
-      require 'pry'; binding.pry
       if response[:status] == 200
         redirect_to user_social_path(current_user, response[:id])
       else
