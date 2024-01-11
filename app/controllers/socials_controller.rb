@@ -1,5 +1,6 @@
 class SocialsController < ApplicationController
   def index
+    require 'pry'; binding.pry
     @socials = SocialsFacade.find_socials(current_user)
   end
 
