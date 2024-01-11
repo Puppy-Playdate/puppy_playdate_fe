@@ -21,19 +21,19 @@ RSpec.describe "Socials Edit" do
 
 
   it 'when i visit the socials index there is a button to edit the social', :vcr do 
-    visit user_socials_path(1, 1)
+    visit user_socials_path(1)
 
-    expect(page).to have_button("Edit #{@social.name}")
+    expect(page).to have_button("Edit Social")
     click_button("Edit Social")
     expect(current_path).to eq(edit_user_social_path(1, @social.id))
   end
 
   xit 'when i visit the socials show there is a button to edit the social' do 
-    visit user_social_path(1)
+    visit user_social_path(1, 1)
 
-    expect(page).to have_button("Edit #{@social.name}")
+    expect(page).to have_button("Edit Social")
     click_button("Edit Social")
-    expect(current_path).to eq(edit_user_social_path(4, @social.id))
+    expect(current_path).to eq(edit_user_social_path(1, @social.id))
   end
 
   xit 'when i visit the edit page i see Edit an Existing Social and text fields to change the socials
@@ -57,7 +57,7 @@ RSpec.describe "Socials Edit" do
     fill_in :name, with 'Francisco'
     click_button("Update")
 
-    expect(current_path).to eq(user_dogs_path(1))
+    expect(current_path).to eq(user_social_path(1, 1))
     expect(page).to have_field :name, with: 'Francisco'
     expect(page).to have_field :description, with: 'Crank that'
     expect(page).to have_select('event_type', selected: 'Chill')
