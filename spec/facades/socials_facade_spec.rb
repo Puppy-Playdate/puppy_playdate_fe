@@ -51,7 +51,38 @@ RSpec.describe SocialsFacade do
 
   describe '#find_socials(user_id)' do
     it 'finds all socials by a users id', :vcr do 
-      
+      user = UsersFacade.find_user(3)
+
+      pit_params = ({
+        name: 'Party With Pitties',
+        description: 'Playtime with pitbulls.',
+        location: 'Denver, CO',
+        event_date: Date.today,
+        event_type: 'chill',
+        user_id: user.user_id
+      })
+
+      corgie_params = ({
+        name: 'Cookies & Corgies',
+        description: "Outdoor party for Kevy Spaghetti's birthday.",
+        location: 'Denver, CO',
+        event_date: Date.today,
+        event_type: 'chill',
+        user_id: user.user_id
+      })
+
+      pitties = SocialsFacade.create_social(pit_params)
+      corgies = SocialsFacade.create_social(corgie_params)
+      socials = SocialsFacade.find_socials(user.user_id)
+      kevy = socials.last 
+
+      expect(socials).to be_an Array 
+      expect(kevy).to be_a Social
+      expect(kevy).to be_a Social
+      expect(kevy.description).to eq("Outdoor party for Kevy Spaghetti's birthday.") 
+      expect(kevy.event_type).to eq("chill") 
+      expect(kevy.location).to eq("Denver, CO") 
+      expect(kevy.name).to eq("Cookies & Corgies") 
     end 
   end 
 end
