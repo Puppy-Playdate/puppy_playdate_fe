@@ -64,6 +64,7 @@ RSpec.describe "User Dog Edit Page" do
     expect(page).to have_content("Size: small")
     expect(page).to have_content("Neutered: true")
 
+    # reset
     visit edit_user_dog_path(1, 1)
     fill_in :age, with: "5"
     click_button("Update")
