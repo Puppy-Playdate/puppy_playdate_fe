@@ -12,7 +12,7 @@ RSpec.describe "Socials Edit" do
 
     visit new_user_social_path(4)
 
-    fill_in :name, with: "You"
+    fill_in :name, with: "Soulja Boy"
     fill_in :description, with: "Crank that"
     select("Chill", from: :event_type)
     fill_in :locality, with: "Mountain View"
@@ -27,15 +27,16 @@ RSpec.describe "Socials Edit" do
 
 
   it 'when i visit the socials index there is a button to edit the social', :vcr do 
-    # require 'pry'; binding.pry
     visit user_socials_path(4)
-
-    expect(page).to have_button("Edit Social")
-    click_button("Edit Social")
+    # write within block to test for specific socials edit button
+    within(".social-box", text: @social.name) do
+      expect(page).to have_button("Edit Social")
+      click_button("Edit Social")
+    end
     expect(current_path).to eq(edit_user_social_path(4, @social.id))
   end
 
-  xit 'when i visit the socials show there is a button to edit the social' do 
+  it 'when i visit the socials show there is a button to edit the social' do 
     visit user_social_path(4, @social.id)
 
     expect(page).to have_button("Edit Social")
