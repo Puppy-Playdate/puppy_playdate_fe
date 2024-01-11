@@ -41,7 +41,16 @@ RSpec.describe UsersFacade do
 
   describe '#update_user(user, name, email, password)' do 
     it 'updates a users information', :vcr do 
+      justin = UsersFacade.find_user(7)
+      params = { name: "Justin P. Sherman", email: "up_dog@gmail.com", password: "puppy123" }
 
+      justin_update = UsersFacade.update_user(justin, params[:name], params[:email], params[:password])
+      new_justin = UsersFacade.find_user(7)
+
+      expect(new_justin.name).to_not eq("Justin Winchester")
+      expect(new_justin.name).to eq("Justin P. Sherman")
+      expect(new_justin.email).to_not eq("up_dog@yahoo.com")
+      expect(new_justin.email).to eq("up_dog@gmail.com")
     end
   end
 end
