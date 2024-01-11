@@ -36,7 +36,7 @@ RSpec.describe "Socials Edit" do
     expect(current_path).to eq(edit_user_social_path(4, @social.id))
   end
 
-  it 'when i visit the socials show there is a button to edit the social' do 
+  it 'when i visit the socials show there is a button to edit the social', :vcr do 
     visit user_social_path(4, @social.id)
 
     expect(page).to have_button("Edit Social")
@@ -44,12 +44,12 @@ RSpec.describe "Socials Edit" do
     expect(current_path).to eq(edit_user_social_path(4, @social.id))
   end
 
-  xit 'when i visit the edit page i see Edit an Existing Social and text fields to change the socials
+  it 'when i visit the edit page i see Edit an Existing Social and text fields to change the socials
     details with the pre-existing social info filled in', :vcr do
     visit edit_user_social_path(4, @social.id)
 
     expect(page).to have_content("Edit an Existing Social")
-    expect(page).to have_field :name, with: 'You'
+    expect(page).to have_field :name, with: 'Soulja Boy'
     expect(page).to have_field :description, with: 'Crank that'
     expect(page).to have_select('event_type', selected: 'Chill')
     expect(page).to have_field :locality, with: 'Mountain View'

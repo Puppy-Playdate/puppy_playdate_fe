@@ -2,19 +2,19 @@
 <h1> Edit an Existing Social </h1>
 <br><%= link_to "Back to User Dashboard", user_path(@user.user_id) %><br>
 
-<br><%= form_with url: user_social_path(@user.user_id, @socials_facade.social_id), method: :patch do |f| %>
+<br><%= form_with url: user_social_path(@user.user_id, @socials_facade.id), method: :patch do |f| %>
   <%= f.label :name, 'Name:' %>
   <%= f.text_field :name, :value => @socials_facade.name %>
   <%= f.label :description, 'Description:' %>
   <%= f.text_field :description, :value => @socials_facade.description %>
-    <%= f.label :event_type, 'Event Type:' %>
-  <%= f.select :event_type, options_for_select(["Chill"], ["Playdate"], ["Walk"], @socials_facade.event_type) %>
-  <%= f.label :locality, 'Locality:' %>
-  <%= f.text_field :locality, :value => @socials_facade.locality %>
+  <%= f.label :event_type, 'Event Type:' %>
+  <%= f.select :event_type, options_for_select(["Chill", "Playdate", "Walk"], @socials_facade.event_type) %>
+  <%= f.label :locality, 'City:' %>
+  <%= f.text_field :locality, :value => @socials_facade.location %>
   <%= f.label :addressLines, 'Address:' %>
-  <%= f.text_field :addressLines, :value => @socials_facade.addressLines %>
+  <%= f.text_field :addressLines, :value => @socials_facade.location %>
   <%= f.label :datetime, 'Date/Time:' %>
-  <%= f.text_field :datetime, :value => @socials_facade.datetime %>
+  <%= f.text_field :datetime, :value => @socials_facade.event_date %>
   <br>
 
   <br><%= f.submit 'Update' %>
