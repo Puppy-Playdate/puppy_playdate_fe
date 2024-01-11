@@ -3,7 +3,15 @@ require 'rails_helper'
 RSpec.describe UsersFacade do
   describe '#create_user(name, email, password)' do
     it 'creates a new user object', :vcr do 
+      params = { name: "Justin Winchester", email: "up_dog@yahoo.com", password: "puppy" }
+      justin = UsersFacade.create_user(
+        params[:name],
+        params[:email],
+        params[:password]
+      )
 
+      expect(justin[:status]).to eq(201)
+      expect(justin).to have_key(:user_id)
     end
   end
 
