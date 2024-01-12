@@ -30,7 +30,7 @@ RSpec.describe "Socials Show" do
       host = UsersFacade.find_user(4)
 
       expect(current_path).to eq(user_social_path(4, social.id))
-
+      save_and_open_page
       expect(page).to have_content("#{social.name}")
       expect(page).to have_content("#{social.description}")
       expect(page).to have_content("#{social.event_type}")
