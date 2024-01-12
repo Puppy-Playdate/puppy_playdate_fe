@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe SocialsService do
   describe 'class methods' do
-    it '#create_social creates a new user', :vcr do
+    it '#create_social creates a new social', :vcr do
       user = UsersFacade.find_user(7)
       social_params = {
         name: 'Brunch with Boxers',
