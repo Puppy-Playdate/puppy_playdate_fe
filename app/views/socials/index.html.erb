@@ -1,51 +1,108 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <div id="social_header" align="center">
-    <h1>All Socials</h1>
-  </div>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Socials</title>
   <style>
     body {
-      text-align: center; 
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 20px;
+    }
+
+    #social_header {
+      margin-top: 20px;
     }
 
     h1 {
-      margin-top: 20px; 
       color: red;
-      font_weight: bold;
+      font-weight: bold;
     }
 
     .social-container {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 20px; 
-      margin-top: 20px; 
+      gap: 20px;
+      margin-top: 20px;
     }
 
     .social-box {
+      max-width: 400px;
       border: 5px solid #ddd;
-      padding: 10px;
+      padding: 20px;
       text-align: left;
-      width: 400px; 
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+      background-color: #fff;
+    }
+
+    h3 {
+      margin-top: 10px;
+    }
+
+    .section {
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 200px;
+      border: none;
+      border-radius: 8px;
+    }
+
+    button {
+      background-color: #4285f4;
+      color: #fff;
+      border: none;
+      padding: 10px 14px;
+      font-size: 14px;
+      cursor: pointer;
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+
+    button:hover {
+      background-color: #3a76e7;
     }
   </style>
 </head>
 <body>
 
+<div id="social_header">
+  <h1>All Socials</h1>
+</div>
+
 <div class="social-container">
   <% @socials.each do |social| %>
     <div class="social-box">
       <%= button_to "Edit Social", edit_user_social_path(current_user, social.id), method: :get %>
-      <h3>Social Name: <%= social.name %></h3>
-      <p>Description: <%= social.description %></p>
-      <p>Type: <%= social.event_type %></p>
-      <p>Date & Time: <%= social.event_date %></p>
-      <div id="google_map" class="map_container" align="center">
+      <div class="section">
+        <h3>Social Name:</h3>
+        <p><%= social.name %></p>
+      </div>
+      <div class="section">
+        <h3>Description:</h3>
+        <p><%= social.description %></p>
+      </div>
+      <div class="section">
+        <h3>Type:</h3>
+        <p><%= social.event_type %></p>
+      </div>
+      <div class="section">
+        <h3>Date & Time:</h3>
+        <p><%= social.event_date %></p>
+      </div>
+      <div id="google_map" class="map_container">
         <h4>Find on Maps</h4>
         <iframe
-            width="400"
-            height="300"
             frameborder="0" style="border:0"
             referrerpolicy="no-referrer-when-downgrade"
             src="https://www.google.com/maps/embed/v1/place?key=<%= Rails.application.credentials.google[:maps_api] %>&q=<%= social.location %>&zoom=13&maptype=satellite"
@@ -55,5 +112,6 @@
     </div>
   <% end %>
 </div>
+
 </body>
 </html>

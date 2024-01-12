@@ -11,7 +11,7 @@ RSpec.describe "User Dog Edit Page" do
   it 'there is a form to fill out with my dogs previous info 
     prefilled for editing for each dog', :vcr do 
     visit edit_user_dog_path(1, 1)
-    
+
     expect(page).to have_content('Editing Fido')
     expect(page).to have_field :name, with: 'Fido'
     expect(page).to have_field :breed, with: 'Lab'

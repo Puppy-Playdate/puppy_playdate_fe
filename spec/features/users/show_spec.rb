@@ -7,6 +7,7 @@ RSpec.describe 'Users Show' do
     end
 
     it 'exists', :vcr do 
+      
       expect(page).to have_button('Edit Profile')
       expect(page).to have_button('Add New Dog')
       expect(page).to have_button('View Pets')

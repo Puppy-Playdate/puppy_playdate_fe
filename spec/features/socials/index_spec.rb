@@ -14,7 +14,6 @@ RSpec.describe "Socials Index" do
   end
   it "will show all socials", :vcr do
     visit user_socials_path(4)
-
     socials = SocialsFacade.find_socials(4)
 
     expect(page).to have_content("All Socials")

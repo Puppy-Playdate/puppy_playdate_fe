@@ -1,55 +1,106 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Puppy Playdate</title>
   <style>
     body {
-      text-align: center; 
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 20px;
     }
 
     h1 {
-      margin-top: 20px; 
-      color: red;
-      font_weight: bold;
+      color: #e44d26;
+      font-weight: bold;
+      margin-top: 20px;
     }
 
+    p {
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: #333;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 16px;
+      box-sizing: border-box;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+
+    select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 16px;
+      box-sizing: border-box;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+
+    input[type="submit"] {
+      background-color: #4caf50;
+      color: #fff;
+      border: none;
+      padding: 12px 16px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
   </style>
 </head>
 <body>
 
-<h1> Puppy Playdate </h1>
+<h1>Puppy Playdate</h1>
 
-<p> Please fill in your dogs information below. </p>
+<p>Please fill in your dog's information below.</p>
 
 <%= form_with url: user_dogs_path(@user.user_id), method: :post do |f| %>
   <div>
     <%= f.label :name %>
     <%= f.text_field :name, required: true %>
   </div>
-  <br/>
 
   <div>
     <%= f.label :breed %>
     <%= f.text_field :breed, required: true %>
   </div>
-  <br/>
 
   <div>
     <%= f.label :age %>
     <%= f.number_field :age, required: true %>
   </div>
-  <br/>
 
   <div>
     <%= f.label :size %>
     <%= f.select :size, ['small', 'medium', 'large'], prompt: 'Select size', required: true %>
   </div>
-  <br/>
 
   <div>
     <%= f.label :neutered %>
     <%= f.select :neutered, [['true', true], ['false', false]], prompt: 'Select neutered status', required: true %>
   </div>
-  <br/>
 
   <div>
     <%= f.submit 'Create Dog' %>

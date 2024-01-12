@@ -24,7 +24,7 @@ RSpec.describe "User Dog Index" do
 
   it 'has a form to fill in', :vcr do
     visit new_user_dog_path(1)
-    
+  
     expect(page).to have_field("Name")
     expect(page).to have_field("Breed")
     expect(page).to have_field("Age")

@@ -1,20 +1,36 @@
-<div align="center">
-<h1> Editing <%= "#{@dogs_facade.name}" %> </h1>
-<br><%= link_to "Back to User Dashboard", user_path(@user.user_id) %><br>
+<%= link_to "Back to User Dashboard", user_path(@user.user_id), class: 'btn btn-secondary mb-3' %>
+<div align="center" style="max-width: 400px; margin: 0 auto; padding: 20px; border: 1px solid #ccc; border-radius: 5px; background-color: #f9f9f9; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+  <h1 style="color: #333;">Editing <%= "#{@dogs_facade.name}" %></h1>
 
-<br><%= form_with url: user_dog_path(@user.user_id, @dogs_facade.dog_id), method: :patch do |f| %>
-  <%= f.label :name, 'Name:' %>
-  <%= f.text_field :name, :value => @dogs_facade.name %>
-  <%= f.label :breed, 'Breed:' %>
-  <%= f.text_field :breed, :value => @dogs_facade.breed %>
-  <%= f.label :age, 'Age:' %>
-  <%= f.text_field :age, :value => @dogs_facade.age %>
-  <%= f.label :size, 'Size:' %>
-  <%= f.select :size, options_for_select([['small', 0], ['medium', 1], ['large', 2]], @dogs_facade.size) %>
-  <%= f.label :neutered, 'Neutered:' %>
-  <%= f.select :neutered, options_for_select([['true', true] , ['false', false]], @dogs_facade.neutered) %>
-  <br>
 
-  <br><%= f.submit 'Update' %>
-<% end %>
+  <%= form_with url: user_dog_path(@user.user_id, @dogs_facade.dog_id), method: :patch do |f| %>
+    <div class="mb-3">
+      <%= f.label :name, 'Name:', class: 'form-label' %>
+      <%= f.text_field :name, class: 'form-control', value: @dogs_facade.name %>
+    </div>
+    <br/>
+
+    <div class="mb-3">
+      <%= f.label :breed, 'Breed:', class: 'form-label' %>
+      <%= f.text_field :breed, class: 'form-control', value: @dogs_facade.breed %>
+    </div>
+    <br/>
+    <div class="mb-3">
+      <%= f.label :age, 'Age:', class: 'form-label' %>
+      <%= f.text_field :age, class: 'form-control', value: @dogs_facade.age %>
+    </div>
+    <br/>
+    <div class="mb-3">
+      <%= f.label :size, 'Size:', class: 'form-label' %>
+      <%= f.select :size, options_for_select([['small', 0], ['medium', 1], ['large', 2]], @dogs_facade.size), class: 'form-select' %>
+    </div>
+    <br/>
+    <div class="mb-3">
+      <%= f.label :neutered, 'Neutered:', class: 'form-label' %>
+      <%= f.select :neutered, options_for_select([['true', true] , ['false', false]], @dogs_facade.neutered), class: 'form-select' %>
+    </div>
+      <br/>
+
+    <%= f.submit 'Update', class: 'btn btn-primary' %>
+  <% end %>
 </div>
