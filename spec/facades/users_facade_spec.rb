@@ -17,13 +17,12 @@ RSpec.describe UsersFacade do
 
   describe '#find_user(id)' do 
     it 'finds a user by its id', :vcr do 
-      require 'pry'; binding.pry
-      justin = UsersFacade.find_user(7)
+      justin = UsersFacade.find_user(5)
 
       expect(justin).to be_a User
       expect(justin.name).to eq("Justin Winchester")
       expect(justin.email).to eq("up_dog@yahoo.com")
-      expect(justin.user_id).to eq(7)
+      expect(justin.user_id).to eq(5)
     end
   end
 
@@ -43,11 +42,11 @@ RSpec.describe UsersFacade do
 
   describe '#update_user(user, name, email, password)' do 
     it 'updates a users information', :vcr do 
-      justin = UsersFacade.find_user(7)
+      justin = UsersFacade.find_user(5)
       params = { name: "Justin P. Sherman", email: "up_dog@gmail.com", password: "puppy123" }
 
       justin_update = UsersFacade.update_user(justin, params[:name], params[:email], params[:password])
-      new_justin = UsersFacade.find_user(7)
+      new_justin = UsersFacade.find_user(5)
 
       expect(new_justin.name).to_not eq("Justin Winchester")
       expect(new_justin.name).to eq("Justin P. Sherman")
