@@ -75,7 +75,7 @@
       <p><b>Age: </b><%= dog.age %></p><br/>
       <p><b>Size: </b><%= dog.size %></p><br/>
       <p><b>Neutered: </b><%= dog.neutered ? 'true' : 'false' %></p><br/>
-      <%= button_to "Edit #{dog.name}", edit_user_dog_path(@user.user_id, dog.dog_id), class: 'edit-button' %>
+      <%= button_to "Edit #{dog.name}", edit_user_dog_path(@user.user_id, dog.dog_id), method: :get, class: 'edit-button' %>
     </div>
   <% end %>
 </div>
