@@ -4,7 +4,6 @@ RSpec.describe 'Users Show' do
   describe 'User Dashboard' do 
     before :each do 
       visit '/users/1'
-      save_and_open_page
     end
 
     it 'exists', :vcr do 
