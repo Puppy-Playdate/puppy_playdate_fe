@@ -13,6 +13,7 @@ class DogsController < ApplicationController
     @dogs_facade = DogsFacade.find_dog_by_id(current_user, params[:id].to_i)
     if dog_params
       response = DogsFacade.update_dog(dog_params)
+      # require 'pry'; binding.pry
       if response[:status] == 200
         flash[:success] = "Dog has been Updated!"
         redirect_to user_dogs_path(current_user)

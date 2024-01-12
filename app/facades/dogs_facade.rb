@@ -30,16 +30,18 @@ class DogsFacade
       Dog.new(dog)
     end
   end
-
+  # show: find specific dog
   def self.find_dog_by_id(user_id, dog_id)
     response = DogsService.find_dog_by_id(user_id, dog_id)
     Dog.new(response[:data]) if response[:data]
   end
 
   def self.update_dog(dog_params)
+    # require 'pry'; binding.pry
     dog_object = build_dog_object(dog_params)
     response = DogsService.update_dog(dog_object)
     response_body = JSON.parse(response.body, symbolize_names: true)
+    # require 'pry'; binding.pry
     if response.status == 200
       {
         status: response.status,

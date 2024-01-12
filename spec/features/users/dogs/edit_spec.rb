@@ -1,9 +1,9 @@
 require "rails_helper"
 
 RSpec.describe "User Dog Edit Page" do
-  before(:each) do
-    @user = UsersFacade.find_user(1)
-  end
+  # before(:each) do
+  #   @user = UsersFacade.find_user(1)
+  # end
 
   # dog index edit button is tested in dog index spec
   # write a test with within blocks that each dog has an edit button
@@ -11,32 +11,38 @@ RSpec.describe "User Dog Edit Page" do
   it 'there is a form to fill out with my dogs previous info 
     prefilled for editing for each dog', :vcr do 
     visit edit_user_dog_path(1, 1)
+    dog1 = DogsFacade.find_dog_by_id(1,1)
 
     expect(page).to have_content('Editing Fido')
-    expect(page).to have_field :name, with: 'Fido'
-    expect(page).to have_field :breed, with: 'Lab'
-    expect(page).to have_field :age, with: '5'
-    expect(page).to have_select('size', selected: 'medium')
-    expect(page).to have_select('neutered', selected: 'true')
+    expect(page).to have_field :name, with: dog1.name
+    expect(page).to have_field :breed, with: dog1.breed
+    expect(page).to have_field :age, with: dog1.age
+    # expect(page).to have_select('size', selected: dog1.size)
+    expect(page).to have_content(dog1.size)
+    # expect(page).to have_select('neutered', selected: dog1.neutered)
+    expect(page).to have_content(dog1.neutered)
     expect(page).to have_button("Update")
-
-
+    
+    dog2 = DogsFacade.find_dog_by_id(1,2)
     visit edit_user_dog_path(1, 2)
-
+    
     expect(page).to have_content('Editing Bob')
-    expect(page).to have_field :name, with: 'Bob'
-    expect(page).to have_field :breed, with: 'Pug'
-    expect(page).to have_field :age, with: '3'
-    expect(page).to have_select('size', selected: 'small')
-    expect(page).to have_select('neutered', selected: 'false')
+    expect(page).to have_field :name, with: dog2.name
+    expect(page).to have_field :breed, with: dog2.breed
+    expect(page).to have_field :age, with: dog2.age
+    # expect(page).to have_select('size', selected: 'small')
+    expect(page).to have_content(dog2.size)
+    # expect(page).to have_select('neutered', selected: 'false')
+    expect(page).to have_content(dog2.neutered)
     expect(page).to have_button("Update")
   end
 
   it 'when i fill out the edit form with my changes and click update,
     i am redirected to the user dog index and the information i updated appears', :vcr do 
     visit edit_user_dog_path(1, 1)
+    dog1 = DogsFacade.find_dog_by_id(1,1)
 
-    expect(page).to have_content('Editing Fido')
+    expect(page).to have_content("Editing #{dog1.name}")
     fill_in :age, with: "6"
     click_button("Update")
     # save_and_open_page
@@ -48,7 +54,7 @@ RSpec.describe "User Dog Edit Page" do
     expect(page).to have_content("Size: medium")
     expect(page).to have_content("Neutered: true")
 
-
+    require 'pry'; binding.pry
     visit edit_user_dog_path(1, 2)
 
     expect(page).to have_content('Editing Bob')

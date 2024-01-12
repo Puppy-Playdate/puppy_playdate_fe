@@ -24,6 +24,7 @@ class DogsService
   end
 
   def self.update_dog(dog_object)
+    # require 'pry'; binding.pry
     conn.patch("/api/v1/users/#{dog_object[:user_id]}/dogs/#{dog_object[:id]}") do |request|
       request.headers['Content-Type'] = 'application/json'
       request.body = dog_object.to_json
