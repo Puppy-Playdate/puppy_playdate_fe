@@ -21,10 +21,20 @@ Does your dog seem bored? Are you curious about any dog park meet ups or social 
 - [Capybara](https://github.com/morris-lab/Capybara) gem for end to end testing 
 - [Lanchy](https://github.com/copiousfreetime/launchy) gem for inspection and debugging
 <!-- - [jsbundling-rails](https://github.com/rails/jsbundling-rails) / [cssbundling-rails](https://github.com/rails/cssbundling-rails) gems for styling  -->
-- [omniauth](https://github.com/omniauth/omniauth) / [omniauth-rails_csrf_protection](https://github.com/cookpad/omniauth-rails_csrf_protection) / [omniauth-google-oauth2](https://github.com/zquestz/omniauth-google-oauth2) gems for OAuth
+- [omniauth](https://github.com/omniauth/omniauth) / [omniauth-rails_csrf_protection](https://github.com/cookpad/omniauth-rails_csrf_protection) gems for oauth
 
 - [Postman](https://www.postman.com/) to check API endpoints
 - [VCR](https://github.com/vcr/vcr) / [Webmock](https://github.com/bblimke/webmock) to stub HTTP requests in tests to simulate API interactions
+
+## API's Consumed
+
+<img src="https://www.loginradius.com/blog/static/a9dad0fc4bf1af95243aa5e2d017bc22/a8669/google_cover.jpg" alt="drawing" width="100"/> <br>
+Google Address Validation: https://developers.google.com/maps/documentation/address-validation/overview <br>
+Google Places: https://developers.google.com/maps/documentation/places/web-service <br>
+Google Maps:  https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY&q=YOUR_LOCATION&zoom=13maptype=satellite <br>
+
+
+
 
 ## Getting Started
 These instructions will give you a copy of the project up and running on your local machine for development and testing purposes. 
@@ -98,13 +108,6 @@ Make use of simplecov with `open coverage/index.html`
 
 ## Acknowledgments
 May use this area for any hat tip to anyone whose code is used, inspiration, helpers (instructors), etc.
-
-
-## API's consumed/endpoints
-
-
-## Gems added to standard rails
-
 
 
 ## PLACEHOLDER FOR PICTURES SHOWING EXAMPLES OR PARTS OF THE PROJECT WE'RE PROUD OF.
