@@ -21,7 +21,6 @@ class DogsController < ApplicationController
         redirect_back(fallback_location: edit_user_dog_path(current_user, @dogs_facade.dog_id))
       end
     else
-      require 'pry'; binding.pry
       flash[:error] = "**NO FIELDS CAN BE LEFT BLANK.**"
       redirect_back(fallback_location: edit_user_dog_path(current_user, @dogs_facade.dog_id))
     end
