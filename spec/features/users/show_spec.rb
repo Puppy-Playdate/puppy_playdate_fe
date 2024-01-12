@@ -4,9 +4,11 @@ RSpec.describe 'Users Show' do
   describe 'User Dashboard' do 
     before :each do 
       visit '/users/1'
+      save_and_open_page
     end
 
     it 'exists', :vcr do 
+      
       expect(page).to have_button('Edit Profile')
       expect(page).to have_button('Add New Dog')
       expect(page).to have_button('View Pets')

@@ -3,7 +3,6 @@ require "rails_helper"
 RSpec.describe "User Creation" do
   it "Has a form to fill in", :vcr do
     visit new_user_path
-
     expect(page).to have_content("Create an Account")
     expect(page).to have_button("Create New User")
 
