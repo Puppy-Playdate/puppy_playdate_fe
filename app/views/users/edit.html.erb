@@ -1,18 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit <%= @user.name %>'s Profile</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      margin-top: 20px;
+      color: #333;
+    }
+
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: #333;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 16px;
+      box-sizing: border-box;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+
+    input[type="submit"] {
+      background-color: #4285f4;
+      color: #fff;
+      border: none;
+      padding: 12px 16px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+
 <div align="center">
-<h1> Editing <%= @user.name %>'s Profile </h1>
-<br><%= link_to "Back to User Dashboard", user_path(@user.user_id) %><br>
+  <h1>Editing <%= @user.name %>'s Profile</h1>
+  <br><%= link_to "Back to User Dashboard", user_path(@user.user_id) %><br>
 
-<br><%= form_with url: user_path(@user.user_id), method: :patch do |f| %>
-  <%= f.label :name, 'Name:' %>
-  <%= f.text_field :name, :value => @user.name %>
-  <%= f.label :email, 'Email:' %>
-  <%= f.text_field :email, :value => @user.email %>
-  <%= f.label :password, 'Password:' %>
-  <%= f.password_field :password, required: true %><br>
+  <br><%= form_with url: user_path(@user.user_id), method: :patch do |f| %>
+    <label for="name">Name:</label>
+    <%= f.text_field :name, value: @user.name, id: "name" %>
 
-  <%= f.label :password_confirmation, 'Password Confirmation:' %>
-  <%= f.password_field :password_confirmation, required: true %><br>
+    <label for="email">Email:</label>
+    <%= f.text_field :email, value: @user.email, id: "email" %>
 
-  <br><%= f.submit 'Save' %>
-<% end %>
+    <label for="password">Password:</label>
+    <%= f.password_field :password, required: true, id: "password" %><br>
+
+    <label for="password_confirmation">Password Confirmation:</label>
+    <%= f.password_field :password_confirmation, required: true, id: "password_confirmation" %><br>
+
+    <br><%= f.submit 'Save' %>
+  <% end %>
 </div>
+
+</body>
+</html>

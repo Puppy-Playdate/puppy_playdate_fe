@@ -1,26 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create a Social</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 20px;
+    }
 
-<div id="social_creation" align="center">
+    h1 {
+      margin-top: 20px;
+      color: #333;
+    }
+
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    p {
+      margin-bottom: 16px;
+      color: #333;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 16px;
+      box-sizing: border-box;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+
+    input[type="datetime-local"] {
+      width: calc(100% - 22px);
+    }
+
+    input[type="submit"] {
+      background-color: #4285f4;
+      color: #fff;
+      border: none;
+      padding: 12px 16px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #3a76e7;
+    }
+  </style>
+</head>
+<body>
+
+<div id="social_creation">
   <h1>Create a Social</h1>
   <%= form_with url: user_socials_path(current_user), method: :post do |f| %>
-    <p>Social Name: <%= f.text_field :name, required: true %></p>
-    <p>Description: <%= f.text_area :description, required: true %></p>
-    
-    <p>Type: <%= f.select :event_type, [["Chill", 0], ["Playdate", 1], ["Walk", 2]], prompt: "Select an Event Type", required: true %></p>
-    <p>City: <%= f.text_field :locality, required: true %></p>
-    <p>Address: <%= f.text_field :addressLines, required: true %></p>
+    <p><b>Social Name: </b><%= f.text_field :name, required: true %></p>
+    <p><b>Description: </b><%= f.text_area :description, required: true %></p>
+    <p><b>Type: </b><%= f.select :event_type, [["Chill", 0], ["Playdate", 1], ["Walk", 2]], prompt: "Select an Event Type", required: true %></p>
+    <p><b>City: </b><%= f.text_field :locality, required: true %></p>
+    <p><b>Address: </b><%= f.text_field :addressLines, required: true %></p>
     <p><label for="datetime">Choose Date and Time:</label></p>
-    <p><input type="datetime-local" id="datetime" name="datetime" required min = "currentDate"></p>
-
-    <script>
-      // Get the current date and time in the format expected by datetime-local input
-      const currentDate = new Date().toISOString().slice(0, 16);
-
-      // Set the minimum attribute dynamically
-      document.getElementById("datetime").min = currentDate;
-    </script>
+    <p><input type="datetime-local" id="datetime" name="datetime" required min="<%= DateTime.now.strftime('%Y-%m-%dT%H:%M') %>"></p>
 
     <p><%= f.submit "Create Social" %></p>
   <% end %>
 </div>
+
+</body>
+</html>
 
 <%# # @social.location %>

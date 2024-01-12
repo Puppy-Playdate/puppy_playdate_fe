@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'User Login' do
   it 'exists' do 
     visit root_path
-
+    save_and_open_page
     expect(page).to have_content("Puppy Playdate")
     expect(page).to have_link('Login')
     expect(page).to have_link('New User')

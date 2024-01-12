@@ -4,7 +4,7 @@ RSpec.describe 'Users Edit' do
   describe 'User Dashboard Updates' do 
     it 'exists', :vcr do 
       visit edit_user_path(1)
-
+      
       expect(page).to have_content("Editing James Sullivan's Profile")
       expect(page).to have_field :name, with: 'James Sullivan'
       expect(page).to have_field :email, with: 'sully@gmail.com'

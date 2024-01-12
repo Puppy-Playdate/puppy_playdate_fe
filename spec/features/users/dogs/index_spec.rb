@@ -4,6 +4,7 @@ RSpec.describe "User Dog Index" do
   it 'displays dogs with their name, breed, size, fixed status', :vcr do
     @user = UsersFacade.find_user(1)
     visit user_dogs_path(1)
+    
     expect(page).to have_content("#{@user.name}'s Dogs")
     expect(page).to have_content("Name: Fido")
     expect(page).to have_content("Breed: Lab")

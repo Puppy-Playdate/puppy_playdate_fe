@@ -1,12 +1,64 @@
-<h1>You've made it to the dashboard</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= @user.name %>'s Dashboard</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 20px;
+    }
 
-<h3>Name: <%= @user.name %></h3>
-<p>Email: <%= @user.email %></p><h2><%= @user.name %>'s Dashboard</h2>
+    h1, h2, h3, p {
+      color: #333;
+    }
 
-<div id="dashboard_nav" >
-  <p><%= button_to "Edit Profile", edit_user_path(@user.user_id), method: :get %></p>
-  <p><%= button_to "Add New Dog", new_user_dog_path(@user.user_id), method: :get  %></p>
-  <p><%= button_to "View Pets", user_dogs_path(@user.user_id), method: :get  %></p>
-  <p><%= button_to "Discover Socials", user_socials_path(@user.user_id), method: :get %></p>
-  <p><%= button_to "Create a Social", new_user_social_path(@user.user_id), method: :get %></p>
-</div>  
+    #dashboard_nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+      justify-content: center;
+    }
+
+    .dashboard-button {
+      background-color: #4285f4;
+      color: #fff;
+      border: none;
+      padding: 10px 14px; /* Adjusted padding for a slightly smaller size */
+      font-size: 14px; /* Adjusted font size */
+      cursor: pointer;
+      border-radius: 4px;
+      text-decoration: none;
+      display: inline-block;
+      transition: background-color 0.3s;
+      margin: 5px; /* Added margin for spacing */
+    }
+
+    .dashboard-button:hover {
+      background-color: #3a76e7;
+    }
+  </style>
+</head>
+<body>
+
+<p>You've made it to the dashboard</p>
+
+<p><b>Name: </b><%= @user.name %></p>
+<p><b>Email: </b><%= @user.email %></p>
+<h1><%= @user.name %>'s Dashboard</h1>
+
+<div id="dashboard_nav">
+  <%= button_to "Edit Profile", edit_user_path(@user.user_id), class: "dashboard-button", method: :get %>
+  <%= button_to "Add New Dog", new_user_dog_path(@user.user_id), class: "dashboard-button", method: :get %>
+  <%= button_to "View Pets", user_dogs_path(@user.user_id), class: "dashboard-button", method: :get %>
+  <%= button_to "Discover Socials", user_socials_path(@user.user_id), class: "dashboard-button", method: :get %>
+  <%= button_to "Create a Social", new_user_social_path(@user.user_id), class: "dashboard-button", method: :get %>
+</div>
+
+</body>
+</html>
