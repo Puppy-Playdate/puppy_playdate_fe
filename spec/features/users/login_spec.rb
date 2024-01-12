@@ -11,7 +11,7 @@ RSpec.describe "User Login" do
 
   it "Can login an existing user", :vcr do
     visit login_path
-
+    save_and_open_page
     expect(page).to have_content("Existing Member Login")
     expect(page).to have_button("Login")
     expect(page).to have_button("Login with Google")
