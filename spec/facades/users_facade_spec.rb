@@ -17,7 +17,9 @@ RSpec.describe UsersFacade do
 
   describe '#find_user(id)' do 
     it 'finds a user by its id', :vcr do 
+      require 'pry'; binding.pry
       justin = UsersFacade.find_user(7)
+
       expect(justin).to be_a User
       expect(justin.name).to eq("Justin Winchester")
       expect(justin.email).to eq("up_dog@yahoo.com")

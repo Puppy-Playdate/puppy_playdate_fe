@@ -65,17 +65,28 @@ RSpec.describe DogsFacade do
       fido = DogsFacade.find_dog_by_id(user.user_id, old_dog[:dog_id].to_i)
       new_params = { name: "Karl", breed: "Weiner Dog", size: "small", age: 1, neutered: true }
 
-      new_dog = DogsFacade.update_dog(fido.dog_id, user.user_id, new_params[:name], new_params[:breed], new_params[:size], new_params[:age], new_params[:neutered])
-# new dog is returning a 404 error while fido is returning a Dog object with old_params 
-      karl = new_dog[:data]
-      expect(karl[:attributes][:name]).to_not eq("Fido")
-      expect(karl[:attributes][:name]).to eq("Karl")
-      expect(karl[:attributes][:size]).to_not eq("large")
-      expect(karl[:attributes][:size]).to eq("small")
-      expect(karl[:attributes][:age]).to_not eq(4)
-      expect(karl[:attributes][:age]).to eq(1)
-      expect(karl[:attributes][:breed]).to_not eq("Labrador")
-      expect(karl[:attributes][:breed]).to eq("Weiner Dog")
+      dog_params = {
+        user_id: user.user_id,
+        id: fido.dog_id,
+        name:  new_params[:name],
+        breed: new_params[:breed],
+        size: new_params[:size],
+        age: new_params[:age],
+        neutered: new_params[:neutered]
+      }
+
+      response = DogsFacade.update_dog(dog_params)
+
+      karl = DogsFacade.find_dog_by_id(user.user_id, fido.dog_id)
+
+      expect(karl.name).to_not eq("Fido")
+      expect(karl.name).to eq("Karl")
+      expect(karl.size).to_not eq("large")
+      expect(karl.size).to eq("small")
+      expect(karl.age).to_not eq(4)
+      expect(karl.age).to eq(1)
+      expect(karl.breed).to_not eq("Labrador")
+      expect(karl.breed).to eq("Weiner Dog")
     end
   end
 

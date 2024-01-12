@@ -23,7 +23,7 @@ class DogsFacade
       }
     end
   end
-
+  # index: all dgs
   def self.find_dog(user_id)
     response = DogsService.find_dog(user_id)
     response[:data].map do |dog|
@@ -40,7 +40,6 @@ class DogsFacade
     dog_object = build_dog_object(dog_params)
     response = DogsService.update_dog(dog_object)
     response_body = JSON.parse(response.body, symbolize_names: true)
-    require 'pry'; binding.pry
     if response.status == 200
       {
         status: response.status,
