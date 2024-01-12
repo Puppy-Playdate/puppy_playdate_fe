@@ -10,9 +10,9 @@
   <%= f.label :age, 'Age:' %>
   <%= f.text_field :age, :value => @dogs_facade.age %>
   <%= f.label :size, 'Size:' %>
-  <%= f.select :size, options_for_select(['small', 'medium', 'large'], @dogs_facade.size) %>
+  <%= f.select :size, options_for_select([['small', 0], ['medium', 1], ['large', 2]], @dogs_facade.size) %>
   <%= f.label :neutered, 'Neutered:' %>
-  <%= f.select :neutered, options_for_select(['true', 'false'], @dogs_facade.neutered) %>
+  <%= f.select :neutered, options_for_select([['true', true] , ['false', false]], @dogs_facade.neutered) %>
   <br>
 
   <br><%= f.submit 'Update' %>

@@ -41,7 +41,7 @@
       <p>Size: <%= dog.size %></p>
       <p>Neutered: <%= dog.neutered ? 'true' : 'false' %></p>
       <!-- Add photo display logic here if we decide to -->
-      <%= button_to "Edit #{dog.name}", edit_user_dog_path(@user.user_id, dog.dog_id) %>
+      <%= button_to "Edit #{dog.name}", edit_user_dog_path(@user.user_id, dog.dog_id), method: :get %>
     </div>
   <% end %>
 </div>
